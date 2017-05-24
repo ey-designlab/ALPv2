@@ -1,0 +1,23 @@
+@mixin bp-mobile {
+  @media (max-width: #{$max-width}) {
+    @content;
+  }
+}
+
+@mixin mobile-aspect {
+    @media screen and (device-aspect-ratio: 40/71) {
+        @content;
+    }
+}
+
+@mixin grid ($columns, $margin){
+    width: ((100% - (($columns - 1) * $margin))/$columns);
+    &:nth-child(n){
+        margin-right: $margin;
+/*        margin-bottom: $margin;*/
+    }
+    &:nth-child(#{$columns}n){
+        margin-right: 0;
+/*        margin-bottom: $margin;*/
+    }
+}
