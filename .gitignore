@@ -40,3 +40,6 @@ nbproject
 
 # Ignore dist files
 dist
+
+# Ignore psd files
+PSD

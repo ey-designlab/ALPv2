@@ -1,135 +1,9 @@
 
+
 $(document).ready(function () {
     //  https://msdn.microsoft.com/en-us/library/office/jj860569.aspx
 
-    $('.finish').on('click', function (e) {
-        e.preventDefault();
-        if ($(this).parent().find('.capabilityitem').hasClass('activeradio')) {
-            sumary();
-            $('.YOURSELECTIONSUMMARY').fadeIn();
-            $('.capability').hide();
-            $('.results').slideDown();
-
-            var target = $(".results");
-            var distance = (target.offset().top) - 115;
-            $('html,body').stop(true, false).animate({
-                scrollTop: distance
-            }, 1500, 'easeInOutCubic');
-
-        }
-    });
-
-    $('.reset').on('click', function (e) {
-        e.preventDefault();
-        $('.YOURSELECTIONSUMMARY').hide().find('.selectedfilters').empty();
-        $('#total').empty();
-        $('.checkbox').css({"top": "", "opacity": ""});
-        $('.capability').show().find('.selectrankwrap').show();
-        $('.activeradio input').removeAttr('checked');
-        $('.capabilityitem').removeClass('activeradio');
-        $('.results').hide();
-    });
-
-    $('.nextslide').on('click', function (e) {
-        e.preventDefault();
-        if ($(this).parent().find('.capabilityitem').hasClass('activeradio')) {
-            animatenext.call(this);
-        }
-    });
-
-    $('.previous').on('click', function (e) {
-        e.preventDefault();
-        $(this).parent().find('.activeradio input').removeAttr('checked');
-        $(this).parent().find('.capabilityitem').removeClass('activeradio');
-        animateprew.call(this);
-    });
-
-    function sumary() {
-        $('.activeradio').each(function () {
-            var capabilityitem = $(this).clone();
-            capabilityitem.find('input').remove();
-            $('.YOURSELECTIONSUMMARY .selectedfilters').append(capabilityitem);
-        });
-    }
-
-    function animateprew() {
-        var dataattr = $(this).data("wrapname");
-        var parent = $(this).parent();
-        $.when(
-                $(this).parent().find('.checkbox').each(function (i) {
-            $(this).css({"top": 0, "opacity": 1, 'position': 'relative'}).delay((i++) * 100)
-                    .animate({
-                        top: -200,
-                        opacity: 0
-                    }, 400, "easeInOutBack");
-        })).done(function () {
-            parent.hide();
-            $('.' + dataattr).fadeIn().find('.checkbox').each(function (i) {
-                $(this).find('.activeradio input').trigger("click");
-                $(this).css({"top": -200, "opacity": 0, 'position': 'relative'}).delay((i++) * 50)
-                        .animate({
-                            top: 0,
-                            opacity: 1
-                        }, 400, "easeInOutBack");
-            });
-        });
-    }
-
-    function animatenext() {
-        var dataattr = $(this).parent().find('.activeradio > input').data("wrapname");
-        var parent = $(this).parent();
-        $.when(
-                $(this).parent().find('.checkbox').each(function (i) {
-            $(this).css({"top": 0, "opacity": 1, 'position': 'relative'}).delay((i++) * 100)
-                    .animate({
-                        top: -200,
-                        opacity: 0
-                    }, 400, "easeInOutBack");
-        })).done(function () {
-            parent.hide();
-            $('.' + dataattr).fadeIn().find('.checkbox').each(function (i) {
-                $(this).css({"top": -200, "opacity": 0, 'position': 'relative'}).delay((i++) * 50)
-                        .animate({
-                            top: 0,
-                            opacity: 1
-                        }, 400, "easeInOutBack");
-            });
-        });
-    }
-
-    $('.capabilityitem').on('click', function (e) {
-
-        var parents = $(this).parents('fieldset');
-        parents.find('.capabilityitem').removeClass('activeradio');
-        var nextslide = parents.parent().find('.nextslide').addClass('animatenext');
-
-        setTimeout(function () {
-            nextslide.removeClass('animatenext');
-        }, 400);
-
-        $(this).addClass('activeradio');
-    });
-
-
-    function secondsToString(seconds) {
-        var value = seconds;
-        var units = {
-            "hour": 60,
-            "minute": 1
-        };
-        var result = [];
-        for (var name in units) {
-            var p = Math.floor(value / units[name]);
-
-            if (p == 1)
-                result.push(" " + p + " " + name);
-            if (p >= 2)
-                result.push(" " + p + " " + name + "s");
-
-            value %= units[name];
-        }
-        return result;
-    }
+  
 
 
     var FilteredContent = [];
@@ -150,12 +24,13 @@ $(document).ready(function () {
         $.when(Ajax(url)).then(function (data) {
             console.log(data)
             $.each(data.d.results, function (key, data) {
-                var type;
 
-                if (data.Learning_x0020_type !== null) {
-                    type = data.Learning_x0020_type.results;
-                } else {
-                    type = "";
+                for (var key in data) {
+                    if (data[key] === null && key !== 'Title' && key !== 'gpqg' && key !== 'Course_x0020_Code' && key !== 'Short_x0020_description' && key !== 'America_x0027_s_x0020_classroom_' && key !== 'America_x0027_s_x0020_AA_x0020_C' && key !== 'Blended_x0020_learning_x0020_pro') {
+                        data[key] = {results: [""]};
+                    } else if (data[key] === null && key === 'Course_x0020_URL') {
+                        data[key] = {Url: ""};
+                    }
                 }
 
                 $.each(data.Division.results, function (key, dat) {
@@ -163,16 +38,9 @@ $(document).ready(function () {
 
                         FilteredContent.push({
                             Area: data.Area.results,
-                            Title: data.Title,
-                            ranks: data.Rank.results,
-                            Duration: data.gpqg,
-                            coursecode: data.Course_x0020_Code,
                             SubServiceLine: data.Sector.results,
-                            URL: data.Course_x0020_URL.Url,
-                            description: data.Short_x0020_description,
+                            ranks: data.Rank.results,
                             Division: data.Division.results,
-                            Sector: data.Sector.results,
-                            CourseType: type,
                             RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
                             PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
                             RiskServiceOfferings: data.Risk_x0020_Service_x0020_Offerin.results,
@@ -180,8 +48,24 @@ $(document).ready(function () {
                             LearningJourneyname: data.Learning_x0020_Journey_x0020_nam.results,
                             CourseLevel: data.Course_x0020_Level.results,
                             Region: data.Region.results,
-                            Competency: data.Consultancy_x0020_Competency.results
+                            Competency: data.Consultancy_x0020_Competency.results,
+                            Sector: data.Sector.results,
+                            PASPillars: data.PAS_x0020_Pillars.results,
+                            PASfferings: data.PAS_x0020__x002d__x0020_Offering.results,
+                            GrowthDrivers: data.Growth_x0020_Drivers.results,
+                            LearningType: data.Learning_x0020_Type0.results,
+                            CourseType: data.Learning_x0020_type.results,
+                            PASPillarOfferings: data.temp.results,
 
+                            URL: data.Course_x0020_URL.Url,
+
+                            Title: data.Title,
+                            Duration: data.gpqg,
+                            coursecode: data.Course_x0020_Code,
+                            description: data.Short_x0020_description,
+                            America: data.America_x0027_s_x0020_classroom_,
+                            AmericaAACPE: data.America_x0027_s_x0020_AA_x0020_C,
+                            Blended: data.Blended_x0020_learning_x0020_pro
                         });
                     }
                 });
@@ -222,6 +106,10 @@ $(document).ready(function () {
             });
 
             FJS.addCriteria({field: 'ranks', ele: '#ranks input:radio'});
+            FJS.addCriteria({field: 'Area', ele: '#area input:radio'});
+            FJS.addCriteria({field: 'Region', ele: '.regions input:radio'});
+
+
             FJS.addCriteria({field: 'RiskCapabilities', ele: '#RiskCapabilities input:radio'});
             FJS.addCriteria({field: 'RiskServiceOfferings', ele: '.RiskServiceOfferings input:radio'});
             window.FJS = FJS;

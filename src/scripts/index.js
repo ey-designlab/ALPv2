@@ -1,3 +1,4 @@
+
 jQuery(document).ready(function ($) {
 
     var body = $('html, body');
@@ -100,10 +101,10 @@ jQuery(document).ready(function ($) {
 
 
 
-    //first set firstname equal to Sparky.
-    localStorage.setItem("firstname", "Sparky");
-//next, get the value of firstname (hint, it will be Sparky).
-    localStorage.getItem("firstname");
+//    //first set firstname equal to Sparky.
+//    localStorage.setItem("firstname", "Sparky");
+////next, get the value of firstname (hint, it will be Sparky).
+//    localStorage.getItem("firstname");
 
 
 
@@ -165,4 +166,139 @@ jQuery(document).ready(function ($) {
 
 
 
+// learning journeys code
+
+    $('.finish').on('click', function (e) {
+        e.preventDefault();
+        if ($(this).parent().find('.capabilityitem').hasClass('activeradio')) {
+            sumary();
+            $('.YOURSELECTIONSUMMARY').fadeIn();
+            $('.capability').hide();
+            $('.results').slideDown();
+
+            var target = $(".results");
+            var distance = (target.offset().top) - 115;
+            $('html,body').stop(true, false).animate({
+                scrollTop: distance
+            }, 1500, 'easeInOutCubic');
+        }
+    });
+
+    $('.reset').on('click', function (e) {
+        e.preventDefault();
+        $('.YOURSELECTIONSUMMARY').hide().find('.selectedfilters').empty();
+        $('#total').empty();
+        $('.checkbox').css({"top": "", "opacity": ""});
+        $('.capability').show().find('.selectareawrap').show();
+        $('.activeradio input').removeAttr('checked');
+        $('.capabilityitem').removeClass('activeradio');
+        $('.results').hide();
+        $('.previosslide').removeClass('previosslide');
+    });
+
+    $('.nextslide').on('click', function (e) {
+        e.preventDefault();
+//        $('.previosslide').removeClass('previosslide');
+        if ($(this).parent().find('.capabilityitem').hasClass('activeradio')) {
+            $(this).parent().addClass('previosslide');
+            animatenext.call(this);
+        }
+    });
+
+    $('.previous').on('click', function (e) {
+        e.preventDefault();
+        animateprew.call(this);
+    });
+
+    function sumary() {
+        $('.activeradio').each(function () {
+            var capabilityitem = $(this).clone();
+            capabilityitem.find('input').remove();
+            $('.YOURSELECTIONSUMMARY .selectedfilters').append(capabilityitem);
+        });
+    }
+
+    function animateprew() {
+        $(this).parent().find('.activeradio input').removeAttr('checked');
+        $(this).parent().find('.capabilityitem').removeClass('activeradio');
+        FJS.setTemplate('#list', true);
+
+//        var dataattr = $(this).data("wrapname");
+        var parent = $(this).parent();
+        $.when(
+                $(this).parent().find('.checkbox').each(function (i) {
+            $(this).css({"top": 0, "opacity": 1, 'position': 'relative'}).delay((i++) * 100)
+                    .animate({
+                        top: -200,
+                        opacity: 0
+                    }, 400, "easeInOutBack");
+        })).done(function () {
+            parent.hide();
+//            $('.' + dataattr).fadeIn().find('.checkbox').each(function (i) {
+            $('.previosslide').last().fadeIn().find('.checkbox').each(function (i) {
+                $(this).parents('.previosslide').removeClass('previosslide');
+//                console.log($(this).find('.activeradio input'));
+//                $(this).find('.activeradio input').trigger("click");
+                $(this).css({"top": -200, "opacity": 0, 'position': 'relative'}).delay((i++) * 50)
+                        .animate({
+                            top: 0,
+                            opacity: 1
+                        }, 400, "easeInOutBack");
+            });
+        });
+    }
+
+    function animatenext() {
+        var dataattr = $(this).parent().find('.activeradio > input').data("wrapname");
+        var parent = $(this).parent();
+        $.when(
+                $(this).parent().find('.checkbox').each(function (i) {
+            $(this).css({"top": 0, "opacity": 1, 'position': 'relative'}).delay((i++) * 100)
+                    .animate({
+                        top: -200,
+                        opacity: 0
+                    }, 400, "easeInOutBack");
+        })).done(function () {
+            parent.hide();
+            $('.' + dataattr).fadeIn().find('.checkbox').each(function (i) {
+                $(this).css({"top": -200, "opacity": 0, 'position': 'relative'}).delay((i++) * 50)
+                        .animate({
+                            top: 0,
+                            opacity: 1
+                        }, 400, "easeInOutBack");
+            });
+        });
+    }
+
+    $('.capabilityitem').on('click', function (e) {
+        var parents = $(this).parents('fieldset');
+        parents.find('.capabilityitem').removeClass('activeradio');
+        var nextslide = parents.parent().find('.nextslide').addClass('animatenext');
+        setTimeout(function () {
+            nextslide.removeClass('animatenext');
+        }, 400);
+        $(this).addClass('activeradio');
+    });
+
+
 });
+
+function secondsToString(seconds) {
+    var value = seconds;
+    var units = {
+        "hour": 60,
+        "minute": 1
+    };
+    var result = [];
+    for (var name in units) {
+        var p = Math.floor(value / units[name]);
+
+        if (p == 1)
+            result.push(" " + p + " " + name);
+        if (p >= 2)
+            result.push(" " + p + " " + name + "s");
+
+        value %= units[name];
+    }
+    return result;
+}

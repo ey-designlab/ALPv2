@@ -41,6 +41,7 @@
     "gulp-add-src": "^0.2.0",
     "gulp-babel": "^6.1.2",
     "gulp-browserify": "^0.5.1",
+    "gulp-develop-server": "^0.5.2",
     "gulp-file-include": "^1.0.0",
     "gulp-inline-base64": "^0.1.5",
     "mocha": "*"

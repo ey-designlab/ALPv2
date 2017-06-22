@@ -20,8 +20,9 @@
     <section >
         <div class="capability">
             <div class="row">
+                @@include('./area_region.html')
 
-                <div class="selectrankwrap clearfix">
+                <div class="selectrankwrap hide clearfix">
                     <fieldset id="ranks">
                         <legend>SELECT YOUR RANK</legend>
                         <div class="checkbox">
@@ -65,325 +66,9 @@
                             </label>
                         </div>
                     </fieldset>
+                    <a data-wrapname="selectareawrap" class="previous"  href="#"> &lt; PREVIOUS</a>
                     <a class="nextslide"  href="#">NEXT ></a>
                 </div>
-
-
-
-
-
-                <!--                    <div class="RiskCapabilitieswtrap hide clearfix">
-                                        <fieldset id="RiskCapabilities">
-                                            <legend>SELECT YOUR Risk Capabilities / Domain</legend>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Actuarial_Capability">
-                                                        <input data-wrapname="RiskServiceOfferingsActuarialCapabilty" name=RiskCapabilitiesgroup type="radio" value="Actuarial Capability">
-                                                        <div class="capabilityitemtitle">Actuarial Capability</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem FSRM_Capability">
-                                                        <input data-wrapname="RiskServiceOfferingsFSRMCapabilty" name=RiskCapabilitiesgroup type="radio" value="FSRM Capability">
-                                                        <div class="capabilityitemtitle">FSRM Capability</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem risk_transformation_capability">
-                                                        <input data-wrapname="RiskServiceOfferingsRiskTransformationCapabilty" name=RiskCapabilitiesgroup type="radio" value="Risk Transformation Capability">
-                                                        <div class="capabilityitemtitle">Risk Transformation Capability</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem cybersecurity">
-                                                        <input data-wrapname="RiskServiceOfferingsCybersecurity"  name=RiskCapabilitiesgroup type="radio" value="Cybersecurity">
-                                                        <div class="capabilityitemtitle">Cybersecurity</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Internal_Audit_Capability">
-                                                        <input data-wrapname="RiskServiceOfferingsInternalAuditCapabilty" name=RiskCapabilitiesgroup type="radio" value="Internal Audit Capability">
-                                                        <div class="capabilityitemtitle">Internal Audit Capability</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Risk_Assurance_Capability">
-                                                        <input data-wrapname="RiskServiceOfferingsRiskAssuranceCapabilty"  name=RiskCapabilitiesgroup type="radio" value="Risk Assurance Capability">
-                                                        <div class="capabilityitemtitle">Risk Assurance Capability</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </fieldset>
-                                        <a data-wrapname="selectrankwrap" class="previous"  href="#">&lt; PREVIOUS</a>
-                                        <a class="nextslide"  href="#">NEXT ></a>
-                                    </div>
-                
-                                    <div class="RiskServiceOfferingsActuarialCapabilty hide clearfix">
-                                        <fieldset class="RiskServiceOfferings">
-                                            <legend>SELECT YOUR Risk Service Offerings</legend>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Pension_and_Employment">
-                                                        <input name=RiskServiceOfferingsActuarialCapabilty type="radio" value="Pension and Employment">
-                                                        <div class="capabilityitemtitle">Pension and Employment</div>
-                                                    </div>
-                                                </label>
-                                            </div>   
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Other_Corporate_Solutions">
-                                                        <input name=RiskServiceOfferingsActuarialCapabilty type="radio" value="Other Corporate Solutions">
-                                                        <div class="capabilityitemtitle">Other Corporate Solutions</div>
-                                                    </div>
-                                                </label>
-                                            </div>   
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Non_Life">
-                                                        <input name=RiskServiceOfferingsActuarialCapabilty type="radio" value="Non Life">
-                                                        <div class="capabilityitemtitle">Non Life</div>
-                                                    </div>
-                                                </label>
-                                            </div>   
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Life">
-                                                        <input name=RiskServiceOfferingsActuarialCapabilty type="radio" value="Life">
-                                                        <div class="capabilityitemtitle">Life</div>
-                                                    </div>
-                                                </label>
-                                            </div>   
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Assessment_Management">
-                                                        <input name=RiskServiceOfferingsActuarialCapabilty type="radio" value="Assessment Management">
-                                                        <div class="capabilityitemtitle">Assessment Management</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </fieldset>              
-                                        <a data-wrapname="RiskCapabilitieswtrap" class="previous"  href="#">&lt; PREVIOUS</a>
-                                        <a class="nextslide finish"  href="#">FINISH</a>
-                                    </div>
-                
-                                    <div class="RiskServiceOfferingsFSRMCapabilty hide clearfix">
-                                        <fieldset class="RiskServiceOfferings">
-                                            <legend>SELECT YOUR Risk Service Offerings</legend>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem FSRM_Regulatory_Compliance">
-                                                        <input name=RiskServiceOfferingsFSRMCapabilty type="radio" value="FSRM Regulatory Compliance">
-                                                        <div class="capabilityitemtitle">FSRM Regulatory Compliance</div>
-                                                    </div>
-                                                </label>
-                                            </div>   
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem FSRM_Analytics">
-                                                        <input name=RiskServiceOfferingsFSRMCapabilty type="radio" value="FSRM Analytics">
-                                                        <div class="capabilityitemtitle">FSRM Analytics</div>
-                                                    </div>
-                                                </label>
-                                            </div>  
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem FSRM_Risk_Management">
-                                                        <input name=RiskServiceOfferingsFSRMCapabilty type="radio" value="FSRM Risk Management">
-                                                        <div class="capabilityitemtitle">FSRM Risk Management</div>
-                                                    </div>
-                                                </label>
-                                            </div>  
-                
-                                        </fieldset>   
-                                        <a data-wrapname="RiskCapabilitieswtrap" class="previous"  href="#">&lt; PREVIOUS</a>
-                                        <a class="nextslide finish"  href="#">FINISH</a>
-                                    </div>
-                
-                                    <div class="RiskServiceOfferingsRiskTransformationCapabilty hide clearfix">
-                                        <fieldset class="RiskServiceOfferings">
-                                            <legend>SELECT YOUR Risk Service Offerings</legend>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Governance_Risk_and_Compliance">
-                                                        <input name=RiskServiceOfferingsRiskTransformationCapabilty type="radio" value="Governance Risk and Compliance">
-                                                        <div class="capabilityitemtitle">Governance Risk and Compliance</div>
-                                                    </div>
-                                                </label>
-                                            </div>   
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Risk_and_Control">
-                                                        <input name=RiskServiceOfferingsRiskTransformationCapabilty type="radio" value="Risk and Controls">
-                                                        <div class="capabilityitemtitle">Risk and Controls</div>
-                                                    </div>
-                                                </label>
-                                            </div> 
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Risk_Management">
-                                                        <input name=RiskServiceOfferingsRiskTransformationCapabilty type="radio" value="Risk Management">
-                                                        <div class="capabilityitemtitle">Risk Management</div>
-                                                    </div>
-                                                </label>
-                                            </div> 
-                
-                                        </fieldset>   
-                                        <a data-wrapname="RiskCapabilitieswtrap" class="previous"  href="#">&lt; PREVIOUS</a>
-                                        <a class="nextslide finish"  href="#">FINISH</a>
-                                    </div>
-                
-                                    <div class="RiskServiceOfferingsCybersecurity hide clearfix">
-                                        <fieldset class="RiskServiceOfferings">
-                                            <legend>SELECT YOUR Risk Service Offerings</legend>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Privacy">
-                                                        <input name=RiskServiceOfferingsCybersecurity type="radio" value="Privacy">
-                                                        <div class="capabilityitemtitle">Privacy</div>
-                                                    </div>
-                                                </label>
-                                            </div>   
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Data_Protection">
-                                                        <input name=RiskServiceOfferingsCybersecurity type="radio" value="Data Protection">
-                                                        <div class="capabilityitemtitle">Data Protection</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Identity_and_Access_Management">
-                                                        <input name=RiskServiceOfferingsCybersecurity type="radio" value="Identity and Access Management">
-                                                        <div class="capabilityitemtitle">Identity and Access Management</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Cyber_Threat_Management">
-                                                        <input name=RiskServiceOfferingsCybersecurity type="radio" value="Cyber Threat Management">
-                                                        <div class="capabilityitemtitle">Cyber Threat Management</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Cyber_Program_Management">
-                                                        <input name=RiskServiceOfferingsCybersecurity type="radio" value="Cyber Program Management">
-                                                        <div class="capabilityitemtitle">Cyber Program Management</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                
-                                        </fieldset>    
-                                        <a data-wrapname="RiskCapabilitieswtrap" class="previous"  href="#">&lt; PREVIOUS</a>
-                                        <a class="nextslide finish"  href="#">FINISH</a>
-                                    </div>
-                
-                                    <div class="RiskServiceOfferingsInternalAuditCapabilty hide clearfix">
-                                        <fieldset class="RiskServiceOfferings">
-                                            <legend>SELECT YOUR Risk Service Offerings</legend>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem IA_Exection">
-                                                        <input name=RiskServiceOfferingsInternalAuditCapabilty type="radio" value="IA Execution">
-                                                        <div class="capabilityitemtitle">IA Execution</div>
-                                                    </div>
-                                                </label>
-                                            </div>   
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem IA_Funtional_Performance">
-                                                        <input name=RiskServiceOfferingsInternalAuditCapabilty type="radio" value="IA Functional Performance">
-                                                        <div class="capabilityitemtitle">IA Functional Performance</div>
-                                                    </div>
-                                                </label>
-                                            </div>  
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem IA_Strategy_and_Planning">
-                                                        <input name=RiskServiceOfferingsInternalAuditCapabilty type="radio" value="IA Strategy and Planning">
-                                                        <div class="capabilityitemtitle">IA Strategy and Planning</div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </fieldset>       
-                                        <a data-wrapname="RiskCapabilitieswtrap" class="previous"  href="#">&lt; PREVIOUS</a>
-                                        <a class="nextslide finish"  href="#">FINISH</a>
-                                    </div>
-                
-                                    <div class="RiskServiceOfferingsRiskAssuranceCapabilty hide clearfix">
-                                        <fieldset class="RiskServiceOfferings">
-                                            <legend>SELECT YOUR Risk Service Offerings</legend>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Contractual_Compliance">
-                                                        <input name=RiskServiceOfferingsRiskAssuranceCapabilty type="radio" value="Contractual Compliance">
-                                                        <div class="capabilityitemtitle">Contractual Compliance</div>
-                                                    </div>
-                                                </label>
-                                            </div>   
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Management_System_Certification">
-                                                        <input name=RiskServiceOfferingsRiskAssuranceCapabilty type="radio" value="Management System Certification">
-                                                        <div class="capabilityitemtitle">Management System Certification</div>
-                                                    </div>
-                                                </label>
-                                            </div> 
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem SOCR">
-                                                        <input name=RiskServiceOfferingsRiskAssuranceCapabilty type="radio" value="SOCR">
-                                                        <div class="capabilityitemtitle">SOCR</div>
-                                                    </div>
-                                                </label>
-                                            </div> 
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem FAIT">
-                                                        <input name=RiskServiceOfferingsRiskAssuranceCapabilty type="radio" value="FAIT">
-                                                        <div class="capabilityitemtitle">FAIT</div>
-                                                    </div>
-                                                </label>
-                                            </div> 
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Internal_Control_Attestation">
-                                                        <input name=RiskServiceOfferingsRiskAssuranceCapabilty type="radio" value="Internal Control Attestation">
-                                                        <div class="capabilityitemtitle">Internal Control Attestation</div>
-                                                    </div>
-                                                </label>
-                                            </div> 
-                                            <div class="checkbox">
-                                                <label>
-                                                    <div class="capabilityitem Regulatory_Compliance">
-                                                        <input name=RiskServiceOfferingsRiskAssuranceCapabilty type="radio" value="Regulatory Compliance">
-                                                        <div class="capabilityitemtitle">Regulatory Compliance</div>
-                                                    </div>
-                                                </label>
-                                            </div> 
-                                        </fieldset> 
-                                        <a data-wrapname="RiskCapabilitieswtrap" class="previous"  href="#">&lt; PREVIOUS</a>
-                                        <a class="nextslide finish"  href="#">FINISH</a>
-                                    </div>-->
-
-
-
-
-
-
 
 
                 <div class="PiCapabilitieswtrap hide clearfix">
@@ -429,14 +114,14 @@
                                 </div>
                             </label>
                         </div>
-                        <div class="checkbox">
-                            <label>
-                                <div class="capabilityitem PeopleAdvisoryService">
-                                    <input data-wrapname="PIServiceOfferingsPeopledvisoryService" name=PiCapabilitiesgroup type="radio" value="People Advisory Service">
-                                    <div class="capabilityitemtitle">People Advisory Services</div>
-                                </div>
-                            </label>
-                        </div>
+                        <!--                        <div class="checkbox">
+                                                    <label>
+                                                        <div class="capabilityitem PeopleAdvisoryService">
+                                                            <input data-wrapname="PIServiceOfferingsPeopledvisoryService" name=PiCapabilitiesgroup type="radio" value="People Advisory Service">
+                                                            <div class="capabilityitemtitle">People Advisory Services</div>
+                                                        </div>
+                                                    </label>
+                                                </div>-->
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem ITACapability">
@@ -680,62 +365,62 @@
                     <a class="nextslide finish"  href="#">FINISH</a>
                 </div>
 
-                <div class="PIServiceOfferingsPeopledvisoryService hide clearfix">
-                    <fieldset class="PIServiceOfferings">
-                        <legend>SELECT YOUR PI CAPABILITY</legend>
-                        <div class="checkbox">
-                            <label>
-                                <div class="capabilityitem Talent">
-                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Talent">
-                                    <div class="capabilityitemtitle">Talent</div>
-                                </div>
-                            </label>
-                        </div>   
-                        <div class="checkbox">
-                            <label>
-                                <div class="capabilityitem Systems">
-                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Systems">
-                                    <div class="capabilityitemtitle">Systems</div>
-                                </div>
-                            </label>
-                        </div>   
-                        <div class="checkbox">
-                            <label>
-                                <div class="capabilityitem Analytics">
-                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Analytics">
-                                    <div class="capabilityitemtitle">Analytics</div>
-                                </div>
-                            </label>
-                        </div>   
-                        <div class="checkbox">
-                            <label>
-                                <div class="capabilityitem Performance">
-                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Performance">
-                                    <div class="capabilityitemtitle">Performance</div>
-                                </div>
-                            </label>
-                        </div>   
-                        <div class="checkbox">
-                            <label>
-                                <div class="capabilityitem Reward">
-                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Reward">
-                                    <div class="capabilityitemtitle">Reward</div>
-                                </div>
-                            </label>
-                        </div>   
-                        <div class="checkbox">
-                            <label>
-                                <div class="capabilityitem Mobility">
-                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Mobility">
-                                    <div class="capabilityitemtitle">Mobility</div>
-                                </div>
-                            </label>
-                        </div>  
-
-                    </fieldset>       
-                    <a data-wrapname="PiCapabilitieswtrap" class="previous"  href="#">&lt; PREVIOUS</a>
-                    <a class="nextslide finish"  href="#">FINISH</a>
-                </div>
+                <!--                <div class="PIServiceOfferingsPeopledvisoryService hide clearfix">
+                                    <fieldset class="PIServiceOfferings">
+                                        <legend>SELECT YOUR PI CAPABILITY</legend>
+                                        <div class="checkbox">
+                                            <label>
+                                                <div class="capabilityitem Talent">
+                                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Talent">
+                                                    <div class="capabilityitemtitle">Talent</div>
+                                                </div>
+                                            </label>
+                                        </div>   
+                                        <div class="checkbox">
+                                            <label>
+                                                <div class="capabilityitem Systems">
+                                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Systems">
+                                                    <div class="capabilityitemtitle">Systems</div>
+                                                </div>
+                                            </label>
+                                        </div>   
+                                        <div class="checkbox">
+                                            <label>
+                                                <div class="capabilityitem Analytics">
+                                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Analytics">
+                                                    <div class="capabilityitemtitle">Analytics</div>
+                                                </div>
+                                            </label>
+                                        </div>   
+                                        <div class="checkbox">
+                                            <label>
+                                                <div class="capabilityitem Performance">
+                                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Performance">
+                                                    <div class="capabilityitemtitle">Performance</div>
+                                                </div>
+                                            </label>
+                                        </div>   
+                                        <div class="checkbox">
+                                            <label>
+                                                <div class="capabilityitem Reward">
+                                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Reward">
+                                                    <div class="capabilityitemtitle">Reward</div>
+                                                </div>
+                                            </label>
+                                        </div>   
+                                        <div class="checkbox">
+                                            <label>
+                                                <div class="capabilityitem Mobility">
+                                                    <input name=PIServiceOfferingsPeopledvisoryService type="radio" value="Mobility">
+                                                    <div class="capabilityitemtitle">Mobility</div>
+                                                </div>
+                                            </label>
+                                        </div>  
+                
+                                    </fieldset>       
+                                    <a data-wrapname="PiCapabilitieswtrap" class="previous"  href="#">&lt; PREVIOUS</a>
+                                    <a class="nextslide finish"  href="#">FINISH</a>
+                                </div>-->
 
                 <div class="PIServiceOfferingsITACapability hide clearfix">
                     <fieldset class="PIServiceOfferings">
@@ -818,17 +503,6 @@
                     <a class="nextslide finish"  href="#">FINISH</a>
                 </div>
 
-
-
-
-
-
-
-
-
-
-
-
                 <div class="TotalResults">Total Results: <span id="total"></span></div>
 
             </div>
@@ -858,81 +532,8 @@
 
     </section>
 
-    <section class="links">
-        <div class="quiklinks"><h1>QUICK LINKS</h1></div>
-        <div class="row clearfix"> 
-
-            <div class="center">
-                <img src="assets/css/cyrcles2.png" alt=""/>
-            </div>
-
-            <div class="linkswrap marginone">
-                <div class="marker">1</div>
-                <div class="linkstitle">EYU – Developing our people</div>
-                <div class="linkstext">Link to the CHS site.</div>
-                <a href="http://chs.ey.net/servlet/CHSRenderingServlet?chsReplicaID=852579AD00518D5D" class="learnmore">LEARN MORE</a>
-            </div>
-            <div class="linkswrap margintwo">
-                <div class="marker">2</div>
-                <div class="linkstitle">MDS</div>
-                <div class="linkstext">Launch My Development Site</div>
-                <a target="_blank" href="https://my-development.ey.net" class="learnmore">LEARN MORE</a>
-            </div>
-            <div class="linkswrap">
-                <div class="marker">3</div>
-                <div class="linkstitle">PMDP</div>
-                <div class="linkstext">To go to PMDP site</div>
-                <a target="_blank" href="http://chs.ey.net/servlet/CHSRenderingServlet?chsReplicaID=852579AD00518D5D&contentID=CT-98431B8F2C00FC29852579D4003AB029" class="learnmore">LEARN MORE</a>
-            </div>
-        </div>
-
-    </section>
-    <div class="footer clearfix">
-        <div class="row">
-            <div class="floatleft">
-                © 2016 EYGM Limited.
-                All Rights Reserved.
-            </div>
-            <div class="floatright">
-                <a class="backToTop" href="#">Back to Top</a>
-            </div>
-        </div>
-    </div>
-
-
-    <script id="list" type="text/html">
-
-        <div class="greywrap clearfix">
-            <div class="colorbar"></div>
-            <div class="greywraptitle"><%= Title %></div>
-            <div class="greydescription">
-                <div class="pad2">
-                    <%= description %> 
-                    <a class="learnmoregreen" target="_blank" href="<%= URL %>">Launch Now</a>
-                </div>
-            </div>
-            <div class="learnmoreinbox">Learn More</div>
-            <div class="clearfix pad">Course Code:<div class="padedwidth "><%= coursecode %></div></div>
-            <div class="clearfix pad">Course Type: <div class="padedwidth clearfix"><%= CourseType %></div></div>
-            <div class="clearfix pad">Course Duration: <div class="padedwidth clearfix courseduration"><%= Duration %></div></div>
-
-            <!--                <% if ( CourseType == "Virtual Instructor Led Training" ){ %>
-                            <div class="CourseTypeicon">
-                                <img src="assets/css/InstructorLedTraining.png" alt=""/>
-                            </div>
-                            <% } %>
-                            <% if ( CourseType == "Web-based Learning" ){ %>
-                            <div class="CourseTypeicon">
-                                <img src="assets/css/Web-basedLearning.png" alt=""/>
-                            </div>
-                            <% } %>-->
-
-        </div>            
-
-    </script>
-
-
-
+    @@include('./links.html')
+    @@include('./List_template.html')
     <script src="assets/js/script.js"></script>
     <script src="assets/js/PI.js"></script>
 

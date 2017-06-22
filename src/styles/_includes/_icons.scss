@@ -1,0 +1,612 @@
+.APAC{
+    @include icons(
+    "generalicons/APAC.png", 
+    "generalicons/APAC_underline.png");
+}
+.STAFF{
+    @include icons(
+    "STAFF.png", 
+    "STAFF_underline.png");
+}
+.Americas{
+    @include icons(
+    "generalicons/Americas.png", 
+    "generalicons/Americas_underline.png");
+}
+.EMEIA{
+    @include icons(
+    "generalicons/EMEIA.png", 
+    "generalicons/EMEIA_underline.png");
+}
+.Japan{
+    @include icons(
+    "generalicons/Japan.png", 
+    "generalicons/Japan_underline.png");
+}
+.Normal_Canada{
+    @include icons(
+    "generalicons/Normal_Canada.png", 
+    "generalicons/Over_Canada.png");
+}
+.Normal_Central{
+    @include icons(
+    "generalicons/Normal_Central.png", 
+    "generalicons/Over_Central.png");
+}
+.Normal_Americas{
+    @include icons(
+    "generalicons/Normal_Americas.png", 
+    "generalicons/Over_Americas.png");   
+}
+.Normal_Isral{
+    @include icons(
+    "generalicons/Normal_Isral.png", 
+    "generalicons/Over_Isral.png");
+
+}
+.Normal_Latin-America-North{
+    @include icons(
+    "generalicons/Normal_Latin-America-North.png", 
+    "generalicons/Over_Latin-America-North.png");
+}
+.Normal_NorthEast{
+    @include icons(
+    "generalicons/Normal_NorthEast.png", 
+    "generalicons/Over_NorthEast.png");   
+}
+.Normal_Latin-South-American-{
+    @include icons(
+    "generalicons/Normal_Latin-South-American-.png", 
+    "generalicons/Over_Latin-South-American-.png");    
+}
+.Normal_SouthEast{
+    @include icons(
+    "generalicons/Normal_SouthEast.png", 
+    "generalicons/Over_SouthEast.png");   
+}
+.Normal_SouthWest{
+    @include icons(
+    "generalicons/Normal_SouthWest.png", 
+    "generalicons/Over_SouthWest.png");    
+}
+.Normal_West{
+    @include icons(
+    "generalicons/Normal_West.png", 
+    "generalicons/Over_West.png");   
+}
+.Normal_FS0-Asian-Pacific{
+    @include icons(
+    "generalicons/Normal_FS0-Asian-Pacific.png", 
+    "generalicons/Over_FS0-Asian-Pacific.png");   
+}
+.Asean{
+    @include icons(
+    "generalicons/Normal_Asian.png", 
+    "generalicons/Over_Asian.png");   
+}
+.CSE{
+    @include icons(
+    "generalicons/Normal_CSE-EMEIA.png", 
+    "generalicons/Over_CSE-EMEIA.png");   
+}
+.Normal_Greater-China{
+    @include icons(
+    "generalicons/Normal_Greater-China.png", 
+    "generalicons/Over_Greater-China.png");  
+}
+.Normal_Korea-Region{
+    @include icons(
+    "generalicons/Normal_Korea-Region.png", 
+    "generalicons/Over_Korea-Region.png");   
+}
+.Normal_Oceania{
+    @include icons(
+    "generalicons/Normal_Oceania.png", 
+    "generalicons/Over_Oceania.png");   
+}
+.Normal_Africa{
+    @include icons(
+    "generalicons/Normal_Africa.png", 
+    "generalicons/Over_Africa.png");   
+}
+.Normal_BeNe-EMEIA{
+    @include icons(
+    "generalicons/Normal_BeNe-EMEIA.png", 
+    "generalicons/Over_BeNe-EMEIA.png");   
+}
+.Normal_CIS-EMEIA{
+    @include icons(
+    "generalicons/Normal_CIS-EMEIA.png", 
+    "generalicons/Over_CIS-EMEIA.png");   
+}
+.Normal_FRaMa-EMEIA{
+    @include icons(
+    "generalicons/Normal_FRaMa-EMEIA.png", 
+    "generalicons/Over_FRaMa-EMEIA.png");  
+}
+.Normal_FSO-EMEIA{
+    @include icons(
+    "generalicons/Normal_FSO-EMEIA.png", 
+    "generalicons/Over_FSO-EMEIA.png");   
+}
+.Normal_GSA-EMEIA{
+    @include icons(
+    "generalicons/Normal_GSA-EMEIA.png", 
+    "generalicons/Over_GSA-EMEIA.png");   
+}
+.Normal_Indian-Region{
+    @include icons(
+    "generalicons/Normal_Indian-Region.png", 
+    "generalicons/Over_Indian-Region.png");   
+}
+.Normal_MENA{
+    @include icons(
+    "generalicons/Normal_MENA.png", 
+    "generalicons/Over_MENA.png");    
+}
+.Normal_Mediterranean{
+    @include icons(
+    "generalicons/Normal_Mediterranean.png", 
+    "generalicons/Over_Mediterranean.png");    
+}
+.Normal_Nordics{
+    @include icons(
+    "generalicons/Normal_Nordics.png", 
+    "generalicons/Over_Nordics.png");   
+}
+.Normal_UK-and-I{
+    @include icons(
+    "generalicons/Normal_UK-and-I.png", 
+    "generalicons/Over_UK-and-I.png");   
+}
+.Normal_Japan{
+    @include icons(
+    "generalicons/Normal_Japan.png", 
+    "generalicons/Over_Japan.png");   
+}
+.BUSINESS {
+    @include icons(
+    "BUSINESS.png", 
+    "BUSINESS_hover.png");   
+}
+.MANAGECHANGE {
+    @include icons(
+    "MANAGECHANGE.png", 
+    "MANAGECHANGE_hover.png");    
+}
+.tiks {
+    @include icons(
+    "tiks.png", 
+    "tiks_hover.png");   
+}
+.rounded {
+    @include icons(
+    "rounded.png", 
+    "rounded_hover.png");  
+}
+.PROJECTmANAGEMENT {
+    @include icons(
+    "PROJECTmANAGEMENT.png", 
+    "PROJECTmANAGEMENT_hover.png");  
+}
+.SERVICEDELIVERY {
+    @include icons(
+    "SERVICEDELIVERY.png", 
+    "SERVICEDELIVERY_hover.png");  
+}
+.LEADERSHIP {
+    @include icons(
+    "LEADERSHIP.png", 
+    "LEADERSHIP_hover.png");  
+}
+.buble {
+    @include icons(
+    "buble.png", 
+    "buble_hover.png");  
+}
+.Actuarial_Capability {
+    @include icons(
+    "riskicons/Actuarial_Capability.png", 
+    "riskicons/Actuarial_Capability_hover.png");  
+}
+.FSRM_Capability {
+    @include icons(
+    "riskicons/FSRM_Capability.png", 
+    "riskicons/FSRM_Capability_hover.png");  
+}
+.risk_transformation_capability {
+    @include icons(
+    "riskicons/risk_transformation_capability.png", 
+    "riskicons/risk_transformation_capability_hover.png");  
+}
+.cybersecurity {
+    @include icons(
+    "riskicons/cybersecurity.png", 
+    "riskicons/cybersecurity_hover.png");  
+}
+
+.Internal_Audit_Capability {
+    @include icons(
+    "riskicons/Internal_Audit_Capability.png", 
+    "riskicons/Internal_Audit_Capability_hover.png");  
+}
+.Risk_Assurance_Capability {
+    @include icons(
+    "riskicons/Risk_Assurance_Capability.png", 
+    "riskicons/Risk_Assurance_Capability_hover.png");  
+}
+.Pension_and_Employment {
+    @include icons(
+    "riskicons/Pension_and_Employment.png", 
+    "riskicons/Pension_and_Employment_hover.png");  
+}
+.Other_Corporate_Solutions {
+    @include icons(
+    "riskicons/Other_Corporate_Solutions.png", 
+    "riskicons/Other_Corporate_Solutions_hover.png");  
+}
+.Non_Life {
+    @include icons(
+    "riskicons/Non_Life.png", 
+    "riskicons/Non_Life_hover.png");  
+}
+.Life {
+    @include icons(
+    "riskicons/Life.png", 
+    "riskicons/Life_hover.png");  
+}
+.Assessment_Management {
+    @include icons(
+    "riskicons/Assessment_Management.png", 
+    "riskicons/Assessment_Management_hover.png");  
+}
+.FSRM_Regulatory_Compliance {
+    @include icons(
+    "riskicons/FSRM_Regulatory_Compliance.png", 
+    "riskicons/FSRM_Regulatory_Compliance_hover.png");  
+}
+.FSRM_Analytics {
+    @include icons(
+    "riskicons/FSRM_Analytics.png", 
+    "riskicons/FSRM_Analytics_hover.png");  
+}
+.FSRM_Risk_Management {
+    @include icons(
+    "riskicons/FSRM_Risk_Management.png", 
+    "riskicons/FSRM_Risk_Management_hover.png");  
+}
+.Governance_Risk_and_Compliance {
+    @include icons(
+    "riskicons/Governance_Risk_and_Compliance.png", 
+    "riskicons/Governance_Risk_and_Compliance_hover.png");  
+}
+.Risk_and_Control {
+    @include icons(
+    "riskicons/Risk_and_Control.png", 
+    "riskicons/Risk_and_Control_hover.png");  
+}
+.Risk_Management {
+    @include icons(
+    "riskicons/Risk_Management.png", 
+    "riskicons/Risk_Management_hover.png");  
+}
+.Privacy {
+    @include icons(
+    "riskicons/Privacy.png", 
+    "riskicons/Privacy_hover.png");
+}
+.Data_Protection {
+    @include icons(
+    "riskicons/Data_Protection.png", 
+    "riskicons/Data_Protection_hover.png");  
+}
+.Identity_and_Access_Management {
+    @include icons(
+    "riskicons/Identity_and_Access_Management.png", 
+    "riskicons/Identity_and_Access_Management_hover.png");  
+}
+.Cyber_Threat_Management {
+    @include icons(
+    "riskicons/Cyber_Threat_Management.png", 
+    "riskicons/Cyber_Threat_Management_hover.png");
+}
+.Cyber_Program_Management {
+    @include icons(
+    "riskicons/Cyber_Program_Management.png", 
+    "riskicons/Cyber_Program_Management_hover.png");  
+}
+.IA_Exection {
+    @include icons(
+    "riskicons/IA_Exection.png", 
+    "riskicons/IA_Exection_hover.png");  
+}
+.IA_Funtional_Performance {
+    @include icons(
+    "riskicons/IA_Funtional_Performance.png", 
+    "riskicons/IA_Funtional_Performance_hover.png");  
+}
+.IA_Strategy_and_Planning {
+    @include icons(
+    "riskicons/IA_Strategy_and_Planning.png", 
+    "riskicons/IA_Strategy_and_Planning_hover.png");  
+}
+.Contractual_Compliance {
+    @include icons(
+    "riskicons/Contractual_Compliance.png", 
+    "riskicons/Contractual_Compliance_hover.png");
+}
+.Management_System_Certification {
+    @include icons(
+    "riskicons/Management_System_Certification.png", 
+    "riskicons/Management_System_Certification_hover.png");  
+}
+.SOCR {
+    @include icons(
+    "riskicons/SOCR.png", 
+    "riskicons/SOCR_hover.png");  
+}
+.FAIT {
+    @include icons(
+    "riskicons/FAIT.png", 
+    "riskicons/FAIT_hover.png");  
+}
+.Internal_Control_Attestation {
+    @include icons(
+    "riskicons/Internal_Control_Attestation.png", 
+    "riskicons/Internal_Control_Attestation_hover.png");  
+}
+.Regulatory_Compliance {
+    @include icons(
+    "riskicons/Regulatory_Compliance.png", 
+    "riskicons/Regulatory_Compliance_hover.png");  
+}
+.Progect_Management {
+    @include icons(
+    "piicons/Progect_Management.png", 
+    "piicons/Progect_Management_hover.png");  
+}
+.Customer_Capability {
+    @include icons(
+    "piicons/Customer_Capability.png", 
+    "piicons/Customer_Capability_hover.png");  
+}
+.Finance_Capability {
+    @include icons(
+    "piicons/Finance_Capability.png", 
+    "piicons/Finance_Capability_hover.png");  
+}
+.Strategy_Capability {
+    @include icons(
+    "piicons/Strategy_Capability.png", 
+    "piicons/Strategy_Capability_hover.png");  
+}
+.SupplyChainandOperation {
+    @include icons(
+    "piicons/SupplyChainandOperation.png", 
+    "piicons/SupplyChainandOperation_hover.png");
+}
+.PeopleAdvisoryService {
+    @include icons(
+    "piicons/PeopleAdvisoryService.png", 
+    "piicons/PeopleAdvisoryService_hover.png");  
+}
+.ITACapability {
+    @include icons(
+    "piicons/ITACapability.png", 
+    "piicons/ITACapability_hover.png");  
+}
+.Delivery {
+    @include icons(
+    "piicons/Delivery.png", 
+    "piicons/Delivery_hover.png");
+}
+.Controls {
+    @include icons(
+    "piicons/Controls.png", 
+    "piicons/Controls_hover.png");  
+}
+.Commercial {
+    @include icons(
+    "piicons/Commercial.png", 
+    "piicons/Commercial_hover.png");  
+}
+.Architect {
+    @include icons(
+    "piicons/Architect.png", 
+    "piicons/Architect_hover.png");  
+}
+.Marketing {
+    @include icons(
+    "piicons/Marketing.png", 
+    "piicons/Marketing_hover.png");  
+}
+.Service {
+    @include icons(
+    "piicons/Service.png", 
+    "piicons/Service_hover.png");  
+}
+.Sales {
+    @include icons(
+    "piicons/Sales.png", 
+    "piicons/Sales_hover.png");  
+}
+.FinanceProcesses {
+    @include icons(
+    "piicons/FinanceProcesses.png", 
+    "piicons/FinanceProcesses_hover.png");  
+}
+.FinanceStragegy {
+    @include icons(
+    "piicons/FinanceStragegy.png", 
+    "piicons/FinanceStragegy_hover.png");  
+}
+.FinancialStatementsCloseandInsights {
+    @include icons(
+    "piicons/FinancialStatementsCloseandInsights.png", 
+    "piicons/FinancialStatementsCloseandInsights_hover.png");  
+}
+.BusinessAssessment {
+    @include icons(
+    "piicons/BusinessAssessment.png", 
+    "piicons/BusinessAssessment_hover.png");  
+}
+.FinanceOrganisationDesign {
+    @include icons(
+    "piicons/FinanceOrganisationDesign.png", 
+    "piicons/FinanceOrganisationDesign_hover.png");  
+}
+.CorporateStragetgy {
+    @include icons(
+    "piicons/CorporateStragetgy.png", 
+    "piicons/CorporateStragetgy_hover.png");  
+}
+.Transformation {
+    @include icons(
+    "piicons/Transformation.png", 
+    "piicons/Transformation_hover.png");  
+}
+.Innovation {
+    @include icons(
+    "piicons/Innovation.png", 
+    "piicons/Innovation_hover.png");  
+}
+.OutsourcingAdvisingManagement {
+    @include icons(
+    "piicons/OutsourcingAdvisingManagement.png", 
+    "piicons/OutsourcingAdvisingManagement_hover.png");  
+}
+.OperationsandServices {
+    @include icons(
+    "piicons/OperationsandServices.png", 
+    "piicons/OperationsandServices_hover.png");
+}
+.LogisticsandFulfilment {
+    @include icons(
+    "piicons/LogisticsandFulfilment.png", 
+    "piicons/LogisticsandFulfilment_hover.png");  
+}
+.Manufacturing {
+    @include icons(
+    "piicons/Manufacturing.png", 
+    "piicons/Manufacturing_hover.png");  
+}
+.Procurement {
+    @include icons(
+    "piicons/Procurement.png", 
+    "piicons/Procurement_hover.png");  
+}
+.Planning {
+    @include icons(
+    "piicons/Planning.png", 
+    "piicons/Planning_hover.png");  
+}
+.ProductLifecyclemanagement {
+    @include icons(
+    "piicons/ProductLifecyclemanagement.png", 
+    "piicons/ProductLifecyclemanagement_hover.png");  
+}
+.E2ESCStrategy {
+    @include icons(
+    "piicons/E2ESCStrategy.png", 
+    "piicons/E2ESCStrategy_hover.png");  
+}
+.Talent {
+    @include icons(
+    "piicons/Talent.png", 
+    "piicons/Talent_hover.png");  
+}
+.Systems {
+    @include icons(
+    "piicons/Systems.png", 
+    "piicons/Systems_hover.png");  
+}
+.Analytics {
+    @include icons(
+    "piicons/Analytics.png", 
+    "piicons/Analytics_hover.png");  
+}
+.Performance {
+    @include icons(
+    "piicons/Performance.png", 
+    "piicons/Performance_hover.png");  
+}
+.Reward {
+    @include icons(
+    "piicons/Reward.png", 
+    "piicons/Reward_hover.png");  
+}
+.Mobility {
+    @include icons(
+    "piicons/Mobility.png", 
+    "piicons/Mobility_hover.png");  
+}
+.AdvancedAnalytics {
+    @include icons(
+    "piicons/AdvancedAnalytics.png", 
+    "piicons/AdvancedAnalytics_hover.png");  
+}
+.BusinessIntelligence {
+    @include icons(
+    "piicons/BusinessIntelligence.png", 
+    "piicons/BusinessIntelligence_hover.png");  
+}
+.InformationManagement {
+    @include icons(
+    "piicons/InformationManagement.png", 
+    "piicons/InformationManagement_hover.png");  
+}
+.ITPerformanceManagement {
+    @include icons(
+    "piicons/ITPerformanceManagement.png", 
+    "piicons/ITPerformanceManagement_hover.png");  
+}
+.ITStrategy {
+    @include icons(
+    "piicons/ITStrategy.png", 
+    "piicons/ITStrategy_hover.png");  
+}
+.InfrastructureServiceResilience {
+    @include icons(
+    "piicons/InfrastructureServiceResilience.png", 
+    "piicons/InfrastructureServiceResilience_hover.png");  
+}
+.Architecture {
+    @include icons(
+    "piicons/Architecture.png", 
+    "piicons/Architecture_hover.png");
+}
+.BusinessIntegration {
+    @include icons(
+    "piicons/BusinessIntegration.png", 
+    "piicons/BusinessIntegration_hover.png");
+}
+.ImplementationPlatform {
+    @include icons(
+    "piicons/ImplementationPlatform.png", 
+    "piicons/ImplementationPlatform_hover.png");  
+}
+.STAFF {
+    @include icons(
+    "STAFF.png", 
+    "STAFF_underline.png");
+}
+.SENIOR {
+    @include icons(
+    "SENIOR.png", 
+    "SENIOR_hover.png");  
+}
+.MANAGER {
+    @include icons(
+    "MANAGER.png", 
+    "MANAGER_hover.png");  
+}
+.head {
+    @include icons(
+    "head.png", 
+    "head_hover.png");  
+}
+.PARTNER {
+    @include icons(
+    "PARTNER.png", 
+    "PARTNER_hover.png");
+}

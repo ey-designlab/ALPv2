@@ -89,7 +89,8 @@ $(document).ready(function () {
 
             $('#LearningJourneyname .capabilityitem').removeClass('activeradio');
             $(this).addClass('activeradio');
-            $('.results').animate({
+            
+            $('.results').show().animate({
                 height: 700
             }, 600, "easeInOutBack");
 
@@ -141,44 +142,56 @@ $(document).ready(function () {
 
             $.each(data.d.results, function (key, data) {
                 var triger = 0;
-                var type;
-                if (data.Learning_x0020_type !== null) {
-                    type = data.Learning_x0020_type.results;
-                } else {
-                    type = "";
+
+                for (var key in data) {
+                    if (data[key] === null && key !== 'Title' && key !== 'gpqg' && key !== 'Course_x0020_Code' && key !== 'Short_x0020_description' && key !== 'America_x0027_s_x0020_classroom_' && key !== 'America_x0027_s_x0020_AA_x0020_C' && key !== 'Blended_x0020_learning_x0020_pro') {
+                        data[key] = {results: [""]};
+                    } else if (data[key] === null && key === 'Course_x0020_URL') {
+                        data[key] = {Url: ""};
+                    }
                 }
 
-                $.each(data.Learning_x0020_Journey_x0020_nam.results, function (key, dat) {
-                    if (dat === "Welcome to Advisory Executive" || dat === "Welcome to Advisory Foundation") {
-                        
-                        if (triger === 0) {
-                            FilteredContent.push({
-                                Title: data.Title,
-                                ranks: data.Rank.results,
-                                coursecode: data.Course_x0020_Code,
-                                SubServiceLine: data.Sector.results,
-                                URL: data.Course_x0020_URL.Url,
-                                description: data.Short_x0020_description,
-                                Sector: data.Sector.results,
-                                CourseType: type,
-                                LearningJourneyname: data.Learning_x0020_Journey_x0020_nam.results,
-                                CourseLevel: data.Course_x0020_Level.results,
-                                Competency: data.Consultancy_x0020_Competency.results,
-                                Duration: data.gpqg
-                            });
-                            triger = 1;
+                if (data.Learning_x0020_Journey_x0020_nam !== null) {
+                    $.each(data.Learning_x0020_Journey_x0020_nam.results, function (key, dat) {
+                        if (dat === "Welcome to Advisory Executive" || dat === "Welcome to Advisory Foundation") {
+                            if (triger === 0) {
+                                FilteredContent.push({
+                                    Area: data.Area.results,
+                                    SubServiceLine: data.Sector.results,
+                                    ranks: data.Rank.results,
+                                    Division: data.Division.results,
+                                    RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
+                                    PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
+                                    RiskServiceOfferings: data.Risk_x0020_Service_x0020_Offerin.results,
+                                    PIServiceOfferings: data.PI_x0020_Service_x0020_Offerings.results,
+                                    LearningJourneyname: data.Learning_x0020_Journey_x0020_nam.results,
+                                    CourseLevel: data.Course_x0020_Level.results,
+                                    Region: data.Region.results,
+                                    Competency: data.Consultancy_x0020_Competency.results,
+                                    Sector: data.Sector.results,
+                                    PASPillars: data.PAS_x0020_Pillars.results,
+                                    PASfferings: data.PAS_x0020__x002d__x0020_Offering.results,
+                                    GrowthDrivers: data.Growth_x0020_Drivers.results,
+                                    LearningType: data.Learning_x0020_Type0.results,
+                                    CourseType: data.Learning_x0020_type.results,
+
+                                    URL: data.Course_x0020_URL.Url,
+
+                                    Title: data.Title,
+                                    Duration: data.gpqg,
+                                    coursecode: data.Course_x0020_Code,
+                                    description: data.Short_x0020_description,
+                                    America: data.America_x0027_s_x0020_classroom_,
+                                    AmericaAACPE: data.America_x0027_s_x0020_AA_x0020_C,
+                                    Blended: data.Blended_x0020_learning_x0020_pro
+                                });
+                                triger = 1;
+                            }
                         }
-                    }
-                });
+                    });
+                }
             });
             var afterFilter = function (result, jQ) {
-                
-                $('.courseduration').each(function () {
-                    var courseduration = $(this).html();
-                    var arraystuff = secondsToString(courseduration);
-                    var string = arraystuff.toString();
-                    $(this).html(string);
-                });
 
                 if (fishishedanimation) {
                     fishishedanimation = false;
@@ -203,6 +216,13 @@ $(document).ready(function () {
 
             };
             var bla = function (result, jQ) {
+                 $('.courseduration').each(function () {
+                    var courseduration = $(this).html();
+                    var arraystuff = secondsToString(courseduration);
+                    var string = arraystuff.toString();
+                    $(this).html(string);
+                });
+                
                 $('.greywrap').on('click', function (e) {
                     $('.greywrap').not(this).removeClass('activedesc').find('.greydescription').slideUp();
                     if ($(this).hasClass('activedesc')) {

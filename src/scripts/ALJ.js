@@ -1,118 +1,6 @@
 
 $(document).ready(function () {
 
-    var count1, count2;
-    var body = $('html, body');
- 
-   
-    $(window).on("load scroll resize", function () {
-        pageheight = $(window).height();
-    });
-
-
-    $('#Competency .capabilityitem').on('click', function (e) {
-
-        $('#Competency .capabilityitem').removeClass('activeradio');
-        $(this).addClass('activeradio');
-        count1 = true;
-        if (count1 && count2) {
-            animate();
-        }
-
-        var target = $(".results");
-        var distance = (target.offset().top) - 115;
-        $('html,body').stop(true, false).animate({
-            scrollTop: distance
-        }, 1500, 'easeInOutCubic');
-
-
-    });
-    $('#ranks .capabilityitem').on('click', function (e) {
-        var parents = $(this).parents('fieldset');
-        var nextslide = parents.parent().find('.nextslide').addClass('animatenext');
-        setTimeout(function () {
-            nextslide.removeClass('animatenext');
-        }, 400);
-        
-        count2 = true;
-        $('#ranks .capabilityitem').removeClass('activeradio');
-        $(this).addClass('activeradio');
-        if (count1 && count2) {
-            animate();
-        }
-    });
-
-    $('#nextslide').on('click', function (e) {
-        e.preventDefault();
-
-        body.stop(true, false).animate({
-            scrollTop: pageheight - 115
-        }, 200);
-
-        if ($(this).parent().find('.capabilityitem').hasClass('activeradio')) {
-            $.when(
-                    $(this).parent().find('.checkbox').each(function (i) {
-                $(this).css({"top": 0, "opacity": 1, 'position': 'relative'}).delay((i++) * 100)
-                        .animate({
-                            top: -200,
-                            opacity: 0
-                        }, 400, "easeInOutBack");
-            })).done(function () {
-                $('.selectrankwrap').animate({
-                    top: -200,
-                    opacity: 0,
-                    height: 0
-                }, 400, "easeInOutBack");
-                $('.competancywtrap').css({"top": 0, "opacity": 1, height: 'inherit'}).fadeIn().parent().find('.checkbox').each(function (i) {
-                    $(this).css({"top": -200, "opacity": 0, 'position': 'relative'}).delay((i++) * 50)
-                            .animate({
-                                top: 0,
-                                opacity: 1
-                            }, 400, "easeInOutBack");
-                });
-
-            });
-        }
-    });
-
-    $('#prewslide').on('click', function (e) {
-        e.preventDefault();
-        body.stop(true, false).animate({
-            scrollTop: pageheight - 115
-        }, 200);
-        $.when(
-                $(this).parent().find('.checkbox').each(function (i) {
-            $(this).css({"top": 0, "opacity": 1, 'position': 'relative'}).delay((i++) * 50)
-                    .animate({
-                        top: -200,
-                        opacity: 0
-                    }, 400, "easeInOutBack");
-        })).done(function () {
-            $('.competancywtrap').animate({
-                top: -200,
-                opacity: 0,
-                height: 0
-            }, 400, "easeInOutBack");
-
-            $('.selectrankwrap').fadeIn().css({"top": 0, "opacity": 1, height: 'inherit'}).parent().find('.checkbox').each(function (i) {
-                $(this).css({"top": -400, "opacity": 0, 'position': 'relative'}).delay((i++) * 100)
-                        .animate({
-                            top: 0,
-                            opacity: 1
-                        }, 400, "easeInOutBack");
-            });
-
-        });
-
-    });
-
-
-
-
-    animate = function () {
-        $('.results').slideDown();
-    };
-
     var FilteredContent = [];
 
     var Ajax = function (url) {
@@ -130,33 +18,52 @@ $(document).ready(function () {
     var Next = function (url) {
         $.when(Ajax(url)).then(function (data) {
             $.each(data.d.results, function (key, data) {
-                var type;
 
-                if (data.Learning_x0020_type !== null) {
-                    type = data.Learning_x0020_type.results;
-                } else {
-                    type = "";
+                for (var key in data) {
+                    if (data[key] === null && key !== 'Title' && key !== 'gpqg' && key !== 'Course_x0020_Code' && key !== 'Short_x0020_description' && key !== 'America_x0027_s_x0020_classroom_' && key !== 'America_x0027_s_x0020_AA_x0020_C' && key !== 'Blended_x0020_learning_x0020_pro') {
+                        data[key] = {results: [""]};
+                    } else if (data[key] === null && key === 'Course_x0020_URL') {
+                        data[key] = {Url: ""};
+                    }
                 }
 
                 FilteredContent.push({
-                    Title: data.Title,
-                    ranks: data.Rank.results,
-                    coursecode: data.Course_x0020_Code,
+                    Area: data.Area.results,
                     SubServiceLine: data.Sector.results,
-                    URL: data.Course_x0020_URL.Url,
-                    description: data.Short_x0020_description,
-                    Sector: data.Sector.results,
-                    CourseType: type,
+                    ranks: data.Rank.results,
+                    Division: data.Division.results,
+                    RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
+                    PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
+                    RiskServiceOfferings: data.Risk_x0020_Service_x0020_Offerin.results,
+                    PIServiceOfferings: data.PI_x0020_Service_x0020_Offerings.results,
                     LearningJourneyname: data.Learning_x0020_Journey_x0020_nam.results,
                     CourseLevel: data.Course_x0020_Level.results,
-                    Competency: data.Consultancy_x0020_Competency.results
+                    Region: data.Region.results,
+                    Competency: data.Consultancy_x0020_Competency.results,
+                    Sector: data.Sector.results,
+                    PASPillars: data.PAS_x0020_Pillars.results,
+                    PASfferings: data.PAS_x0020__x002d__x0020_Offering.results,
+                    GrowthDrivers: data.Growth_x0020_Drivers.results,
+                    LearningType: data.Learning_x0020_Type0.results,
+                    CourseType: data.Learning_x0020_type.results,
+                    PASPillarOfferings: data.temp.results,
 
+                    URL: data.Course_x0020_URL.Url,
+
+                    Title: data.Title,
+                    Duration: data.gpqg,
+                    coursecode: data.Course_x0020_Code,
+                    description: data.Short_x0020_description,
+                    America: data.America_x0027_s_x0020_classroom_,
+                    AmericaAACPE: data.America_x0027_s_x0020_AA_x0020_C,
+                    Blended: data.Blended_x0020_learning_x0020_pro
                 });
+
             });
 
 
             var afterFilter = function (result, jQ) {
-
+                $('#total').text(result.length);
             };
 
             var bla = function (result, jQ) {
@@ -169,6 +76,25 @@ $(document).ready(function () {
                         $(this).addClass('activedesc').parent().find('.greydescription').slideDown();
                     }
                 });
+
+
+                $('.greywrap').on('click', function (e) {
+                    $('.greywrap').not(this).removeClass('activedesc').find('.greydescription').slideUp();
+
+                    if ($(this).hasClass('activedesc')) {
+                        $(this).removeClass('activedesc').find('.greydescription').slideUp();
+                    } else {
+                        $(this).addClass('activedesc').find('.greydescription').slideDown();
+                    }
+                });
+
+                $('.courseduration').each(function () {
+                    var courseduration = $(this).html();
+                    var arraystuff = secondsToString(courseduration);
+                    var string = arraystuff.toString();
+                    $(this).html(string);
+                });
+
             };
 
             var FJS = FilterJS(FilteredContent, '#results', {
@@ -198,9 +124,10 @@ $(document).ready(function () {
                 }
             });
 
-
-
             FJS.addCriteria({field: 'ranks', ele: '#ranks input:radio'});
+            FJS.addCriteria({field: 'Area', ele: '#area input:radio'});
+            FJS.addCriteria({field: 'Region', ele: '.regions input:radio'});
+
             FJS.addCriteria({field: 'Competency', ele: '#Competency input:radio'});
             window.FJS = FJS;
 

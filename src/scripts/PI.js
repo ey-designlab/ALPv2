@@ -1,154 +1,6 @@
 
 $(document).ready(function () {
 
-    var body = $('html, body');
-    var downarrow = $(".scroll");
-
-
-    $(window).on("load scroll resize", function () {
-        pageheight = $(window).height();
-    });
-
-
-    $('.finish').on('click', function (e) {
-        e.preventDefault();
-        if ($(this).parent().find('.capabilityitem').hasClass('activeradio')) {
-            sumary();
-            $('.YOURSELECTIONSUMMARY').fadeIn();
-            $('.capability').hide();
-            $('.results').slideDown();
-
-            var target = $(".results");
-            var distance = (target.offset().top) - 115;
-            $('html,body').stop(true, false).animate({
-                scrollTop: distance
-            }, 1500, 'easeInOutCubic');
-
-        }
-    });
-
-    $('.reset').on('click', function (e) {
-        e.preventDefault();
-        $('.YOURSELECTIONSUMMARY').hide().find('.selectedfilters').empty();
-        $('#total').empty();
-        $('.checkbox').css({"top": "", "opacity": ""});
-        $('.capability').show().find('.selectrankwrap').show();
-        $('.activeradio input').removeAttr('checked');
-        $('.capabilityitem').removeClass('activeradio');
-        $('.results').hide();
-    });
-
-    $('.nextslide').on('click', function (e) {
-        e.preventDefault();
-        if ($(this).parent().find('.capabilityitem').hasClass('activeradio')) {
-            animatenext.call(this);
-        }
-    });
-
-    $('.previous').on('click', function (e) {
-        e.preventDefault();
-        $(this).parent().find('.activeradio input').removeAttr('checked');
-        $(this).parent().find('.capabilityitem').removeClass('activeradio');
-        animateprew.call(this);
-    });
-
-    function sumary() {
-        $('.activeradio').each(function () {
-            var capabilityitem = $(this).clone();
-            capabilityitem.find('input').remove();
-            $('.YOURSELECTIONSUMMARY .selectedfilters').append(capabilityitem);
-        });
-    }
-
-    function animateprew() {
-        var dataattr = $(this).data("wrapname");
-        var parent = $(this).parent();
-        $.when(
-                $(this).parent().find('.checkbox').each(function (i) {
-            $(this).css({"top": 0, "opacity": 1, 'position': 'relative'}).delay((i++) * 100)
-                    .animate({
-                        top: -200,
-                        opacity: 0
-                    }, 400, "easeInOutBack");
-        })).done(function () {
-            parent.hide();
-            $('.' + dataattr).fadeIn().find('.checkbox').each(function (i) {
-                $(this).find('.activeradio input').trigger("click");
-                $(this).css({"top": -200, "opacity": 0, 'position': 'relative'}).delay((i++) * 50)
-                        .animate({
-                            top: 0,
-                            opacity: 1
-                        }, 400, "easeInOutBack");
-            });
-        });
-    }
-
-    function animatenext() {
-        var dataattr = $(this).parent().find('.activeradio > input').data("wrapname");
-        var parent = $(this).parent();
-        $.when(
-                $(this).parent().find('.checkbox').each(function (i) {
-            $(this).css({"top": 0, "opacity": 1, 'position': 'relative'}).delay((i++) * 100)
-                    .animate({
-                        top: -200,
-                        opacity: 0
-                    }, 400, "easeInOutBack");
-        })).done(function () {
-            parent.hide();
-            $('.' + dataattr).fadeIn().find('.checkbox').each(function (i) {
-                $(this).css({"top": -200, "opacity": 0, 'position': 'relative'}).delay((i++) * 50)
-                        .animate({
-                            top: 0,
-                            opacity: 1
-                        }, 400, "easeInOutBack");
-            });
-        });
-    }
-
-    $('.capabilityitem').on('click', function (e) {
-
-        var parents = $(this).parents('fieldset');
-        parents.find('.capabilityitem').removeClass('activeradio');
-        var nextslide = parents.parent().find('.nextslide').addClass('animatenext');
-
-        setTimeout(function () {
-            nextslide.removeClass('animatenext');
-        }, 400);
-
-        $(this).addClass('activeradio');
-    });
-
-
-    function secondsToString(seconds) {
-        var value = seconds;
-        var units = {
-
-            "hour": 60,
-            "minute": 1
-        };
-        var result = [];
-        for (var name in units) {
-            var p = Math.floor(value / units[name]);
-            if (p == 1)
-                result.push(" " + p + " " + name);
-            if (p >= 2)
-                result.push(" " + p + " " + name + "s");
-
-            value %= units[name];
-        }
-        return result;
-    }
-
-
-    downarrow.on("click", function (e) {
-        e.preventDefault();
-        body.stop(true, false).animate({
-            scrollTop: pageheight - 115
-        }, 500);
-    });
-
-
-
     var FilteredContent = [];
 
     var Ajax = function (url) {
@@ -165,31 +17,25 @@ $(document).ready(function () {
     };
     var Next = function (url) {
         $.when(Ajax(url)).then(function (data) {
-            console.log(data)
+//            console.log(data)
             $.each(data.d.results, function (key, data) {
 
-                (function removeNull(o) {
-                    for (var key in o) {
-                        if (o[key] == null)
-                            o[key] = {results: ''};
+                for (var key in data) {
+                    if (data[key] === null && key !== 'Title' && key !== 'gpqg' && key !== 'Course_x0020_Code' && key !== 'Short_x0020_description' && key !== 'America_x0027_s_x0020_classroom_' && key !== 'America_x0027_s_x0020_AA_x0020_C' && key !== 'Blended_x0020_learning_x0020_pro') {
+                        data[key] = {results: [""]};
+                    } else if (data[key] === null && key === 'Course_x0020_URL') {
+                        data[key] = {Url: ""};
                     }
-                })(data);
+                }
 
                 $.each(data.Division.results, function (key, dat) {
                     if (dat === "PI") {
 
                         FilteredContent.push({
                             Area: data.Area.results,
-                            Title: data.Title,
-                            ranks: data.Rank.results,
-                            Duration: data.gpqg,
-                            coursecode: data.Course_x0020_Code,
                             SubServiceLine: data.Sector.results,
-                            URL: data.Course_x0020_URL.Url,
-                            description: data.Short_x0020_description,
+                            ranks: data.Rank.results,
                             Division: data.Division.results,
-                            Sector: data.Sector.results,
-                            CourseType: data.Learning_x0020_type.results,
                             RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
                             PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
                             RiskServiceOfferings: data.Risk_x0020_Service_x0020_Offerin.results,
@@ -197,20 +43,32 @@ $(document).ready(function () {
                             LearningJourneyname: data.Learning_x0020_Journey_x0020_nam.results,
                             CourseLevel: data.Course_x0020_Level.results,
                             Region: data.Region.results,
-                            Competency: data.Consultancy_x0020_Competency.results
+                            Competency: data.Consultancy_x0020_Competency.results,
+                            Sector: data.Sector.results,
+                            PASPillars: data.PAS_x0020_Pillars.results,
+                            PASfferings: data.PAS_x0020__x002d__x0020_Offering.results,
+                            GrowthDrivers: data.Growth_x0020_Drivers.results,
+                            LearningType: data.Learning_x0020_Type0.results,
+                            CourseType: data.Learning_x0020_type.results,
+                            PASPillarOfferings: data.temp.results,
+
+                            URL: data.Course_x0020_URL.Url,
+
+                            Title: data.Title,
+                            Duration: data.gpqg,
+                            coursecode: data.Course_x0020_Code,
+                            description: data.Short_x0020_description,
+                            America: data.America_x0027_s_x0020_classroom_,
+                            AmericaAACPE: data.America_x0027_s_x0020_AA_x0020_C,
+                            Blended: data.Blended_x0020_learning_x0020_pro
                         });
                     }
                 });
-
             });
-
 
             var afterFilter = function (result, jQ) {
                 $('#total').text(result.length);
-
-
             };
-
             var bla = function (result, jQ) {
                 $('.greywrap').on('click', function (e) {
                     $('.greywrap').not(this).removeClass('activedesc').find('.greydescription').slideUp();
@@ -244,14 +102,16 @@ $(document).ready(function () {
             FJS.addCriteria({field: 'PiCapabilities', ele: '#PiCapabilities input:radio'});
             FJS.addCriteria({field: 'PIServiceOfferings', ele: '.PIServiceOfferings input:radio'});
 
-            window.FJS = FJS;
+            FJS.addCriteria({field: 'Area', ele: '#area input:radio'});
+            FJS.addCriteria({field: 'Region', ele: '.regions input:radio'});
 
+            window.FJS = FJS;
         });
     };
     Next("src.json");
+
 //    Next("https://share.ey.net/sites/playyourpart/_api/web/Lists/getByTitle('Courselistnew')/items?$filter=Division eq 'PI'");
 //    Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000");
-
 });
 
 

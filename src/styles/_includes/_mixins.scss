@@ -1,7 +1,7 @@
 @mixin bp-mobile {
-  @media (max-width: #{$max-width}) {
-    @content;
-  }
+    @media (max-width: #{$max-width}) {
+        @content;
+    }
 }
 
 @mixin mobile-aspect {
@@ -14,10 +14,22 @@
     width: ((100% - (($columns - 1) * $margin))/$columns);
     &:nth-child(n){
         margin-right: $margin;
-/*        margin-bottom: $margin;*/
+        /*        margin-bottom: $margin;*/
     }
     &:nth-child(#{$columns}n){
         margin-right: 0;
-/*        margin-bottom: $margin;*/
+        /*        margin-bottom: $margin;*/
+    }
+}
+
+
+
+@mixin icons ($icon, $hovericon){
+    background-image: url($icon);
+    &:hover{
+        background-image: url($hovericon);
+    }
+    &.activeradio {
+        background-image: url($hovericon);
     }
 }

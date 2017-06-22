@@ -22,23 +22,23 @@
         <div class="capability">
             <div class="row">
 
+                @@include('./area_region.html')
 
-                <div class="selectrankwrap clearfix">
+                <div class="selectrankwrap hide clearfix">
                     <fieldset id="ranks">
                         <legend>SELECT YOUR RANK</legend>
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem STAFF">
-                                    <input name=group type="radio" value="Staff/Consultant">
+                                    <input data-wrapname="competancywtrap" name=ranksgroup type="radio" value="Staff/Consultant">
                                     <div class="ranktitle">Staff / Consultant</div>
                                 </div>
                             </label>
                         </div>
-
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem SENIOR">
-                                    <input name=group type="radio" value="Senior/Senior Consultant">
+                                    <input data-wrapname="competancywtrap" name=ranksgroup type="radio" value="Senior/Senior Consultant">
                                     <div class="ranktitle">Senior / Senior Consultant</div>
                                 </div>
                             </label>
@@ -46,7 +46,7 @@
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem MANAGER">
-                                    <input name=group type="radio" value="Manager">
+                                    <input data-wrapname="competancywtrap" name=ranksgroup type="radio" value="Manager">
                                     <div class="ranktitle">Manager</div>                                   
                                 </div> 
                             </label>
@@ -54,7 +54,7 @@
                         <div class="checkbox">
                             <label>   
                                 <div class="capabilityitem head"> 
-                                    <input name=group type="radio" value="Senior Manager">
+                                    <input data-wrapname="competancywtrap" name=ranksgroup type="radio" value="Senior Manager">
                                     <div class="ranktitle">Senior Manager</div>
                                 </div>
                             </label>
@@ -62,16 +62,17 @@
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem PARTNER">
-                                    <input name=group type="radio" value="PPED">
+                                    <input data-wrapname="competancywtrap" name=ranksgroup type="radio" value="PPED">
                                     <div class="ranktitle">PPED</div>
                                 </div>
                             </label>
                         </div>
                     </fieldset>
-                    <a class="nextslide" id="nextslide" href="#">NEXT ></a>
+                    <a data-wrapname="selectareawrap" class="previous"  href="#"> &lt; PREVIOUS</a>
+                    <a class="nextslide"  href="#">NEXT ></a>
                 </div>
 
-                <div class="competancywtrap">
+                <div class="competancywtrap hide">
                     <fieldset id="Competency">
                         <legend>SELECT YOUR COMPETENCY</legend>
                         <div class="checkbox">
@@ -139,15 +140,26 @@
                             </label>
                         </div>
                     </fieldset>
-                    <a class="nextslide" id="prewslide" href="#">  &lt; BACK</a>
+
+                    <a data-wrapname="selectrankwrap" class="previous"  href="#"> &lt; PREVIOUS</a>
+                    <a class="nextslide finish"  href="#">FINISH</a>                    
                 </div>
+
+                <div class="TotalResults">Total Results: <span id="total"></span></div>
             </div>
 
 
         </div>  
 
 
-
+        <div class="YOURSELECTIONSUMMARY">
+            <div class="row clearfix">
+                <h1>YOUR SELECTION SUMMARY</h1>
+                <br />
+                <div class="selectedfilters"></div>
+                <a class="reset"  href="#">RESET</a>
+            </div>
+        </div>
 
         <div class="results">
             <div class="row clearfix">
@@ -173,47 +185,7 @@
 
     </section>
 
-    <section class="links">
-        <div class="quiklinks"><h1>QUICK LINKS</h1></div>
-        <div class="row clearfix"> 
-
-            <div class="center">
-                <img src="assets/css/cyrcles2.png" alt=""/>
-            </div>
-
-            <div class="linkswrap marginone">
-                <div class="marker">1</div>
-                <div class="linkstitle">EYU – Developing our people</div>
-                <div class="linkstext">Link to the CHS site.</div>
-                <a href="http://chs.ey.net/servlet/CHSRenderingServlet?chsReplicaID=852579AD00518D5D" class="learnmore">LEARN MORE</a>
-            </div>
-            <div class="linkswrap margintwo">
-                <div class="marker">2</div>
-                <div class="linkstitle">MDS</div>
-                <div class="linkstext">Launch My Development Site</div>
-                <a target="_blank" href="https://my-development.ey.net" class="learnmore">LEARN MORE</a>
-            </div>
-            <div class="linkswrap">
-                <div class="marker">3</div>
-                <div class="linkstitle">PMDP</div>
-                <div class="linkstext">To go to PMDP site</div>
-                <a target="_blank" href="http://chs.ey.net/servlet/CHSRenderingServlet?chsReplicaID=852579AD00518D5D&contentID=CT-98431B8F2C00FC29852579D4003AB029" class="learnmore">LEARN MORE</a>
-            </div>
-        </div>
-
-    </section>
-    <div class="footer clearfix">
-        <div class="row">
-            <div class="floatleft">
-                © 2016 EYGM Limited.
-                All Rights Reserved.
-            </div>
-            <div class="floatright">
-                <a class="backToTop" href="#">Back to Top</a>
-            </div>
-        </div>
-    </div>
-
+    @@include('./links.html')
 
     <script id="list" type="text/html">
         <% if ( CourseLevel == "Beginner" ){ %>

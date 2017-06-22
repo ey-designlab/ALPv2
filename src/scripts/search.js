@@ -116,10 +116,10 @@ $(document).ready(function () {
     function WhriteTOStorage() {
 
 // Put the object into storage
-        localStorage.setItem('AppliedFilters', JSON.stringify(AppliedFiltersOBJ));
+//        localStorage.setItem('AppliedFilters', JSON.stringify(AppliedFiltersOBJ));
 
 // Retrieve the object from storage
-        var retrievedObject = localStorage.getItem('AppliedFilters');
+//        var retrievedObject = localStorage.getItem('AppliedFilters');
 
 //        console.log('retrievedObject: ', JSON.parse(retrievedObject));
 
@@ -139,7 +139,7 @@ $(document).ready(function () {
             crossDomain: true,
             xhrFields: {withCredentials: true}
         }).fail(function (xhr) {
-            alert('Error: ' + xhr.responseText);
+           
         });
     };
     var Next = function (url) {
@@ -214,6 +214,7 @@ $(document).ready(function () {
 
             var FJS = FilterJS(FilteredContent, '#movies', {
                 template: '#courses',
+                filter_on_init: true,
                 search: {ele: '#searchbox'},
 //                search: {ele: '#searchbox', fields: ['Title']}, // With specific fields
 
@@ -234,7 +235,7 @@ $(document).ready(function () {
             FJS.addCriteria({field: 'Division', ele: '#Division input:checkbox'});
             FJS.addCriteria({field: 'CourseType', ele: '#CourseType input:checkbox', all: 'all'});
             FJS.addCriteria({field: 'CourseLevel', ele: '#CourseLevel input:checkbox'});
-            FJS.addCriteria({field: 'Area', ele: '#Area > input:checkbox'});
+            FJS.addCriteria({field: 'Area', ele: '#Area input:checkbox'});
             FJS.addCriteria({field: 'Region', ele: '#Region input:checkbox'});
             FJS.addCriteria({field: 'Sector', ele: '#Sector input:checkbox'});
             FJS.addCriteria({field: 'RiskCapabilities', ele: '#RiskCapabilities input:checkbox'});
@@ -242,19 +243,14 @@ $(document).ready(function () {
             FJS.addCriteria({field: 'RiskServiceOfferings', ele: '#RiskServiceOfferings input:checkbox'});
             FJS.addCriteria({field: 'PIServiceOfferings', ele: '#PIServiceOfferings input:checkbox'});
             FJS.addCriteria({field: 'Competency', ele: '#Competency input:checkbox'});
-
             FJS.addCriteria({field: 'PASPillars', ele: '#PASPillars input:checkbox'});
             FJS.addCriteria({field: 'GrowthDrivers', ele: '#GrowthDrivers input:checkbox'});
             FJS.addCriteria({field: 'LearningType', ele: '#LearningType input:checkbox'});
-
             FJS.addCriteria({field: 'Blended', ele: '#Blended'});
             FJS.addCriteria({field: 'AmericaAACPE', ele: '#AmericaAACPE'});
             FJS.addCriteria({field: 'PASfferings', ele: '#PASfferings input:checkbox'});
 
-
-
-//            FJS.addCriteria({field: 'Division', ele: '#Division', all: 'all', selector: 'select'});
-
+            //            FJS.addCriteria({field: 'Division', ele: '#Division', all: 'all', selector: 'select'});
             FJS.addCriteria({field: 'SubServiceLine', ele: '#SubServiceLine input:checkbox'});
             FJS.addCriteria({field: 'Duration', ele: '#runtime_filter', type: 'range'});
 
@@ -277,26 +273,12 @@ $(document).ready(function () {
     };
 
 
-//    Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000");
-    Next("../src.json");
+    //  Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000");
+    Next("src.json");
 
 });
 
 
-function secondsToString(seconds) {
-    var value = seconds;
-    var units = {
-        "h": 60,
-        "m": 1
-    };
-    var result = [];
-    for (var name in units) {
-        var p = Math.floor(value / units[name]);
-        result.push(" " + p + name);
-        value %= units[name];
-    }
-    return result;
-}
 
 function initSliders() {
 
