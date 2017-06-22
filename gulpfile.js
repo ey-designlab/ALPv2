@@ -63,7 +63,7 @@ var routes = {
 
     files: {
         html: 'dist/',
-        images: baseDirs.src + 'images/*',
+        images: baseDirs.src + 'images/**/*',
         baseimages: baseDirs.src + 'images',
         imgmin: baseDirs.assets + 'css/',
         cssFiles: baseDirs.assets + 'css/*.css',

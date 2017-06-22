@@ -223,7 +223,7 @@ $(document).ready(function () {
                     $(this).html(string);
                 });
                 
-                $('.greywrap').on('click', function (e) {
+                $('.pinwrap').on('click', function (e) {
                     $('.greywrap').not(this).removeClass('activedesc').find('.greydescription').slideUp();
                     if ($(this).hasClass('activedesc')) {
                         $(this).removeClass('activedesc').find('.greydescription').slideUp();
