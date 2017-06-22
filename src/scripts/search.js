@@ -139,7 +139,7 @@ $(document).ready(function () {
             crossDomain: true,
             xhrFields: {withCredentials: true}
         }).fail(function (xhr) {
-           
+
         });
     };
     var Next = function (url) {

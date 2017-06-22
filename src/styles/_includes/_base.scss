@@ -32,29 +32,42 @@ dd {
         padding: 20px;
     }
     #submenu {
-        background-image: url("graypixel.png");
-        margin: 8px 0 0 0;
-        padding: 5px 0;
+        background-image: url("whitepixel.png");
+/*        margin: 8px 0 0 0;*/
+/*        padding: 15px 0;*/
         display: none;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        background-color: #3f3f3c;
+        top: 99px;
+    }
+    li#dropdown {
+        cursor: pointer;
+        height: 50px;
     }
     #submenu li {
-        float: none !important;
-        margin: 11px !important;
-        padding: 1px 0 !important;
+        /*        float: none !important;
+                margin: 11px !important;
+                padding: 1px 0 !important;*/
+        /*        border-left: 1px solid #FFFFFF;*/
+
     }
     #submenu li a {
-        margin: 5px 0px;
-        padding: 5px 0px 5px 10px !important;
+/*        margin: 5px 0px;*/
+        padding: 15px 20px !important;
         text-align: left !important;
     }
 
     #submenu li a:hover {
         background-color: #ffd500;
         color: #000000;
+        transition: all 200ms ease-in-out 0s;
     }
     #submenu li:hover {
-        border-bottom: 1px solid #FFFFFF;
-        border-top: 1px solid #FFFFFF;
+        /*        border-bottom: 1px solid #FFFFFF;
+                border-top: 1px solid #FFFFFF;*/
         padding: 0px !important;
     }
     #box {
@@ -68,11 +81,12 @@ dd {
         display:block;
     }
     #menu li {
-        float:left;
+/*        height: 42px;*/
+
         margin:0;
         list-style-type:none;  
         padding:0;
-
+        display: inline-block;
         position: relative;
         z-index: 10;
     }
@@ -103,9 +117,7 @@ dd {
         height: 6px;
         width: 100%;
     }
-    li#dropdown {
-        width: 225px;
-    }
+
 }
 .clearfix:after {
     content: " ";

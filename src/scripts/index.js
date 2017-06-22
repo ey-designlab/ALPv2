@@ -72,17 +72,17 @@ jQuery(document).ready(function ($) {
 
     //animate to anhor tag when menu is clicked
     // $('a[href*=#]:not([href=#],[href*=#tab])').on('click', function (e) {
-    $('a[href*=#page]').on('click', function (e) {
-        e.preventDefault();
-        var target = $(this.hash);
-        var distance = (target.offset().top) + 2;
-        if (target.length) {
-            $('html,body').stop(true, false).animate({
-                scrollTop: distance
-            }, 1500, 'easeInOutCubic');
-            return false;
-        }
-    });
+//    $('a[href*=#page]').on('click', function (e) {
+//        e.preventDefault();
+//        var target = $(this.hash);
+//        var distance = (target.offset().top) + 2;
+//        if (target.length) {
+//            $('html,body').stop(true, false).animate({
+//                scrollTop: distance
+//            }, 1500, 'easeInOutCubic');
+//            return false;
+//        }
+//    });
 
 
     //menu on click animate window to anchor 

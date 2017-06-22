@@ -4,41 +4,49 @@ $(document).ready(function () {
     $(function () {
         $.srSmoothscroll();
     });
-
-
     var downarrow = $(".scroll");
     var body = $('html, body');
-
     downarrow.on("click", function (e) {
         e.preventDefault();
         body.stop(true, false).animate({
             scrollTop: 870
         }, 500);
     });
+//    $(window).on("load", function () {
+//        if (window.location.hash === '#page1') {
+//            setTimeout(function () {
+//                body.stop(true, false).animate({
+//                    scrollTop: 870
+//                }, 500);
+//            }, 400);
+//        }
+//    });
 
-    $(window).on("load", function () {
-        if (window.location.hash === '#page1') {
-            setTimeout(function () {
-                body.stop(true, false).animate({
-                    scrollTop: 870
-                }, 500);
-            }, 400);
-        }
-    });
 
-    //waypoints trigered when on section and calls AnimatingMenuLine funtion
+    setTimeout(function () {
 
-    $('#carousel').waypoint(function () {
         $("#carousel").featureCarousel({
             trackerSummation: false,
             carouselSpeed: 600,
             autoPlay: 7000,
             pauseOnHover: true
         });
-    }, {
-        offset: 500,
-        triggerOnce: true
-    });
+
+    }, 400);
+
+    //waypoints trigered when on section and calls AnimatingMenuLine funtion
+
+//    $('#carousel').waypoint(function () {
+//        $("#carousel").featureCarousel({
+//            trackerSummation: false,
+//            carouselSpeed: 600,
+//            autoPlay: 7000,
+//            pauseOnHover: true
+//        });
+//    }, {
+//        offset: 500,
+//        triggerOnce: true
+//    });
 
     // how many pixeles you have scrolled from top
     function getPageScroll() {
@@ -64,15 +72,12 @@ $(document).ready(function () {
 
 
         var scrollY = getPageScroll();
-
         var yPos = (scrollY * 0.2);
         var coords = '50% ' + -yPos + 'px';
-
         $bgobj.css({
             backgroundPosition: coords
         });
     });
-
     var Ajax2 = function (url) {
         return $.ajax({
             url: url,
@@ -85,8 +90,6 @@ $(document).ready(function () {
 //            alert('Error: ' + xhr.responseText);
         });
     };
-
-
     var Next2 = function (url) {
         $.when(Ajax2(url)).then(function (data) {
 //            console.log(data);
@@ -96,8 +99,6 @@ $(document).ready(function () {
                 $.each(data.AttachmentFiles.results, function (key, data) {
                     image = data.ServerRelativeUrl
                 });
-
-
                 $('#carousel').append(
                         '<div class="carousel-feature">'
                         + '<a target="_blank" href="' + data.URL + '">'
@@ -111,8 +112,6 @@ $(document).ready(function () {
                         + '</div>'
                         );
             });
-
-
         });
     };
     Next2("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('Whats_new')/items?$select=Title,ID,Description,URL,Attachments,AttachmentFiles&$expand=AttachmentFiles");
