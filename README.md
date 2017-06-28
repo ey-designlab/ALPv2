@@ -24,7 +24,7 @@ npm install
 ### Use 
 
 ```bash
-yo ALP_2
+gulp
 ```
 
 # Author 
