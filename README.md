@@ -13,8 +13,12 @@
 
 ### Install
 
+
 ```bash
-npm install -g ALP_2
+git clone https://github.com/rokart/ALP-v2-.git
+```
+```bash
+npm install
 ```
 
 ### Use 
