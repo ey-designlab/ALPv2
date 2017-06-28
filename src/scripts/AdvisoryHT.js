@@ -31,7 +31,7 @@ $(document).ready(function () {
     };
     var Next = function (url) {
         $.when(Ajax(url)).then(function (data) {
-            console.log(data)
+//            console.log(data)
             $.each(data.d.results, function (key, data) {
                 for (var key in data) {
                     if (data[key] === null && key !== 'Title' && key !== 'gpqg' && key !== 'Course_x0020_Code' && key !== 'Short_x0020_description' && key !== 'America_x0027_s_x0020_classroom_' && key !== 'America_x0027_s_x0020_AA_x0020_C' && key !== 'Blended_x0020_learning_x0020_pro') {
@@ -110,14 +110,14 @@ $(document).ready(function () {
 
             FJS.addCriteria({field: 'Division', ele: '#Sales_Winning_Market'});
             FJS.addCriteria({field: 'GrowthDrivers', ele: '.Growth_Drivers input:radio'});
-            
+
 
 
 
             window.FJS = FJS;
         });
     };
-    Next("src.json");
+    Next(sourseUrl);
 //    Next("https://share.ey.net/sites/playyourpart/_api/web/Lists/getByTitle('Courselistnew')/items?$filter=Division eq 'Risk'");
 // Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000");
 });

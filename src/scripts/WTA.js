@@ -89,7 +89,7 @@ $(document).ready(function () {
 
             $('#LearningJourneyname .capabilityitem').removeClass('activeradio');
             $(this).addClass('activeradio');
-            
+
             $('.results').show().animate({
                 height: 700
             }, 600, "easeInOutBack");
@@ -216,13 +216,13 @@ $(document).ready(function () {
 
             };
             var bla = function (result, jQ) {
-                 $('.courseduration').each(function () {
+                $('.courseduration').each(function () {
                     var courseduration = $(this).html();
                     var arraystuff = secondsToString(courseduration);
                     var string = arraystuff.toString();
                     $(this).html(string);
                 });
-                
+
                 $('.pinwrap').on('click', function (e) {
                     $('.greywrap').not(this).removeClass('activedesc').find('.greydescription').slideUp();
                     if ($(this).hasClass('activedesc')) {
@@ -246,7 +246,7 @@ $(document).ready(function () {
             window.FJS = FJS;
         });
     };
-    Next("src.json");
+    Next(sourseUrl);
 //    Next("https://share.ey.net/sites/playyourpart/_api/web/Lists/getByTitle('Courselistnew')/items?$top=1000");
 
 //    Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('Courses')/items?$filter=(Learning_x0020_Journey_x0020_nam eq 'Welcome to Advisory Foundation') or (Learning_x0020_Journey_x0020_nam eq 'Welcome to Advisory Executive')");

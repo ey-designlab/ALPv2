@@ -67,6 +67,8 @@ $(document).ready(function () {
             };
 
             var bla = function (result, jQ) {
+                $("#Divisiontrigger").trigger("click");
+
                 $('.greywraptitle').on('click', function (e) {
                     $('.greywraptitle').not(this).removeClass('activedesc').parent().find('.greydescription').slideUp();
 
@@ -123,6 +125,8 @@ $(document).ready(function () {
                     afterAddRecords: bla
                 }
             });
+            FJS.addCriteria({field: 'Division', ele: '#Divisiontrigger'});
+            FJS.addCriteria({field: 'Blended', ele: '#Blended'});
 
             FJS.addCriteria({field: 'ranks', ele: '#ranks input:radio'});
             FJS.addCriteria({field: 'Area', ele: '#area input:radio'});
@@ -133,8 +137,10 @@ $(document).ready(function () {
 
         });
     };
-    Next("src.json");
+    Next(sourseUrl);
 //    Next("https://share.ey.net/sites/playyourpart/_api/web/Lists/getByTitle('Courselistnew')/items?$top=1000");
 // Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000");
+
+
 });
 

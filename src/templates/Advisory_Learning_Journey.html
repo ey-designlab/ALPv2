@@ -19,7 +19,14 @@
     </section>
 
     <section>
+        <div class="blended-togle-wrap">
+            <div class="blended-togle clearfix">
+                <input value="true" type="checkbox" name="toggle" class="sw" id="Blended">
+                <label for="Blended"><span>Blended learning</span></label>
+            </div>
+        </div>
         <div class="capability">
+            <input id="Divisiontrigger" type="checkbox" value="Advisory">
             <div class="row">
 
                 @@include('./area_region.html')
@@ -175,9 +182,9 @@
 
                 <br />
                 <div id="results" class="clearfix"></div>
-                <div id="results2" class="clearfix"> <div class="comingsoon">Coming soon</div></div>
-                <div id="results3" class="clearfix"><div class="comingsoon">Coming soon</div></div>
-                <div id="results4" class="clearfix"><div class="comingsoon">Coming soon</div></div>
+                <div id="results2" class="clearfix"> </div>
+                <div id="results3" class="clearfix"> </div>
+                <div id="results4" class="clearfix"> </div>
             </div>
         </div>
 
@@ -194,10 +201,14 @@
             <div class="greywraptitle"><%= Title %></div>
             <div class="greydescription">
                 <div class="pad2">
-                    <%= description %> 
+                    <div class="description">
+                        <%= description %> 
+                    </div>
                     <div class="clearfix pad">Course code:<div class="padedwidth "><%= coursecode %></div></div>
                     <div class="clearfix pad">Sector: <div class="padedwidth clearfix"><%= Sector %></div></div>
+                    <% if ( America !== true ){ %>
                     <a class="learnmoregreen" target="_blank" href="<%= URL %>">LEARN MORE</a>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -211,10 +222,14 @@
             <div class="greywraptitle"><%= Title %></div>
             <div class="greydescription">
                 <div class="pad2">
-                    <%= description %> 
+                    <div class="description">
+                        <%= description %> 
+                    </div>
                     <div class="clearfix pad">Course code:<div class="padedwidth "><%= coursecode %></div></div>
                     <div class="clearfix pad">Sector: <div class="padedwidth clearfix"><%= Sector %></div></div>
+                    <% if ( America !== true ){ %>
                     <a class="learnmoregreen" target="_blank" href="<%= URL %>">LEARN MORE</a>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -228,10 +243,14 @@
             <div class="greywraptitle"><%= Title %></div>
             <div class="greydescription">
                 <div class="pad2">
-                    <%= description %> 
+                    <div class="description">
+                        <%= description %> 
+                    </div>
                     <div class="clearfix pad">Course code:<div class="padedwidth "><%= coursecode %></div></div>
                     <div class="clearfix pad">Sector: <div class="padedwidth clearfix"><%= Sector %></div></div>
+                    <% if ( America !== true ){ %>
                     <a class="learnmoregreen" target="_blank" href="<%= URL %>">LEARN MORE</a>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -245,10 +264,14 @@
             <div class="greywraptitle"><%= Title %></div>
             <div class="greydescription">
                 <div class="pad2">
-                    <%= description %> 
+                    <div class="description">
+                        <%= description %> 
+                    </div>
                     <div class="clearfix pad">Course code:<div class="padedwidth "><%= coursecode %></div></div>
                     <div class="clearfix pad">Sector: <div class="padedwidth clearfix"><%= Sector %></div></div>
+                    <% if ( America !== true ){ %>
                     <a class="learnmoregreen" target="_blank" href="<%= URL %>">LEARN MORE</a>
+                    <% } %>
                 </div>
             </div>
         </div>

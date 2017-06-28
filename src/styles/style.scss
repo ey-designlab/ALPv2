@@ -76,6 +76,48 @@
         display: block;
         min-height: 10px;
     }
+
+    .greywrap {
+        float: left;
+        background-color: #efefef;
+        width: 100%;
+        min-height: auto;
+        margin: 1%;
+        margin-bottom: 25px;
+        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        &:hover {
+            background-color: #dfdfdf;
+        }
+        .greywraptitle {
+            border-bottom: none;
+            padding: 4% 9% 4% 4%;
+            width: 87%;
+            &:after{
+                content: "+";
+                font-size: 20px;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+        }
+        .pad{
+            padding: 10px 0;
+        }
+        .padedwidth {
+            float: right;
+            width: 150px;
+        }
+        .pad2 {
+            padding: 10px;
+        }
+    }
+
+
+
+
 }
 
 .risk{
@@ -88,7 +130,7 @@
         min-height: 740px;
     }
     .links {
-        background: rgba(0, 0, 0, 0) url("links.jpg") no-repeat scroll center bottom / cover ;
+        background: rgba(0, 0, 0, 0) url("risk_footer.jpg") no-repeat scroll center bottom / cover ;
     }
 }
 
@@ -101,7 +143,7 @@
         min-height: 740px;
     }
     .links {
-        background: rgba(0, 0, 0, 0) url("links.jpg") no-repeat scroll center bottom / cover ;
+        background: rgba(0, 0, 0, 0) url("pi_footerbg.jpg") no-repeat scroll center bottom / cover ;
     }   
     .transperantbox {
         height: 420px;
@@ -157,6 +199,10 @@
     .links {
         background: rgba(0, 0, 0, 0) url("Advisory_Hot_topics_foot-BG.jpg") no-repeat scroll center bottom / cover ;
     }
+    .capability {
+        padding-top: 60px;
+    }
+
 
 }
 

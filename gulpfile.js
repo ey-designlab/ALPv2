@@ -50,7 +50,7 @@ var routes = {
             baseDirs.src + 'scripts/vendor/migrate.js',
             baseDirs.src + 'scripts/vendor/jquery.easing.min.js',
             baseDirs.src + 'scripts/vendor/jquery.mousewheel.min.js',
-            baseDirs.src + 'scripts/vendor/jquery.simplr.smoothscroll.js',
+//            baseDirs.src + 'scripts/vendor/jquery.simplr.smoothscroll.js',
             baseDirs.src + 'scripts/vendor/waypoints.js',
             baseDirs.src + 'scripts/vendor/jquery.featureCarousel.min.js',
             baseDirs.src + 'scripts/vendor/jquery-ui-1.10.2.custom.min.js',

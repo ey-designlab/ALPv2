@@ -837,7 +837,7 @@
             track: true
         });
 
-        $('.rowwrap, .caption').on('click', function (e) {
+        $('.rowwrap, .caption, .moreinfo').on('click', function (e) {
             $(this).parent().find('.popup').show()
                     .css({'top': '-=100'})
                     .animate({'top': '+=100', 'opacity': 1},
@@ -883,9 +883,6 @@
 
 
     };
-
-
-
 
     "use strict";
 
@@ -935,13 +932,12 @@
                 + "');}return __p.join('');";
 
         var func = new Function('obj', tmpl);
+//        console.log(func)
         return data ? func(data) : function (data) {
 //             console.log(data.ranks.join(', '))
             return func(data);
         };
     }
-    ;
-
 
     function each(objs, callback, context) {
 
@@ -1092,7 +1088,7 @@
 ////                value %= units[name];
 //            }
 
-
+//        console.log(record)
         return this.templateFn(record);
     };
 

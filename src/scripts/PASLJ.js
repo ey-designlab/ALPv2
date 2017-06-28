@@ -48,6 +48,7 @@ $(document).ready(function () {
                     GrowthDrivers: data.Growth_x0020_Drivers.results,
                     LearningType: data.Learning_x0020_Type0.results,
                     CourseType: data.Learning_x0020_type.results,
+                    PASPillarOfferings: data.temp.results,
 
                     URL: data.Course_x0020_URL.Url,
 
@@ -66,6 +67,8 @@ $(document).ready(function () {
             };
 
             var bla = function (result, jQ) {
+                $("#Divisiontrigger").trigger("click");
+
                 $('.greywrap').on('click', function (e) {
                     $('.greywrap').not(this).removeClass('activedesc').find('.greydescription').slideUp();
                     if ($(this).hasClass('activedesc')) {
@@ -90,7 +93,8 @@ $(document).ready(function () {
                     afterAddRecords: bla
                 }
             });
-
+            FJS.addCriteria({field: 'Division', ele: '#Divisiontrigger'});
+            FJS.addCriteria({field: 'Blended', ele: '#Blended'});
 
             FJS.addCriteria({field: 'Area', ele: '#area input:radio'});
             FJS.addCriteria({field: 'Region', ele: '.regions input:radio'});
@@ -99,11 +103,10 @@ $(document).ready(function () {
             FJS.addCriteria({field: 'PASfferings', ele: '#PASSERVICEOFFERINGS input:radio'});
             FJS.addCriteria({field: 'PASPillars', ele: '#PASPillars input:radio'});
             FJS.addCriteria({field: 'PASPillarOfferings', ele: '.PASPillarOfferings input:radio'});
-
             window.FJS = FJS;
         });
     };
-    Next("src.json");
+    Next(sourseUrl);
 //    Next("https://share.ey.net/sites/playyourpart/_api/web/Lists/getByTitle('Courselistnew')/items?$filter=Division eq 'Risk'");
 // Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000");
 });

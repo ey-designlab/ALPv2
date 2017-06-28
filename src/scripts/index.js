@@ -1,4 +1,7 @@
 
+var sourseUrl = "src.json";
+//var sourseUrl = "https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000";
+
 jQuery(document).ready(function ($) {
 
     var body = $('html, body');
@@ -62,12 +65,12 @@ jQuery(document).ready(function ($) {
     });
 
 
-
-    (function () {
-        $('html,body').animate({
-            scrollTop: 0
-        }, 0);
-    })();
+//
+//    (function () {
+//        $('html,body').animate({
+//            scrollTop: 0
+//        }, 0);
+//    })();
 
 
     //animate to anhor tag when menu is clicked
@@ -86,16 +89,16 @@ jQuery(document).ready(function ($) {
 
 
     //menu on click animate window to anchor 
-    $('a[href*=#]:not([href=#],[href*=#tab])').click(function () {
-        var target = $(this.hash);
-        var distance = (target.offset().top) + 1;
-        if (target.length) {
-            $('html,body').animate({
-                scrollTop: distance
-            }, 1500, 'easeInOutCubic');
-            return false;
-        }
-    });
+//    $('a[href*=#]:not([href=#],[href*=#tab])').click(function () {
+//        var target = $(this.hash);
+//        var distance = (target.offset().top) + 1;
+//        if (target.length) {
+//            $('html,body').animate({
+//                scrollTop: distance
+//            }, 1500, 'easeInOutCubic');
+//            return false;
+//        }
+//    });
 
 
 
@@ -164,9 +167,28 @@ jQuery(document).ready(function ($) {
 //
 //    setStyles();
 
+    $('.blended-togle input').on('click', function () {
+        if ($(this).is(":checked")) {
+            $('.capability').hide();
+            $('.results').show();
+            $('.activeradio input').removeAttr('checked');
+            $('.capabilityitem').removeClass('activeradio');
+            $('.previosslide').removeClass('previosslide');
+
+            $('.capability').find('.hide').hide();
+            $('.checkbox').css({"top": "", "opacity": ""});
+            $('.selectareawrap').show();
+
+        } else {
+            $('.results').hide();
+            $('.capability').show();
+        }
+    });
 
 
 // learning journeys code
+
+
 
     $('.finish').on('click', function (e) {
         e.preventDefault();
@@ -282,6 +304,9 @@ jQuery(document).ready(function ($) {
 
 
 });
+
+
+
 
 function secondsToString(seconds) {
     var value = seconds;

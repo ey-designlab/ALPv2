@@ -17,9 +17,17 @@
         </div>
     </section>
 
-    <section >
+    <section>
+        <div class="blended-togle-wrap">
+            <div class="blended-togle clearfix">
+                <input value="true" type="checkbox" name="toggle" class="sw" id="Blended">
+                <label for="Blended"><span>Blended learning</span></label>
+            </div>
+        </div>
         <div class="capability">
+            <input id="Divisiontrigger" type="checkbox" value="PI">
             <div class="row">
+
                 @@include('./area_region.html')
 
                 <div class="selectrankwrap hide clearfix">
@@ -77,56 +85,48 @@
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem Progect_Management">
-                                    <input data-wrapname="PIServiceOfferingsProjectManagement" name=PiCapabilitiesgroup type="radio" value="Project Management">
-                                    <div class="capabilityitemtitle">Project Management</div>
+                                    <input data-wrapname="PIServiceOfferingsProjectManagement" name=PiCapabilitiesgroup type="radio" value="Program Management">
+                                    <div class="capabilityitemtitle">Program Management</div>
                                 </div>
                             </label>
                         </div>
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem Customer_Capability">
-                                    <input data-wrapname="PIServiceOfferingsCustomerCapability" name=PiCapabilitiesgroup type="radio" value="Customer Capability">
-                                    <div class="capabilityitemtitle">Customer Capability</div>
+                                    <input data-wrapname="PIServiceOfferingsCustomerCapability" name=PiCapabilitiesgroup type="radio" value="Customer">
+                                    <div class="capabilityitemtitle">Customer</div>
                                 </div>
                             </label>
                         </div>
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem Finance_Capability">
-                                    <input data-wrapname="PIServiceOfferingsFinanceCapability" name=PiCapabilitiesgroup type="radio" value="Finance Capability">
-                                    <div class="capabilityitemtitle">Finance Capability</div>
+                                    <input data-wrapname="PIServiceOfferingsFinanceCapability" name=PiCapabilitiesgroup type="radio" value="Finance">
+                                    <div class="capabilityitemtitle">Finance</div>
                                 </div>
                             </label>
                         </div>
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem Strategy_Capability">
-                                    <input data-wrapname="PIServiceOfferingsStrategyCapability" name=PiCapabilitiesgroup type="radio" value="Strategy Capability">
-                                    <div class="capabilityitemtitle">Strategy Capability</div>
+                                    <input data-wrapname="PIServiceOfferingsStrategyCapability" name=PiCapabilitiesgroup type="radio" value="Strategy">
+                                    <div class="capabilityitemtitle">Strategy</div>
                                 </div>
                             </label>
                         </div>
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem SupplyChainandOperation">
-                                    <input data-wrapname="PIServiceOfferingsSupplyChainOperation" name=PiCapabilitiesgroup type="radio" value="Supply Chain and Operation">
-                                    <div class="capabilityitemtitle">Supply Chain and Operation</div>
+                                    <input data-wrapname="PIServiceOfferingsSupplyChainOperation" name=PiCapabilitiesgroup type="radio" value="Supply Chain and Operations">
+                                    <div class="capabilityitemtitle">Supply Chain and Operations</div>
                                 </div>
                             </label>
                         </div>
-                        <!--                        <div class="checkbox">
-                                                    <label>
-                                                        <div class="capabilityitem PeopleAdvisoryService">
-                                                            <input data-wrapname="PIServiceOfferingsPeopledvisoryService" name=PiCapabilitiesgroup type="radio" value="People Advisory Service">
-                                                            <div class="capabilityitemtitle">People Advisory Services</div>
-                                                        </div>
-                                                    </label>
-                                                </div>-->
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem ITACapability">
-                                    <input data-wrapname="PIServiceOfferingsITACapability" name=PiCapabilitiesgroup type="radio" value="ITA Capability">
-                                    <div class="capabilityitemtitle">ITA Capability</div>
+                                    <input data-wrapname="PIServiceOfferingsITACapability" name=PiCapabilitiesgroup type="radio" value="Technology">
+                                    <div class="capabilityitemtitle">Technology</div>
                                 </div>
                             </label>
                         </div>                            
@@ -144,32 +144,32 @@
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem Delivery">
-                                    <input name=PIServiceOfferingsProjectManagement type="radio" value="Delivery">
-                                    <div class="capabilityitemtitle">Delivery</div>
+                                    <input name=PIServiceOfferingsProjectManagement type="radio" value="PPM Delivery">
+                                    <div class="capabilityitemtitle">PPM Delivery</div>
                                 </div>
                             </label>
                         </div>   
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem Controls">
-                                    <input name=PIServiceOfferingsProjectManagement type="radio" value="Controls">
-                                    <div class="capabilityitemtitle">Controls</div>
+                                    <input name=PIServiceOfferingsProjectManagement type="radio" value="PPM Controls">
+                                    <div class="capabilityitemtitle">PPM Controls</div>
                                 </div>
                             </label>
                         </div>  
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem Commercial">
-                                    <input name=PIServiceOfferingsProjectManagement type="radio" value="Commercial">
-                                    <div class="capabilityitemtitle">Commercial</div>
+                                    <input name=PIServiceOfferingsProjectManagement type="radio" value="PPM Commercial">
+                                    <div class="capabilityitemtitle">PPM Commercial</div>
                                 </div>
                             </label>
                         </div>  
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem Architect">
-                                    <input name=PIServiceOfferingsProjectManagement type="radio" value="Architect">
-                                    <div class="capabilityitemtitle">Architect</div>
+                                    <input name=PIServiceOfferingsProjectManagement type="radio" value="PPM Architect">
+                                    <div class="capabilityitemtitle">PPM Architect</div>
                                 </div>
                             </label>
                         </div>                                                      
@@ -182,6 +182,12 @@
                     <fieldset class="PIServiceOfferings">
                         <legend>SELECT YOUR PI CAPABILITY</legend>
                         <div class="checkbox">
+                            <label>
+                                <div class="capabilityitem XXX">
+                                    <input name=PIServiceOfferingsCustomerCapability type="radio" value="Experience">
+                                    <div class="capabilityitemtitle">Experience</div>
+                                </div>
+                            </label>
                             <label>
                                 <div class="capabilityitem Marketing">
                                     <input name=PIServiceOfferingsCustomerCapability type="radio" value="Marketing">
@@ -298,16 +304,16 @@
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem OutsourcingAdvisingManagement">
-                                    <input name=PIServiceOfferingsSupplyChainOperation type="radio" value="Outsourcing Advising Management">
-                                    <div class="capabilityitemtitle">Outsourcing Advising Management</div>
+                                    <input name=PIServiceOfferingsSupplyChainOperation type="radio" value="Service Operations">
+                                    <div class="capabilityitemtitle">Service Operations</div>
                                 </div>
                             </label>
                         </div>   
                         <div class="checkbox">
                             <label>
                                 <div class="capabilityitem OperationsandServices">
-                                    <input name=PIServiceOfferingsSupplyChainOperation type="radio" value="Operations and Services">
-                                    <div class="capabilityitemtitle">Operations and Services</div>
+                                    <input name=PIServiceOfferingsSupplyChainOperation type="radio" value="Network Operations">
+                                    <div class="capabilityitemtitle">Network Operations</div>
                                 </div>
                             </label>
                         </div> 
@@ -497,6 +503,46 @@
                                 </div>
                             </label>
                         </div>   
+                        <div class="checkbox">
+                            <label>
+                                <div class="capabilityitem XXX">
+                                    <input name=PIServiceOfferingsITACapability type="radio" value="Artificial Intelligence">
+                                    <div class="capabilityitemtitle">Artificial Intelligence</div>
+                                </div>
+                            </label>
+                        </div>   
+                        <div class="checkbox">
+                            <label>
+                                <div class="capabilityitem XXX">
+                                    <input name=PIServiceOfferingsITACapability type="radio" value="3D Printing">
+                                    <div class="capabilityitemtitle">3D Printing </div>
+                                </div>
+                            </label>
+                        </div>  
+                        <div class="checkbox">
+                            <label>
+                                <div class="capabilityitem XXX">
+                                    <input name=PIServiceOfferingsITACapability type="radio" value="IoT">
+                                    <div class="capabilityitemtitle">IoT</div>
+                                </div>
+                            </label>
+                        </div>  
+                        <div class="checkbox">
+                            <label>
+                                <div class="capabilityitem XXX">
+                                    <input name=PIServiceOfferingsITACapability type="radio" value="Blockchain">
+                                    <div class="capabilityitemtitle">Blockchain</div>
+                                </div>
+                            </label>
+                        </div>  
+                        <div class="checkbox">
+                            <label>
+                                <div class="capabilityitem XXX">
+                                    <input name=PIServiceOfferingsITACapability type="radio" value="RPA">
+                                    <div class="capabilityitemtitle">RPA</div>
+                                </div>
+                            </label>
+                        </div>  
 
                     </fieldset>     
                     <a data-wrapname="PiCapabilitieswtrap" class="previous"  href="#">&lt; PREVIOUS</a>

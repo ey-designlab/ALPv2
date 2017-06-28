@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
 
-    $(function () {
-        $.srSmoothscroll();
-    });
+//    $(function () {
+//        $.srSmoothscroll();
+//    });
+    
     var downarrow = $(".scroll");
     var body = $('html, body');
     downarrow.on("click", function (e) {
@@ -32,7 +33,7 @@ $(document).ready(function () {
             pauseOnHover: true
         });
 
-    }, 400);
+    }, 600);
 
     //waypoints trigered when on section and calls AnimatingMenuLine funtion
 

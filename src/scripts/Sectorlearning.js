@@ -78,6 +78,8 @@ $(document).ready(function () {
             };
 
             var bla = function (result, jQ) {
+                $("#Divisiontrigger").trigger("click");
+
                 $('.greywrap').on('click', function (e) {
                     $('.greywrap').not(this).removeClass('activedesc').find('.greydescription').slideUp();
                     if ($(this).hasClass('activedesc')) {
@@ -102,7 +104,8 @@ $(document).ready(function () {
                     afterAddRecords: bla
                 }
             });
-
+            FJS.addCriteria({field: 'Division', ele: '#Divisiontrigger'});
+            FJS.addCriteria({field: 'Blended', ele: '#Blended'});
 
             FJS.addCriteria({field: 'Area', ele: '#area input:radio'});
             FJS.addCriteria({field: 'Region', ele: '.regions input:radio'});
@@ -117,7 +120,7 @@ $(document).ready(function () {
             window.FJS = FJS;
         });
     };
-    Next("src.json");
+    Next(sourseUrl);
 //    Next("https://share.ey.net/sites/playyourpart/_api/web/Lists/getByTitle('Courselistnew')/items?$filter=Division eq 'Risk'");
 // Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000");
 });

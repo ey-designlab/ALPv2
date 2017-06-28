@@ -42,6 +42,9 @@ $(document).ready(function () {
     var RiskWrap = $('#RiskCapabilities, #RiskServiceOfferings').parent();
     var PiWrap = $('#PiCapabilities, #PIServiceOfferings').parent();
 
+    var PAStick = $('#Division').find('input[value="PAS"]');
+    var PASWrap = $('#PASfferings, #PASPillarOfferings').parent();
+
     Risktick.on("click", function () {
         if (PItick.is(":checked") && Risktick.is(":checked") || PItick.is(":not(:checked)") && Risktick.is(":not(:checked)")) {
             RiskWrap.show();
@@ -144,6 +147,7 @@ $(document).ready(function () {
     };
     var Next = function (url) {
         $.when(Ajax(url)).then(function (data) {
+//            console.log(data)
             $.each(data.d.results, function (key, data) {
                 for (var key in data) {
                     if (data[key] === null && key !== 'Title' && key !== 'gpqg' && key !== 'Course_x0020_Code' && key !== 'Short_x0020_description' && key !== 'America_x0027_s_x0020_classroom_' && key !== 'America_x0027_s_x0020_AA_x0020_C' && key !== 'Blended_x0020_learning_x0020_pro') {
@@ -157,6 +161,7 @@ $(document).ready(function () {
                     Area: data.Area.results,
                     SubServiceLine: data.Sector.results,
                     ranks: data.Rank.results,
+//                    ranks: data.Rank.results.join(', '),
                     Division: data.Division.results,
                     RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
                     PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
@@ -172,6 +177,7 @@ $(document).ready(function () {
                     GrowthDrivers: data.Growth_x0020_Drivers.results,
                     LearningType: data.Learning_x0020_Type0.results,
                     CourseType: data.Learning_x0020_type.results,
+                    PASPillarOfferings: data.temp.results,
 
                     URL: data.Course_x0020_URL.Url,
 
@@ -183,8 +189,6 @@ $(document).ready(function () {
                     AmericaAACPE: data.America_x0027_s_x0020_AA_x0020_C,
                     Blended: data.Blended_x0020_learning_x0020_pro
                 });
-
-
 
             });
 
@@ -249,6 +253,8 @@ $(document).ready(function () {
             FJS.addCriteria({field: 'Blended', ele: '#Blended'});
             FJS.addCriteria({field: 'AmericaAACPE', ele: '#AmericaAACPE'});
             FJS.addCriteria({field: 'PASfferings', ele: '#PASfferings input:checkbox'});
+            FJS.addCriteria({field: 'PASPillarOfferings', ele: '#PASPillarOfferings input:checkbox'});
+
 
             //            FJS.addCriteria({field: 'Division', ele: '#Division', all: 'all', selector: 'select'});
             FJS.addCriteria({field: 'SubServiceLine', ele: '#SubServiceLine input:checkbox'});
@@ -272,9 +278,7 @@ $(document).ready(function () {
         });
     };
 
-
-    //  Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000");
-    Next("src.json");
+    Next(sourseUrl);
 
 });
 

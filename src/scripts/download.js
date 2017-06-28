@@ -1,8 +1,6 @@
 
 
 $(document).ready(function () {
-    //  https://msdn.microsoft.com/en-us/library/office/jj860569.aspx
-
 
     var FilteredContent = [];
 
@@ -20,9 +18,8 @@ $(document).ready(function () {
     };
     var Next = function (url) {
         $.when(Ajax(url)).then(function (data) {
-//            console.log(data)
+         
             $.each(data.d.results, function (key, data) {
-
                 for (var key in data) {
                     if (data[key] === null && key !== 'Title' && key !== 'gpqg' && key !== 'Course_x0020_Code' && key !== 'Short_x0020_description' && key !== 'America_x0027_s_x0020_classroom_' && key !== 'America_x0027_s_x0020_AA_x0020_C' && key !== 'Blended_x0020_learning_x0020_pro') {
                         data[key] = {results: [""]};
@@ -31,15 +28,10 @@ $(document).ready(function () {
                     }
                 }
 
-//                $.each(data.Division.results, function (key, dat) {
-//                    if (dat === "Risk") {
-
                 FilteredContent.push({
                     Area: data.Area.results,
                     SubServiceLine: data.Sector.results,
                     ranks: data.Rank.results,
-
-//                    ranks: data.Rank.results.join(', '),
                     Division: data.Division.results,
                     RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
                     PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
@@ -55,7 +47,6 @@ $(document).ready(function () {
                     GrowthDrivers: data.Growth_x0020_Drivers.results,
                     LearningType: data.Learning_x0020_Type0.results,
                     CourseType: data.Learning_x0020_type.results,
-                    PASPillarOfferings: data.temp.results,
 
                     URL: data.Course_x0020_URL.Url,
 
@@ -67,65 +58,20 @@ $(document).ready(function () {
                     AmericaAACPE: data.America_x0027_s_x0020_AA_x0020_C,
                     Blended: data.Blended_x0020_learning_x0020_pro
                 });
-//                    }
-//                });
             });
+            
+            var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(FilteredContent));
+            $('<a href="data:' + data + '" download="data.json">download JSON</a>').appendTo('#container');
 
-
-            var afterFilter = function (result, jQ) {
-                $('#total').text(result.length);
-
-
-
-            };
-
-            var bla = function (result, jQ) {
-                $("#Divisiontrigger").trigger("click");
-
-                $('.greywrap').on('click', function (e) {
-                    $('.greywrap').not(this).removeClass('activedesc').find('.greydescription').slideUp();
-
-                    if ($(this).hasClass('activedesc')) {
-                        $(this).removeClass('activedesc').find('.greydescription').slideUp();
-                    } else {
-                        $(this).addClass('activedesc').find('.greydescription').slideDown();
-                    }
-                });
-
-                $('.courseduration').each(function () {
-                    var courseduration = $(this).html();
-                    var arraystuff = secondsToString(courseduration);
-                    var string = arraystuff.toString();
-                    $(this).html(string);
-                });
-            };
-
-            var FJS = FilterJS(FilteredContent, '#results', {
-                template: '#list',
-
-                callbacks: {
-                    afterFilter: afterFilter,
-                    afterAddRecords: bla
-                }
-            });
-            FJS.addCriteria({field: 'Division', ele: '#Divisiontrigger'});
-            FJS.addCriteria({field: 'Blended', ele: '#Blended'});
-
-            FJS.addCriteria({field: 'ranks', ele: '#ranks input:radio'});
-            FJS.addCriteria({field: 'Area', ele: '#area input:radio'});
-            FJS.addCriteria({field: 'Region', ele: '.regions input:radio'});
-
-
-            FJS.addCriteria({field: 'RiskCapabilities', ele: '#RiskCapabilities input:radio'});
-            FJS.addCriteria({field: 'RiskServiceOfferings', ele: '.RiskServiceOfferings input:radio'});
-
-            window.FJS = FJS;
 
         });
     };
-    Next(sourseUrl);
+//    Next("src.json");
 //    Next("https://share.ey.net/sites/playyourpart/_api/web/Lists/getByTitle('Courselistnew')/items?$filter=Division eq 'Risk'");
-// Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000");
+ Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000");
+
+
+
 });
 
 
