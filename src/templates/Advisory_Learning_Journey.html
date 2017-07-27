@@ -22,7 +22,7 @@
         <div class="blended-togle-wrap">
             <div class="blended-togle clearfix">
                 <input value="true" type="checkbox" name="toggle" class="sw" id="Blended">
-                <label for="Blended"><span>Blended learning</span></label>
+                <label for="Blended"><span>Blended learning and program execution</span></label>
             </div>
         </div>
         <div class="capability">
@@ -172,19 +172,26 @@
             <div class="row clearfix">
                 <h1>YOUR LEARNING OBJECTIVES</h1>
                 <div class="center clearfix">
-                    <img src="assets/css/aljarrow.png" alt=""/>
-                    <div class="onefour">BEGINNING <div class="imag"><img src="assets/css/downarrow.png" alt="" /></div>
-                    </div>
+                    <img class="aljarrow" src="assets/css/aljarrow.png" alt=""/>
+<!--                    <div class="onefour">BEGINNING <div class="imag"><img src="assets/css/downarrow.png" alt="" /></div></div>
                     <div class="onefour">PROGRESSING <div class="imag"><img src="assets/css/downarrow.png" alt="" /></div></div>
                     <div class="onefour">PROFICIENT <div class="imag"><img src="assets/css/downarrow.png" alt="" /></div></div>
-                    <div class="onefour">MASTER <div class="imag"><img src="assets/css/downarrow.png" alt="" /></div></div>
+                    <div class="onefour">MASTER <div class="imag"><img src="assets/css/downarrow.png" alt="" /></div></div>-->
                 </div>
 
                 <br />
-                <div id="results" class="clearfix"></div>
-                <div id="results2" class="clearfix"> </div>
-                <div id="results3" class="clearfix"> </div>
-                <div id="results4" class="clearfix"> </div>
+                <div id="results" class="onefour clearfix"> 
+                    <div class="arrowdown">BEGINNING<div class="imag"><img src="assets/css/downarrow.png" alt="" /></div></div>
+                </div>
+                <div id="results2" class="onefour clearfix"> 
+                    <div class="arrowdown">PROGRESSING <div class="imag"><img src="assets/css/downarrow.png" alt="" /></div></div>
+                </div>
+                <div id="results3" class=" onefour clearfix">
+                    <div class="arrowdown">PROFICIENT <div class="imag"><img src="assets/css/downarrow.png" alt="" /></div></div>
+                </div>
+                <div id="results4" class=" onefour clearfix">
+                    <div class="arrowdown">MASTER <div class="imag"><img src="assets/css/downarrow.png" alt="" /></div></div>
+                </div>
             </div>
         </div>
 
@@ -206,9 +213,14 @@
                     </div>
                     <div class="clearfix pad">Course code:<div class="padedwidth "><%= coursecode %></div></div>
                     <div class="clearfix pad">Sector: <div class="padedwidth clearfix"><%= Sector %></div></div>
+
                     <% if ( America !== true ){ %>
+                    <% if ( Blended !== true ){ %>
                     <a class="learnmoregreen" target="_blank" href="<%= URL %>">LEARN MORE</a>
                     <% } %>
+                    <% } %>
+
+
                 </div>
             </div>
         </div>
@@ -228,7 +240,9 @@
                     <div class="clearfix pad">Course code:<div class="padedwidth "><%= coursecode %></div></div>
                     <div class="clearfix pad">Sector: <div class="padedwidth clearfix"><%= Sector %></div></div>
                     <% if ( America !== true ){ %>
+                    <% if ( Blended !== true ){ %>
                     <a class="learnmoregreen" target="_blank" href="<%= URL %>">LEARN MORE</a>
+                    <% } %>
                     <% } %>
                 </div>
             </div>
@@ -249,7 +263,9 @@
                     <div class="clearfix pad">Course code:<div class="padedwidth "><%= coursecode %></div></div>
                     <div class="clearfix pad">Sector: <div class="padedwidth clearfix"><%= Sector %></div></div>
                     <% if ( America !== true ){ %>
+                    <% if ( Blended !== true ){ %>
                     <a class="learnmoregreen" target="_blank" href="<%= URL %>">LEARN MORE</a>
+                    <% } %>
                     <% } %>
                 </div>
             </div>
@@ -270,7 +286,9 @@
                     <div class="clearfix pad">Course code:<div class="padedwidth "><%= coursecode %></div></div>
                     <div class="clearfix pad">Sector: <div class="padedwidth clearfix"><%= Sector %></div></div>
                     <% if ( America !== true ){ %>
+                    <% if ( Blended !== true ){ %>
                     <a class="learnmoregreen" target="_blank" href="<%= URL %>">LEARN MORE</a>
+                    <% } %>
                     <% } %>
                 </div>
             </div>

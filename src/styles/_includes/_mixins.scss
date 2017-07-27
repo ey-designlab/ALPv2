@@ -33,3 +33,9 @@
         background-image: url($hovericon);
     }
 }
+
+@mixin break ($length){
+    @media (min-width: $length){
+        @content;
+    }
+}

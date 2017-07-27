@@ -19,6 +19,9 @@ html {
 dd {
     margin: 0;
 }
+/*h1{
+    font-size: 40px;
+}*/
 .header{
     height: 115px;
     position: fixed;
@@ -29,89 +32,125 @@ dd {
 
     .logo {
         float: left;
-        padding: 20px;
-    }
-    #submenu {
-        background-image: url("whitepixel.png");
-        /*        margin: 8px 0 0 0;*/
-        /*        padding: 15px 0;*/
-        display: none;
-        position: fixed;
-        width: 100%;
-        left: 0;
-        text-align: center;
-        background-color: #3f3f3c;
-        top: 99px;
-    }
-    li#dropdown {
-        cursor: pointer;
-        height: 50px;
-    }
-    #submenu li {
-        /*        float: none !important;
-                margin: 11px !important;
-                padding: 1px 0 !important;*/
-        /*        border-left: 1px solid #FFFFFF;*/
-
-    }
-    #submenu li a {
-        /*        margin: 5px 0px;*/
-        padding: 15px 20px !important;
-        text-align: left !important;
+        padding: 17px 20px;
     }
 
-    #submenu li a:hover {
-        background-color: #ffd500;
-        color: #000000;
-        transition: all 200ms ease-in-out 0s;
-    }
-    #submenu li:hover {
-        /*        border-bottom: 1px solid #FFFFFF;
-                border-top: 1px solid #FFFFFF;*/
-        padding: 0px !important;
-    }
     #box {
         float: right;
         position: relative;
-        top: 75px;
-    }
-    #menu{
-        margin:0;
-        padding:0;
-        display:block;
-    }
-    #menu li {
-        /*        height: 42px;*/
+        top: 1px;
+        background-image: url("graypixel.png");
+        width: 100%;
+        display: none;
+        @include break(850px){
+            background-image: none;
+            width: auto;
+            top: 75px;
+            display: block !important;
+        }
+        #menu{
+            margin:0;
+            padding:0;
+            display:block;
+            li {
+                /*        height: 42px;*/
 
-        margin:0;
-        list-style-type:none;  
-        padding:0;
-        display: inline-block;
-        position: relative;
-        z-index: 10;
+                margin:0;
+                list-style-type:none;  
+                padding:0;
+                position: relative;
+                z-index: 10;
+                display: block;
+
+                &:hover{
+                    background: rgba(255, 255, 255, 0.4);
+                }
+
+                @include break(850px){
+                    display: inline-block;
+                    &:hover{
+                        background: rgba(255, 255, 255, 0);
+                    }
+                }
+                a {
+                    display: block;
+                    text-decoration: none;
+                    color: #ffffff;
+
+                    text-align: center;
+                    padding: 10px;
+                    @include break(850px){
+                        padding: 5px 30px;
+                    }
+                    @include break(1020px){
+                        padding: 5px 50px;
+                    }
+                    &:active{
+                        color:#CC0000;
+                    }
+                }
+            }
+            li.slide-line {
+                background-image: url("whitepixel.png");
+                display: block;
+                height: 116px;
+                left: 0px;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                top: -76px;
+                width: 143px;
+                z-index: 0;
+                display: none;
+                @include break(850px){
+                    display: block;
+                }
+            }
+            #submenu {
+                background-image: url("whitepixel.png");
+                /*                margin: 8px 0 0 0;*/
+                padding: 0;
+                display: none;
+
+                width: 100%;
+                left: 0;
+                text-align: center;
+                background-color: #3f3f3c;
+                top: 99px;
+                position: static;
+                @include break(850px){
+                    position: fixed;
+                }
+            }
+            li#dropdown {
+                cursor: pointer;
+                height: auto;
+                @include break(850px){
+                    height: 50px;
+                }
+
+            }
+
+            #submenu li a {
+                /*        margin: 5px 0px;*/
+                padding: 15px 20px !important;
+                text-align: left !important;
+            }
+
+            #submenu li a:hover {
+                background-color: #ffd500;
+                color: #000000;
+                transition: all 200ms ease-in-out 0s;
+            }
+            #submenu li:hover {
+                /*        border-bottom: 1px solid #FFFFFF;
+                        border-top: 1px solid #FFFFFF;*/
+                padding: 0px !important;
+            }
+        }
     }
-    #menu li a {
-        display: block;
-        text-decoration: none;
-        color: #ffffff;
-        padding: 5px 50px;
-        text-align: center;
-    }
-    #menu li a.active {
-        color:#CC0000;
-    }
-    #menu li.slide-line {
-        background-image: url("whitepixel.png");
-        display: block;
-        height: 116px;
-        left: 0px;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        top: -76px;
-        width: 143px;
-        z-index: 0;
-    }
+
+
     .slide-line-top {
         background: none repeat scroll 0 0 #ffffff;
         height: 6px;
@@ -127,9 +166,12 @@ dd {
     clear: both;
 }
 .row {
-    width: 1160px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
+    @include break(1160px){
+        width: 1160px;
+    }
 }
 
 .footer {
@@ -140,6 +182,7 @@ dd {
         color: #fff;
         width: 180px;
         padding: 38px 0;
+        margin: 0 20px;
     }
     .floatright {
         float: right;
@@ -147,6 +190,7 @@ dd {
         width: 180px;
         padding: 60px 0 0 0;
         text-align: right;
+        margin: 0 20px;
     }
     .backToTop {
         color: #fff;
@@ -187,6 +231,10 @@ section::after {
     position: absolute;
     width: 100%;
     z-index: 10;
+    display: none;
+    @include break(1100px){
+        display: block;
+    }
 }
 .center{
     text-align: center;
@@ -232,16 +280,7 @@ section::after {
     border-radius: 50%;
     cursor: pointer;
 }
-.marker {
-    background-image: url("marker.png");
-    position: absolute;
-    top: -120px;
-    width: 57px;
-    height: 86px;
-    padding-top: 20px;
-    background-repeat: no-repeat;
-    left: 70px;
-}
+
 .item{
     padding: 2.5%;
     width: 18.50%;
@@ -413,21 +452,21 @@ input{
                     left: 300px;
                     background-color: #ffe600;*/
 }
-section::after {
-    background: rgba(0, 0, 0, 0) url("lowshadow.png") no-repeat scroll center center;
-    bottom: -63px;
-    content: " ";
-    display: block;
-    height: 63px;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
-}
+
 .onefour {
     float: left;
+    width: 100%;
+    @include break(800px){
+        width: 50%;
+    }
+    @include break(1160px){
+        width: 25%;
+    }
+}
+.arrowdown {
     padding: 20px 0;
     text-align: center;
-    width: 25%;
+    width: 100%;
     color: #999999;
     font-size: 25px;
 }
@@ -437,21 +476,12 @@ section::after {
     padding: 50px 0 10px;
     text-align: center;
 }
-.hide{
+/*.hide{
     display: none;
-}
+}*/
 
 
-.quiklinks {
-    background-color: #f7f3f7;
-    padding: 50px;
-    h1 {
-        font-weight: 300;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-}
+
 /*.selectedfilters .activeradio:after {
     display: block;
     content: " ";
@@ -545,16 +575,24 @@ section::after {
                 }
             }
         }
-
+    }
+    .aljarrow{
+        display: none;
+        @include break(1160px){
+            display: inline-block;     
+        }
     }
     .padedwidth {
         float: right;
-        width: 200px;
+        width: 50%;
+        @include break(1160px){
+            width: 60%;
+        }
     }
     .greywrap {
         float: left;
         background-color: #efefef;
-        width: 31%;
+        width: 98%;
         min-height: 70px;
         margin: 1%;
         margin-bottom: 25px;
@@ -562,6 +600,13 @@ section::after {
         cursor: pointer;
         transition: all 0.3s ease;
         position: relative;
+        @include break(650px){
+            width: 48%; 
+        }
+        @include break(940px){
+            width: 31%; 
+        }
+
     }
     .greywrap:hover {
         background-color: #dfdfdf;
@@ -628,7 +673,7 @@ section::after {
 
 }
 .blended-togle{
-    width: 300px;
+    width: 470px;
     display: inline-block;
     label{
         cursor: pointer;
@@ -640,7 +685,7 @@ section::after {
     text-align: center;
     legend {
         font-size: 2em;
-        padding: 20px;
+        padding: 20px 0;
         text-align: center;
         width: 100%;
         text-transform: uppercase;
@@ -675,30 +720,7 @@ section::after {
 
 }
 
-.linkswrap {
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4);
-    width: 27.3%;
-    float: left;
-    margin: 30px 3% 20px 3%;
-    text-align: center;
-    position: relative;
-    .learnmore {
-        border: 1px solid #000000;
-        border-radius: 5px;
-        margin: 0 20px 30px;
-        padding: 13px;
-        text-align: center;
-        display: block;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: #000000;
-    }
-    .learnmore:hover{
-        background-color: #ffe600;
-        color: #333333;
-    }
-}
+
 
 
 
@@ -769,9 +791,89 @@ fieldset{
     border: none;
 }
 
-
-.links .center{
-    padding-top: 60px;
+.links{
+    .center{
+        padding-top: 60px;
+        img {
+            display: none;
+            @include break(800px){
+                display: inline-block;
+            }
+        }
+    }
+    .marker {
+        background-image: url("marker.png");
+        position: absolute;
+        top: -120px;
+        width: 57px;
+        height: 86px;
+        padding-top: 20px;
+        background-repeat: no-repeat;
+        left: 70px;
+        display: none;
+        @include break(800px){
+            display: inline-block;
+        }
+    }
+    .linkstitle {
+        background-color: #d7d7d7;
+        padding: 20px;
+        text-align: center;
+    }
+    .linkstext {
+        padding: 10px;
+        color: #7b8392;
+    }
+    .quiklinks {
+        background-color: #f7f3f7;
+        padding: 50px;
+        h1 {
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+    }
+    .linkswrap {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4);
+        width: 94%;
+        float: left;
+        margin: 3%;
+        text-align: center;
+        position: relative;
+        @include break(800px){
+            width: 27.3%;
+            margin: 30px 3% 20px 3%;
+        }
+        .learnmore {
+            border: 1px solid #000000;
+            border-radius: 5px;
+            margin: 0 20px 30px;
+            padding: 13px;
+            text-align: center;
+            display: block;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #000000;
+        }
+        .learnmore:hover{
+            background-color: #ffe600;
+            color: #333333;
+        }
+    }
+    .marginone {
+        margin-top: 0px;
+        @include break(800px){
+            margin-top: -130px;
+        }
+    }
+    .margintwo{
+        margin-top: 0px;
+        @include break(800px){
+            margin-top: -50px;
+        }
+    }
 }
 
 .greysquore{
@@ -779,21 +881,7 @@ fieldset{
     height: 225px;
     display: block;
 }
-.marginone {
-    margin-top: -130px;
-}
-.margintwo{
-    margin-top: -50px;
-}
-.linkstitle {
-    background-color: #d7d7d7;
-    padding: 20px;
-    text-align: center;
-}
-.linkstext {
-    padding: 10px;
-    color: #7b8392;
-}
+
 
 .rectagle{
     height: 6px;
@@ -811,7 +899,7 @@ fieldset{
     margin: 0 auto;
 }
 
-.transperantbox {
+/*.transperantbox {
     height: 350px;
     width: 920px;
     margin: auto;
@@ -823,6 +911,31 @@ fieldset{
     box-shadow: 0px 0px 18.56px 13.44px rgba(0, 0, 0, 0.392);
     background-color: rgba(255,255,255,0.6);
     z-index: 2;
+}*/
+
+.transperantbox {
+
+    margin: auto;
+    left: 0;
+    right: 0;
+    position: static;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 18.56px 13.44px rgba(0, 0, 0, 0.392);
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+
+    @include break(1100px){
+
+        position: absolute;
+        width: 920px;
+        height: 350px;
+        margin: auto;
+        padding: 0;
+    }
+
 }
 .scroll {
     bottom: 20px;
@@ -836,10 +949,13 @@ fieldset{
 .Journeyhometytle {
     padding-top: 40px;
     padding-bottom: 20px;
-    font-size: 90px;
+    font-size: 60px;
     text-align: center;
     color: #333333;
     line-height: 1.2em;
+    @include break(670px){
+        font-size: 90px;
+    }
 }
 
 .blended-togle{
@@ -854,4 +970,63 @@ fieldset{
         overflow-y: auto;
     }
 
+}
+
+#nav-icon {
+    width: 60px;
+    height: 45px;
+    position: relative;
+    margin: 41px 30px 0 0;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    float: right;
+    display: block;
+    @include break(850px){
+        display: none;
+    }
+    span{
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: $white;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;       
+        transform: rotate(0deg);       
+        transition: .25s ease-in-out; 
+    }
+    span:nth-child(1) {
+        top: 0px;
+    }
+    span:nth-child(2){
+        top: 16px;
+    }
+    span:nth-child(3) {
+        top: 16px;
+    }
+    span:nth-child(4) {
+        top: 32px;
+    }
+    &.open span:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+        background: #FFF;
+    }
+    &.open span:nth-child(2) {   
+        transform: rotate(45deg);
+        background: #FFF;
+    }
+    &.open span:nth-child(3) {   
+        transform: rotate(-45deg);
+        background: #FFF;
+    }
+    &.open span:nth-child(4) {
+        background: #FFF;
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
 }

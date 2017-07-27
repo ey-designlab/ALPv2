@@ -35,13 +35,22 @@
         padding-top: 110px;
     }
     .transperantbox {
-        width: 830px;
-        height: 380px;
+
+
         margin: 0 auto;
         position: relative;
         box-shadow: 0px 0px 18.56px 13.44px rgba(0, 0, 0, 0.392);
         background-color: rgba(255, 255, 255, 0.6);
-        padding: 60px;
+        padding: 0 4%;
+        width: 84%;
+        margin: 0 4%;
+        height: auto;
+        @include break(1100px){
+            width: 830px;
+            margin: 0 auto;
+            padding: 60px;
+            height: 380px;
+        }
     }
     .darkblock {
         display: block;
@@ -55,23 +64,40 @@
     }
 
     .row{
-        width: 1080px;
+        width: 100%;
         margin: 0 auto;
         position: relative;
+        @include break(1180px){
+            width: 1080px;
+        }
     }
 
     .homecontent {
-        padding-top: 160px;
         text-align: center;
         width: 100%;
-        height: 550px;
+        padding: 160px 0 40px 0;
+        @include break(1180px){
+            height: 550px;
+            padding: 160px 0 0 0;
+        }
+        h1{
+            font-size: 3em;  
+            margin: 0;
+            padding: 0;
+            @include break(560px){
+                font-size: 3.8em;  
+            }
+            @include break(660px){
+                font-size: 4.2em;  
+            }
+        }
     }
 
-    .homecontent h1, .content h1, .page3inner h1, .page4inner h1  {
-        font-size: 4.2em;   
-        margin: 0;
-        padding: 0;
-    }
+    /*    .homecontent h1, .content h1, .page3inner h1, .page4inner h1  {
+            font-size: 4.2em;   
+            margin: 0;
+            padding: 0;
+        }*/
 
     .whitewrap {
         background-image: url("whitepixel2.png");
@@ -120,14 +146,14 @@
         padding-bottom: 40px;
     }
 
-    .linksinner {
-        margin: 0 auto;
-        padding-bottom: 40px;
-        width: 1080px;
-    }
+
     .onethird {
-        float: left;
-        width: 33.3%;
+
+
+        @include break(1120px){
+            float: left;
+            width: 33.3%;
+        }
     }
 
     .onethird > h2 {
@@ -143,6 +169,15 @@
 
     .linksinner{
         color: #fff;
+
+        margin: 0 3%;
+        padding-bottom: 40px;
+        width: 94%;
+
+        @include break(1120px){
+            width: 1080px;
+            margin: 0 auto;
+        }
         h1 {
             margin: 0;
             padding: 20px;
@@ -165,7 +200,11 @@
                 display: block;
                 height: 1px;
                 margin: 10px 0 0 -18px;
-                width: 340px;
+
+
+                @include break(1120px){
+                    width: 340px;
+                }
             }
         }
     }
@@ -266,15 +305,40 @@
     }
     #carousel {
         height:580px;
-        width:1080px;
+
         position:relative;
         margin-bottom: 70px;
         font-size:12px;
+        width:100%;
+        @include break(1060px){
+            width:1080px;
+        }
     }
     .carousel-image {
         border:0;
         display:block;
+
+        width:400px;
+        @include break(600px){
+            width:600px;
+        }
+        @include break(1060px){
+            width:auto;
+        }
     }
+    .carousel-feature .carousel-caption {
+        position:absolute;
+
+        width:100%;
+        bottom:-250px;
+        @include break(600px){
+            bottom:-150px;
+        }
+        @include break(1060px){
+            bottom:-50px;
+        }
+    }
+
     .carousel-feature {
         position:absolute;
         top:-1000px;
@@ -283,11 +347,7 @@
     .carousel-link{
         cursor: pointer;
     }
-    .carousel-feature .carousel-caption {
-        position:absolute;
-        bottom:-50px;
-        width:100%;
-    }
+
     .carousel-feature .carousel-caption p {
         margin:0;
         padding:5px;
@@ -922,6 +982,12 @@
             &:hover{
                 background: #fff;
                 box-shadow: 2px 1.732px 5px 0px rgba(0, 0, 0, 0.4);
+            }
+            .caption{
+                padding-bottom: 0px;
+                .coursespopupdevider{
+                    border-bottom: none;
+                }
             }
         }
         .popup{

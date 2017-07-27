@@ -7,7 +7,12 @@
                 <div class="description">
                     <%= description %> 
                 </div> 
+                <% if ( America !== true ){ %>
+                <% if ( Blended !== true ){ %>
                 <a class="learnmoregreen" target="_blank" href="<%= URL %>">Launch Now</a>
+                <% } %>
+                <% } %>
+
             </div>
         </div>
         <div class="learnmoreinbox">Learn More</div>

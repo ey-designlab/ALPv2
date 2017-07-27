@@ -4,7 +4,7 @@ $(document).ready(function () {
 //    $(function () {
 //        $.srSmoothscroll();
 //    });
-    
+
     var downarrow = $(".scroll");
     var body = $('html, body');
     downarrow.on("click", function (e) {
@@ -30,7 +30,8 @@ $(document).ready(function () {
             trackerSummation: false,
             carouselSpeed: 600,
             autoPlay: 7000,
-            pauseOnHover: true
+            pauseOnHover: true,
+            animationEasing: "easeInOutCirc"
         });
 
     }, 600);
@@ -97,13 +98,18 @@ $(document).ready(function () {
             $.each(data.d.results, function (key, data) {
 
                 var image = '';
+                var FileName = '';
+
                 $.each(data.AttachmentFiles.results, function (key, data) {
                     image = data.ServerRelativeUrl
+                    FileName = data.FileName
                 });
+
                 $('#carousel').append(
                         '<div class="carousel-feature">'
                         + '<a target="_blank" href="' + data.URL + '">'
-                        + '<img class="carousel-image" src="https://share.ey.net' + image + '">'
+//                        + '<img class="carousel-image" src="https://share.ey.net' + image + '">'
+                        + '<img class="carousel-image" src="assets/sliderimages/' + FileName + '">'
                         + '<div class="clickherewrap">'
                         + '<img class="click_here" alt="Image Caption" src="assets/css/click_here_info.png">'
                         + '<img class="click_here_shad" alt="Image Caption" src="assets/css/click_here_shad.png">'
@@ -115,7 +121,16 @@ $(document).ready(function () {
             });
         });
     };
-    Next2("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('Whats_new')/items?$select=Title,ID,Description,URL,Attachments,AttachmentFiles&$expand=AttachmentFiles");
+    
+    //good one
+//    Next2("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('Whats_new')/items?$select=Title,ID,Description,URL,Attachments,AttachmentFiles&$expand=AttachmentFiles");
+    
+    //local
+    Next2("slider.json");
+    
+    
+    
+    
 //    Next2("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('Whats_new')/items?$top=1000");
 //    Next("../src.json");
 

@@ -13,33 +13,40 @@
 
     .home {
         background: rgba(0, 0, 0, 0) url("aljhomebg.jpg") no-repeat scroll center top / cover ;
-        height: 100%;
-        width: 100%;
-        min-height: 780px;
+
+        padding: 150px 5% 200px 5%;
+        width: 90%;
+        @include break(1100px){
+            height: 100%;
+            width: 100%;
+            min-height: 780px;
+            padding: 0;
+        }
     }
     .links {
         background: rgba(0, 0, 0, 0) url("links.jpg") no-repeat scroll center bottom / cover ;
     }
+
+
+
     .transperantbox {
-        width: 920px;
-        height: 420px;
-        margin: auto;
-        left: 0;
-        right: 0;
-        position: absolute;
-        background-color: rgba(255, 255, 255, 0.6);
-        box-shadow: 0px 0px 18.56px 13.44px rgba(0, 0, 0, 0.392);
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1;
+        height: auto;
+        @include break(1100px){
+            height: 420px;
+        }
     }
+
+
     .Journeyhometytle {
         padding-top: 40px;
         padding-bottom: 20px;
-        font-size: 60px;
+        font-size: 40px;
         text-align: center;
         color: #333333;
         line-height: 1.2em;
+        @include break(670px){
+            font-size: 60px;
+        }
     }
 
     .comingsoon {
@@ -51,31 +58,31 @@
         line-height: 6;
     }
 
-    div#results {
-        width: 24%;
-        float: left;
-    }
-    div#results2 {
-        width: 24%;
-        float: left;
-        margin: 0 0 0 1%;
-        display: block;
-        min-height: 10px;
-    }
-    div#results3 {
-        width: 24%;
-        float: left;
-        margin: 0 0 0 1%;
-        display: block;
-        min-height: 10px;
-    }
-    div#results4 {
-        width: 24%;
-        float: left;
-        margin: 0 0 0 1%;
-        display: block;
-        min-height: 10px;
-    }
+    /*    div#results {
+            width: 24%;
+            float: left;
+        }
+        div#results2 {
+            width: 24%;
+            float: left;
+            margin: 0 0 0 1%;
+            display: block;
+            min-height: 10px;
+        }
+        div#results3 {
+            width: 24%;
+            float: left;
+            margin: 0 0 0 1%;
+            display: block;
+            min-height: 10px;
+        }
+        div#results4 {
+            width: 24%;
+            float: left;
+            margin: 0 0 0 1%;
+            display: block;
+            min-height: 10px;
+        }*/
 
     .greywrap {
         float: left;
@@ -93,7 +100,7 @@
         }
         .greywraptitle {
             border-bottom: none;
-            padding: 4% 9% 4% 4%;
+            padding: 10px 25px 10px 10px;
             width: 87%;
             &:after{
                 content: "+";
@@ -108,7 +115,7 @@
         }
         .padedwidth {
             float: right;
-            width: 150px;
+            width: 60%;
         }
         .pad2 {
             padding: 10px;
@@ -125,9 +132,14 @@
     min-height: 100%;
     .home { 
         background: rgba(0, 0, 0, 0) url("riskhomebg.jpg") no-repeat scroll center top / cover ;
-        height: 100%;
-        width: 100%;    
-        min-height: 740px;
+        padding: 150px 5% 200px 5%;
+        width: 90%;
+        @include break(1100px){
+            height: 100%;
+            width: 100%;
+            min-height: 780px;
+            padding: 0;
+        }
     }
     .links {
         background: rgba(0, 0, 0, 0) url("risk_footer.jpg") no-repeat scroll center bottom / cover ;
@@ -138,33 +150,40 @@
     height: 100%;   
     .home {
         background: rgba(0, 0, 0, 0) url("PIhomebg.jpg") no-repeat scroll center top / cover ;
-        height: 100%;
-        width: 100%;    
-        min-height: 740px;
+
+
+
+        padding: 150px 5% 200px 5%;
+        width: 90%;
+        @include break(1100px){
+            height: 100%;
+            width: 100%;    
+            min-height: 740px;
+            padding: 0;
+        }
     }
     .links {
         background: rgba(0, 0, 0, 0) url("pi_footerbg.jpg") no-repeat scroll center bottom / cover ;
     }   
+
     .transperantbox {
-        height: 420px;
-        width: 920px;
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        position: absolute;
-        box-shadow: 0px 0px 18.56px 13.44px rgba(0, 0, 0, 0.392);
-        background-color: rgba(255,255,255,0.6);
-        z-index: 2;
+        height: auto;
+        @include break(1100px){
+            height: 420px;
+        }
     }
+
+
     .Journeyhometytle {
         padding-top: 40px;
         padding-bottom: 20px;
-        font-size: 60px;
+        font-size: 40px;
         text-align: center;
         color: #333333;
         line-height: 1.2em;
+        @include break(670px){
+            font-size: 60px;
+        }
     }
 }
 
@@ -173,9 +192,17 @@
     min-height: 100%;
     .home {
         background: rgba(0, 0, 0, 0) url("pas_main_bg.jpg") no-repeat scroll center top / cover ;
-        height: 100%;
-        width: 100%;    
-        min-height: 740px;
+
+
+        padding: 150px 5% 200px 5%;
+        width: 90%;
+        @include break(1100px){
+            height: 100%;
+            width: 100%;    
+            min-height: 740px;
+            padding: 0;
+        }
+
     }
     .links {
         background: rgba(0, 0, 0, 0) url("pas_footer_bg.jpg") no-repeat scroll center bottom / cover ;
@@ -183,7 +210,10 @@
 
 
     .transperantbox {
-        height: 470px;
+        height: auto;
+        @include break(1100px){
+            height: 470px;
+        }
     }
 }
 
@@ -192,9 +222,17 @@
     min-height: 100%;
     .home {
         background: rgba(0, 0, 0, 0) url("Advisory_Hot_topics_BG.jpg") no-repeat scroll center top / cover ;
-        height: 100%;
-        width: 100%;    
-        min-height: 740px;
+
+
+
+        padding: 150px 5% 200px 5%;
+        width: 90%;
+        @include break(1100px){
+            height: 100%;
+            width: 100%;    
+            min-height: 740px;
+            padding: 0;
+        }
     }
     .links {
         background: rgba(0, 0, 0, 0) url("Advisory_Hot_topics_foot-BG.jpg") no-repeat scroll center bottom / cover ;
@@ -203,7 +241,6 @@
         padding-top: 60px;
     }
 
-
 }
 
 .Sector_learning{
@@ -211,9 +248,14 @@
     min-height: 100%;
     .home {
         background: rgba(0, 0, 0, 0) url("sector_main_bg.jpg") no-repeat scroll center top / cover ;
-        height: 100%;
-        width: 100%;    
-        min-height: 740px;
+        padding: 150px 5% 200px 5%;
+        width: 90%;
+        @include break(1100px){
+            height: 100%;
+            width: 100%;    
+            min-height: 740px;
+            padding: 0;
+        }
     }
     .links {
         background: rgba(0, 0, 0, 0) url("sector_footer_bg.jpg") no-repeat scroll center bottom / cover ;

@@ -4,6 +4,14 @@ var sourseUrl = "src.json";
 
 jQuery(document).ready(function ($) {
 
+
+
+    $("#nav-icon").on('click', function () {
+        $(this).toggleClass('open');
+        $("#box").toggle(  )
+    });
+
+
     var body = $('html, body');
     var downarrow = $(".scroll");
 
