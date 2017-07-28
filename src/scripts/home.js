@@ -129,15 +129,10 @@ $(document).ready(function () {
     Next2("slider.json");
     
     
-    
-    
 //    Next2("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('Whats_new')/items?$top=1000");
 //    Next("../src.json");
 
 //Next("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('Courses')/items?$filter=(Learning_x0020_Journey_x0020_nam eq 'Welcome to Advisory Foundation') or (Learning_x0020_Journey_x0020_nam eq 'Welcome to Advisory Executive')");
-
-
-
 
 
 });
