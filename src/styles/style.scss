@@ -217,7 +217,7 @@
     }
 }
 
-.Advisory_Hot_topics{
+.Account_Topics{
     height: 500px;
     min-height: 100%;
     .home {
@@ -241,9 +241,16 @@
         padding-top: 60px;
     }
 
+    .transperantbox {
+        height: auto;
+        @include break(1100px){
+            height: 430px;
+        }
+    }
+
 }
 
-.Sector_learning{
+.Sector{
     height: 500px;
     min-height: 100%;
     .home {
@@ -259,6 +266,12 @@
     }
     .links {
         background: rgba(0, 0, 0, 0) url("sector_footer_bg.jpg") no-repeat scroll center bottom / cover ;
+    }
+    .transperantbox {
+        height: auto;
+        @include break(1100px){
+            height: 430px;
+        }
     }
 }
 
