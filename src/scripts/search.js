@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-
+console.log(this)
     var filtergroopstitle = $('.filtergroops .title');
 
     filtergroopstitle.on('click', function (e) {
@@ -42,8 +42,8 @@ $(document).ready(function () {
     var RiskWrap = $('#RiskCapabilities, #RiskServiceOfferings').parent();
     var PiWrap = $('#PiCapabilities, #PIServiceOfferings').parent();
 
-    var PAStick = $('#Division').find('input[value="PAS"]');
-    var PASWrap = $('#PASfferings, #PASPillarOfferings').parent();
+    //    var PAStick = $('#Division').find('input[value="PAS"]');
+    //    var PASWrap = $('#PASfferings, #PASPillarOfferings').parent();
 
     Risktick.on("click", function () {
         if (PItick.is(":checked") && Risktick.is(":checked") || PItick.is(":not(:checked)") && Risktick.is(":not(:checked)")) {
@@ -117,17 +117,37 @@ $(document).ready(function () {
 
 
     function WhriteTOStorage() {
-
 // Put the object into storage
-//        localStorage.setItem('AppliedFilters', JSON.stringify(AppliedFiltersOBJ));
-
-// Retrieve the object from storage
-//        var retrievedObject = localStorage.getItem('AppliedFilters');
-
-//        console.log('retrievedObject: ', JSON.parse(retrievedObject));
-
-//        console.log(AppliedFiltersOBJ)
+        localStorage.setItem('AppliedFilters', JSON.stringify(AppliedFiltersOBJ));
     }
+
+    function ReadFromStorage() {
+
+
+        // Retrieve the object from storage  var retrievedObject = localStorage.getItem('AppliedFilters');
+        var retrievedObject = localStorage.getItem('AppliedFilters');
+        var parsed = JSON.parse(retrievedObject);
+
+        $.each(parsed, function (key, data) {
+            $(data).each(function () {
+                setTimeout(function () {
+                    $('#' + key).find('input[value="' + this + '"]').trigger("click");
+                }, 400);
+
+//                console.log(key);
+            });
+//            console.log(key, data);
+
+        });
+//        var fieldvalue = $(this).text();
+//        var fieldsetname = $(this).parent().attr('class');
+//        
+//        $('#' + fieldsetname).find('input[value="' + fieldvalue + '"]').trigger("click");
+
+//        console.log(parsed);
+//        console.log(retrievedObject);
+    }
+    ReadFromStorage();
 
     initSliders();
 
@@ -142,12 +162,12 @@ $(document).ready(function () {
             crossDomain: true,
             xhrFields: {withCredentials: true}
         }).fail(function (xhr) {
-
+            console.log('fail fetch' + xhr);
         });
     };
     var Next = function (url) {
         $.when(Ajax(url)).then(function (data) {
-//            console.log(data)
+            console.log(data)
             $.each(data.d.results, function (key, data) {
                 for (var key in data) {
                     if (data[key] === null && key !== 'Title' && key !== 'gpqg' && key !== 'Course_x0020_Code' && key !== 'Short_x0020_description' && key !== 'America_x0027_s_x0020_classroom_' && key !== 'America_x0027_s_x0020_AA_x0020_C' && key !== 'Blended_x0020_learning_x0020_pro') {

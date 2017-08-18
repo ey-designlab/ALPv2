@@ -80,6 +80,8 @@ $(document).ready(function () {
             backgroundPosition: coords
         });
     });
+    
+    
     var Ajax2 = function (url) {
         return $.ajax({
             url: url,
