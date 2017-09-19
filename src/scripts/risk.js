@@ -31,8 +31,8 @@ $(document).ready(function () {
                     }
                 }
 
-//                $.each(data.Division.results, function (key, dat) {
-//                    if (dat === "Risk") {
+                $.each(data.Division.results, function (key, dat) {
+                    if (dat === "Risk") {
 
                 FilteredContent.push({
                     Area: data.Area.results,
@@ -67,8 +67,8 @@ $(document).ready(function () {
                     AmericaAACPE: data.America_x0027_s_x0020_AA_x0020_C,
                     Blended: data.Blended_x0020_learning_x0020_pro
                 });
-//                    }
-//                });
+                    }
+                });
             });
 
 
@@ -80,7 +80,7 @@ $(document).ready(function () {
             };
 
             var bla = function (result, jQ) {
-                $("#Divisiontrigger").trigger("click");
+//                $("#Divisiontrigger").trigger("click");
 
                 $('.greywrap').on('click', function (e) {
                     $('.greywrap').not(this).removeClass('activedesc').find('.greydescription').slideUp();

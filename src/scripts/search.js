@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-console.log(this)
     var filtergroopstitle = $('.filtergroops .title');
 
     filtergroopstitle.on('click', function (e) {
@@ -37,8 +36,8 @@ console.log(this)
     });
 
 
-    var Risktick = $('#Division').find('input[value="Risk"]');
-    var PItick = $('#Division').find('input[value="PI"]');
+    var Risktick = $('#SubServiceLine').find('input[value="Risk"]');
+    var PItick = $('#SubServiceLine').find('input[value="PI"]');
     var RiskWrap = $('#RiskCapabilities, #RiskServiceOfferings').parent();
     var PiWrap = $('#PiCapabilities, #PIServiceOfferings').parent();
 
@@ -73,7 +72,9 @@ console.log(this)
 
 
     MainArr = [];
+
     var fieldset = $('fieldset');
+
     var AppliedFiltersOBJ = {};
 
     $('.filterwrap input').on('click', function (e) {
@@ -99,7 +100,7 @@ console.log(this)
             }
         });
 
-        WhriteTOStorage();
+//        WhriteTOStorage();
 
         $('.clearall').on('click', function (e) {
             $('fieldset input:checked').each(function (j) {
@@ -116,38 +117,38 @@ console.log(this)
     });
 
 
-    function WhriteTOStorage() {
-// Put the object into storage
-        localStorage.setItem('AppliedFilters', JSON.stringify(AppliedFiltersOBJ));
-    }
-
-    function ReadFromStorage() {
-
-
-        // Retrieve the object from storage  var retrievedObject = localStorage.getItem('AppliedFilters');
-        var retrievedObject = localStorage.getItem('AppliedFilters');
-        var parsed = JSON.parse(retrievedObject);
-
-        $.each(parsed, function (key, data) {
-            $(data).each(function () {
-                setTimeout(function () {
-                    $('#' + key).find('input[value="' + this + '"]').trigger("click");
-                }, 400);
-
-//                console.log(key);
-            });
-//            console.log(key, data);
-
-        });
-//        var fieldvalue = $(this).text();
-//        var fieldsetname = $(this).parent().attr('class');
-//        
-//        $('#' + fieldsetname).find('input[value="' + fieldvalue + '"]').trigger("click");
-
-//        console.log(parsed);
-//        console.log(retrievedObject);
-    }
-    ReadFromStorage();
+//    function WhriteTOStorage() {
+//// Put the object into storage
+//        localStorage.setItem('AppliedFilters', JSON.stringify(AppliedFiltersOBJ));
+//    }
+//
+//    function ReadFromStorage() {
+//
+//
+//        // Retrieve the object from storage  var retrievedObject = localStorage.getItem('AppliedFilters');
+//        var retrievedObject = localStorage.getItem('AppliedFilters');
+//        var parsed = JSON.parse(retrievedObject);
+//
+//        $.each(parsed, function (key, data) {
+//            $(data).each(function () {
+//                setTimeout(function () {
+//                    $('#' + key).find('input[value="' + this + '"]').trigger("click");
+//                }, 400);
+//
+////                console.log(key);
+//            });
+////            console.log(key, data);
+//
+//        });
+////        var fieldvalue = $(this).text();
+////        var fieldsetname = $(this).parent().attr('class');
+////        
+////        $('#' + fieldsetname).find('input[value="' + fieldvalue + '"]').trigger("click");
+//
+////        console.log(parsed);
+////        console.log(retrievedObject);
+//    }
+//    ReadFromStorage();
 
     initSliders();
 
@@ -179,10 +180,10 @@ console.log(this)
 
                 FilteredContent.push({
                     Area: data.Area.results,
-                    SubServiceLine: data.Sector.results,
+//                    SubServiceLine: data.Sector.results,
                     ranks: data.Rank.results,
 //                    ranks: data.Rank.results.join(', '),
-                    Division: data.Division.results,
+                    SubServiceLine: data.Division.results,
                     RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
                     PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
                     RiskServiceOfferings: data.Risk_x0020_Service_x0020_Offerin.results,
@@ -198,6 +199,7 @@ console.log(this)
                     LearningType: data.Learning_x0020_Type0.results,
                     CourseType: data.Learning_x0020_type.results,
                     PASPillarOfferings: data.temp.results,
+                    WinningintheMarket: data.Winning_x0020_in_x0020_the_x0020.results,
 
                     URL: data.Course_x0020_URL.Url,
 
@@ -256,7 +258,7 @@ console.log(this)
                 }
             });
             FJS.addCriteria({field: 'ranks', ele: '#ranks input:checkbox'});
-            FJS.addCriteria({field: 'Division', ele: '#Division input:checkbox'});
+//            FJS.addCriteria({field: 'Division', ele: '#Division input:checkbox'});
             FJS.addCriteria({field: 'CourseType', ele: '#CourseType input:checkbox', all: 'all'});
             FJS.addCriteria({field: 'CourseLevel', ele: '#CourseLevel input:checkbox'});
             FJS.addCriteria({field: 'Area', ele: '#Area input:checkbox'});
@@ -274,6 +276,8 @@ console.log(this)
             FJS.addCriteria({field: 'AmericaAACPE', ele: '#AmericaAACPE'});
             FJS.addCriteria({field: 'PASfferings', ele: '#PASfferings input:checkbox'});
             FJS.addCriteria({field: 'PASPillarOfferings', ele: '#PASPillarOfferings input:checkbox'});
+            FJS.addCriteria({field: 'WinningintheMarket', ele: '#WinningintheMarket input:checkbox'});
+            
 
 
             //            FJS.addCriteria({field: 'Division', ele: '#Division', all: 'all', selector: 'select'});

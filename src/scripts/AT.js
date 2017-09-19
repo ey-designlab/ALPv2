@@ -10,10 +10,13 @@ $(document).ready(function () {
         $('#Sales_Winning_Market').removeAttr('checked');
         FJS.setTemplate('#list', true);
     });
+    
     $('#Sales_Winning_Market').on('click', function (e) {
         $('.Sales_Winning .next').hide();
         $('.Sales_Winning .finish').show();
     });
+
+
 
     var FilteredContent = [];
 
@@ -41,36 +44,46 @@ $(document).ready(function () {
                     }
                 }
 
-                FilteredContent.push({
-                    Area: data.Area.results,
-                    SubServiceLine: data.Sector.results,
-                    ranks: data.Rank.results,
-                    Division: data.Division.results,
-                    RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
-                    PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
-                    RiskServiceOfferings: data.Risk_x0020_Service_x0020_Offerin.results,
-                    PIServiceOfferings: data.PI_x0020_Service_x0020_Offerings.results,
-                    LearningJourneyname: data.Learning_x0020_Journey_x0020_nam.results,
-                    CourseLevel: data.Course_x0020_Level.results,
-                    Region: data.Region.results,
-                    Competency: data.Consultancy_x0020_Competency.results,
-                    Sector: data.Sector.results,
-                    PASPillars: data.PAS_x0020_Pillars.results,
-                    PASfferings: data.PAS_x0020__x002d__x0020_Offering.results,
-                    GrowthDrivers: data.Growth_x0020_Drivers.results,
-                    LearningType: data.Learning_x0020_Type0.results,
-                    CourseType: data.Learning_x0020_type.results,
+                $.each(data.Division.results, function (key, dat) {
+                    if (dat === "Account Topics") {
 
-                    URL: data.Course_x0020_URL.Url,
+                        FilteredContent.push({
+                            Area: data.Area.results,
+//                    SubServiceLine: data.Sector.results,
+                            ranks: data.Rank.results,
+//                    ranks: data.Rank.results.join(', '),
+                            SubServiceLine: data.Division.results,
+                            RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
+                            PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
+                            RiskServiceOfferings: data.Risk_x0020_Service_x0020_Offerin.results,
+                            PIServiceOfferings: data.PI_x0020_Service_x0020_Offerings.results,
+                            LearningJourneyname: data.Learning_x0020_Journey_x0020_nam.results,
+                            CourseLevel: data.Course_x0020_Level.results,
+                            Region: data.Region.results,
+                            Competency: data.Consultancy_x0020_Competency.results,
+                            Sector: data.Sector.results,
+                            PASPillars: data.PAS_x0020_Pillars.results,
+                            PASfferings: data.PAS_x0020__x002d__x0020_Offering.results,
+                            GrowthDrivers: data.Growth_x0020_Drivers.results,
+                            LearningType: data.Learning_x0020_Type0.results,
+                            CourseType: data.Learning_x0020_type.results,
+                            PASPillarOfferings: data.temp.results,
+                            WinningintheMarket: data.Winning_x0020_in_x0020_the_x0020.results,
 
-                    Title: data.Title,
-                    Duration: data.gpqg,
-                    coursecode: data.Course_x0020_Code,
-                    description: data.Short_x0020_description,
-                    America: data.America_x0027_s_x0020_classroom_,
-                    AmericaAACPE: data.America_x0027_s_x0020_AA_x0020_C,
-                    Blended: data.Blended_x0020_learning_x0020_pro
+                            URL: data.Course_x0020_URL.Url,
+
+                            Title: data.Title,
+                            Duration: data.gpqg,
+                            coursecode: data.Course_x0020_Code,
+                            description: data.Short_x0020_description,
+                            America: data.America_x0027_s_x0020_classroom_,
+                            AmericaAACPE: data.America_x0027_s_x0020_AA_x0020_C,
+                            Blended: data.Blended_x0020_learning_x0020_pro
+                        });
+
+                    }
                 });
+
             });
 
             var afterFilter = function (result, jQ) {
@@ -108,7 +121,7 @@ $(document).ready(function () {
             FJS.addCriteria({field: 'Region', ele: '.regions input:radio'});
             FJS.addCriteria({field: 'ranks', ele: '#ranks input:radio'});
 
-            FJS.addCriteria({field: 'Division', ele: '#Sales_Winning_Market'});
+            FJS.addCriteria({field: 'WinningintheMarket', ele: '#Sales_Winning_Market'});
             FJS.addCriteria({field: 'GrowthDrivers', ele: '.Growth_Drivers input:radio'});
 
 

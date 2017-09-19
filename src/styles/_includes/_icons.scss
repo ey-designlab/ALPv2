@@ -23,6 +23,11 @@
     "generalicons/Japan.png", 
     "generalicons/Japan_underline.png");
 }
+.Normal_EMEIA{
+    @include icons(
+    "generalicons/Normal_EMEIA.png", 
+    "generalicons/Over_EMEIA.png");
+}
 .Normal_Canada{
     @include icons(
     "generalicons/Normal_Canada.png", 
@@ -683,38 +688,253 @@
     "pasicons/HR_OperatingDelivery_model.png", 
     "pasicons/HR_OperatingDelivery_model_hover.png");
 }
-.XXX{
+
+
+
+
+
+
+.Automotive{
     @include icons(
-    "pasicons/XXX.png", 
-    "pasicons/XXX.png");
+    "sectoricons/automotive.png", 
+    "sectoricons/automotive_hover.png");
 }
-.XXX{
+.consumerProducts{
     @include icons(
-    "pasicons/XXX.png", 
-    "pasicons/XXX.png");
+    "sectoricons/consumerProducts.png", 
+    "sectoricons/consumerProducts_hover.png");
 }
-.XXX{
+.FS{
     @include icons(
-    "pasicons/XXX.png", 
-    "pasicons/XXX.png");
+    "sectoricons/FS.png", 
+    "sectoricons/FS_hover.png");
 }
-.XXX{
+.government{
     @include icons(
-    "pasicons/XXX.png", 
-    "pasicons/XXX.png");
+    "sectoricons/government.png", 
+    "sectoricons/government_hover.png");
 }
-.XXX{
+.health{
     @include icons(
-    "pasicons/XXX.png", 
-    "pasicons/XXX.png");
+    "sectoricons/health.png", 
+    "sectoricons/health_hover.png");
 }
-.XXX{
+.insurance{
     @include icons(
-    "pasicons/XXX.png", 
-    "pasicons/XXX.png");
+    "sectoricons/insurance.png", 
+    "sectoricons/insurance_hover.png");
 }
-.XXX{
+.lifeSciences{
     @include icons(
-    "pasicons/XXX.png", 
-    "pasicons/XXX.png");
+    "sectoricons/lifeSciences.png", 
+    "sectoricons/lifeSciences_hover.png");
+}
+
+.media{
+    @include icons(
+    "sectoricons/media.png", 
+    "sectoricons/media_hover.png");
+}
+.mining{
+    @include icons(
+    "sectoricons/mining.png", 
+    "sectoricons/mining_hover.png");
+}
+.OilGas{
+    @include icons(
+    "sectoricons/OilGas.png", 
+    "sectoricons/OilGas_hover.png");
+}
+.Power{
+    @include icons(
+    "sectoricons/Power.png", 
+    "sectoricons/Power_hover.png");
+}
+.realEstate{
+    @include icons(
+    "sectoricons/realEstate.png", 
+    "sectoricons/realEstate_hover.png");
+}
+.technology{
+    @include icons(
+    "sectoricons/technology.png", 
+    "sectoricons/technology-hover.png");
+}
+.telecommunications{
+    @include icons(
+    "sectoricons/telecommunications.png", 
+    "sectoricons/telecommunications_hover.png");
+}
+.wealthManagement{
+    @include icons(
+    "sectoricons/wealthManagement.png", 
+    "sectoricons/wealthManagement_hover.png");
+}
+.fundamental{
+    @include icons(
+    "sectoricons/fundamental.png", 
+    "sectoricons/fundamental_hover.png");
+}
+.informal{
+    @include icons(
+    "sectoricons/informal.png", 
+    "sectoricons/informal_hover.png");
+}
+.serviceOfferings{
+    @include icons(
+    "sectoricons/serviceOfferings.png", 
+    "sectoricons/serviceOfferings_hover.png");
+}
+.Private_Equity{
+    @include icons(
+    "sectoricons/Private_Equity.png", 
+    "sectoricons/Private_Equity_hover.png");
+}
+
+
+
+.growthDrivers{
+    @include icons(
+    "Account_Topicsicons/growthDrivers.png", 
+    "Account_Topicsicons/growthDrivers_hover.png");
+}
+.SalesWinning{
+    @include icons(
+    "Account_Topicsicons/SalesWinning.png", 
+    "Account_Topicsicons/SalesWinning_hover.png");
+}
+.technology{
+    @include icons(
+    "Account_Topicsicons/technology.png", 
+    "Account_Topicsicons/technology_hover.png");
+}
+.strategy{
+    @include icons(
+    "Account_Topicsicons/strategy.png", 
+    "Account_Topicsicons/strategy_hover.png");
+}
+.Digital{
+    @include icons(
+    "Account_Topicsicons/Digital.png", 
+    "Account_Topicsicons/Digital_hover.png");
+}
+.Analytics{
+    @include icons(
+    "Account_Topicsicons/Analytics.png", 
+    "Account_Topicsicons/Analytics_hover.png");
+}
+.Cyber{
+    @include icons(
+    "Account_Topicsicons/Cyber.png", 
+    "Account_Topicsicons/Cyber_hover.png");
+}
+.FAIT{
+    @include icons(
+    "Account_Topicsicons/FAIT.png", 
+    "Account_Topicsicons/FAIT_hover.png");
+}
+.PAS{
+    @include icons(
+    "Account_Topicsicons/PAS.png", 
+    "Account_Topicsicons/PAS_hover.png");
+}
+.PASlearning{
+    .Digital{
+        @include icons(
+        "pasicons/Digital.png", 
+        "pasicons/Digital_hover.png");
+    }
+    .HR_Technology{
+        @include icons(
+        "pasicons/HR_Technology.png", 
+        "pasicons/HR_Technology_hover.png");
+    }
+    .Payroll{
+        @include icons(
+        "pasicons/Payroll.png", 
+        "pasicons/Payroll_hover .png");
+    }
+    .People_Risk{
+        @include icons(
+        "pasicons/People_Risk.png", 
+        "pasicons/People_Risk_hover.png");
+    }
+    .OrganizationalDevelopment{
+        @include icons(
+        "pasicons/OrganizationalDevelopment.png", 
+        "pasicons/OrganizationalDevelopment_hover.png");
+    }
+    .Capability_Development{
+        @include icons(
+        "pasicons/Capability_Development.png", 
+        "pasicons/Capability_Development_hover.png");
+    }
+    .talent_management{
+        @include icons(
+        "pasicons/talent_management.png", 
+        "pasicons/talent_management_hover.png");
+    }
+    .workforce_strategy{
+        @include icons(
+        "pasicons/workforce_strategy.png", 
+        "pasicons/workforce_strategy_hover.png");
+    }
+
+}
+.PiLearning{
+    .experience{
+        @include icons(
+        "piicons/experience.png", 
+        "piicons/experience_hover.png");
+    }
+    .AI{
+        @include icons(
+        "piicons/AI.png", 
+        "piicons/AI_hover.png"); 
+    }
+    .printing{
+        @include icons(
+        "piicons/3d_printing.png", 
+        "piicons/3d_printing_hover.png");
+    }
+    .IoT{
+        @include icons(
+        "piicons/IoT.png", 
+        "piicons/IoT_hover.png");
+    }
+    .blockchain{
+        @include icons(
+        "piicons/blockchain.png", 
+        "piicons/blockchain_hover.png");
+    }
+    .rpa{
+        @include icons(
+        "piicons/rpa.png", 
+        "piicons/rpa_hover.png");
+    }
+    .xxx{
+        @include icons(
+        "piicons/xxxxx.png", 
+        "piicons/xxxxx.png");
+    }
+    .xxx{
+        @include icons(
+        "piicons/xxxxx.png", 
+        "piicons/xxxxx.png");
+    }
+    .xxx{
+        @include icons(
+        "piicons/xxxxx.png", 
+        "piicons/xxxxx.png");
+    }
+    .xxx{
+        @include icons(
+        "piicons/xxxxx.png", 
+        "piicons/xxxxx.png");
+    }
+    .xxx{
+        @include icons(
+        "piicons/xxxxx.png", 
+        "piicons/xxxxx.png");
+    }
 }

@@ -121,10 +121,6 @@
             padding: 10px;
         }
     }
-
-
-
-
 }
 
 .risk{
@@ -150,9 +146,6 @@
     height: 100%;   
     .home {
         background: rgba(0, 0, 0, 0) url("PIhomebg.jpg") no-repeat scroll center top / cover ;
-
-
-
         padding: 150px 5% 200px 5%;
         width: 90%;
         @include break(1100px){
@@ -172,7 +165,6 @@
             height: 420px;
         }
     }
-
 
     .Journeyhometytle {
         padding-top: 40px;
@@ -197,10 +189,9 @@
         padding: 150px 5% 200px 5%;
         width: 90%;
         @include break(1100px){
-            height: 100%;
             width: 100%;    
             min-height: 740px;
-            padding: 0;
+            padding: 150px 0 180px 0;
         }
 
     }
@@ -208,13 +199,222 @@
         background: rgba(0, 0, 0, 0) url("pas_footer_bg.jpg") no-repeat scroll center bottom / cover ;
     }
 
+    .bottomtext{
+        padding: 50px;
+        margin: 0;
+        text-align: center;
+    }
 
     .transperantbox {
         height: auto;
+        position: relative;
         @include break(1100px){
-            height: 470px;
+            height: 720px;
+            position: relative;
+        }
+
+        .homeinfobox{    
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 160px;
+            height: 180px;
+            position: relative;
+            margin: 40px 20px;
+            float: left;
         }
     }
+
+    .resultss{
+        background: transparent url("Roadmap_background.jpg") no-repeat scroll center bottom;
+        background-size: auto auto;
+        background-size: cover;
+        color: #fff;
+
+        padding-top: 60px;
+        p{
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        #resultss{
+            position: relative;
+            top: 160px;            
+        }
+        .Foundationwrap{
+            img{
+                padding-top: 60px;
+            }
+
+        }
+    }
+
+    .ADVISORYgroop {
+        background-image: url(whitegradiant.png);
+        padding: 115px 0 10px 0;
+        text-align: center;
+        width: 38%;
+        float: left;
+        margin-right: 1%;
+        color: #000;
+    }
+    .CAREERgroop {
+        background-image: url(whitegradiant.png);
+        padding: 115px 0 10px 0;
+        text-align: center;
+        width: 21%;
+        float: left;
+        margin-right: 1%;
+        color: #000;
+    }
+    .CLIENTSgroop {
+        background-image: url(whitegradiant.png);
+        padding: 115px 0 10px 0;
+        text-align: center;
+        width: 39%;
+        float: left;
+        color: #000;
+    }
+
+    div#fjs_1 {
+        top: 100px;
+        left: 150px;
+    }
+    div#fjs_2 {
+        top: 30px;
+        left: 300px;
+    }
+    div#fjs_3 {
+        top: -3px;
+        left: 110px;
+    }
+    div#fjs_4 {
+        top: -40px;
+        left: 225px;
+    }
+    div#fjs_5 {
+        top: -49px;
+        left: 347px;
+    }
+    div#fjs_6 {
+        top: -50px;
+        left: 472px;
+    }
+    div#fjs_7 {
+        top: -10px;
+        left: 579px;
+    }
+    #fjs_7 .smallcyrkle{
+        left: 0;
+    }
+    #fjs_7 .cyrcklecontent {
+        right: 113px;
+        left: auto;
+    }
+    #fjs_7 .strightline {
+        right: 107px;
+        left: auto;
+    }
+    #fjs_7 .rotatedline{  
+        transform: rotate(-122deg);
+        transform-origin: 12px 50% 0;
+    }
+    div#fjs_8 {
+        top: -55px;
+        left: 703px;
+    }
+    #fjs_8 .smallcyrkle{
+        left: 0;
+    }
+    #fjs_8 .cyrcklecontent {
+        right: 113px;
+        left: auto;
+    }
+    #fjs_8 .strightline {
+        right: 107px;
+        left: auto;
+    }
+    #fjs_8 .rotatedline{  
+        transform: rotate(-122deg);
+        transform-origin: 12px 50% 0;
+    }
+    div#fjs_9 {
+        top: -47px;
+        left: 820px;
+    }
+    #fjs_9 .smallcyrkle{
+        left: 0;
+    }
+    #fjs_9 .cyrcklecontent {
+        right: 113px;
+        left: auto;
+    }
+    #fjs_9 .strightline {
+        right: 107px;
+        left: auto;
+    }
+    #fjs_9 .rotatedline{  
+        transform: rotate(-122deg);
+        transform-origin: 12px 50% 0;
+    }
+    div#fjs_10 {
+        top: 2px;
+        left: 916px;
+    }
+    #fjs_10 .smallcyrkle{
+        left: 0;
+    }
+    #fjs_10 .cyrcklecontent {
+        right: 113px;
+        left: auto;
+    }
+    #fjs_10 .strightline {
+        right: 107px;
+        left: auto;
+    }
+    #fjs_10 .rotatedline{  
+        transform: rotate(-122deg);
+        transform-origin: 12px 50% 0;
+    }
+    div#fjs_11 {
+        top: 40px;
+        left: 753px;
+    }
+    #fjs_11 .smallcyrkle{
+        left: 0;
+    }
+    #fjs_11 .cyrcklecontent {
+        right: 113px;
+        left: auto;
+    }
+    #fjs_11 .strightline {
+        right: 107px;
+        left: auto;
+    }
+    #fjs_11 .rotatedline{  
+        transform: rotate(-122deg);
+        transform-origin: 12px 50% 0;
+    }
+
+    div#fjs_12 {
+        top: 100px;
+        left: 913px;
+    }
+    #fjs_12 .smallcyrkle{
+        left: 0;
+    }
+    #fjs_12 .cyrcklecontent {
+        right: 113px;
+        left: auto;
+    }
+    #fjs_12 .strightline {
+        right: 107px;
+        left: auto;
+    }
+    #fjs_12 .rotatedline{  
+        transform: rotate(-122deg);
+        transform-origin: 12px 50% 0;
+    }
+
 }
 
 .Account_Topics{
@@ -247,6 +447,9 @@
             height: 430px;
         }
     }
+    .linkswrap{
+        height: 200px;
+    }
 
 }
 
@@ -275,7 +478,7 @@
     }
 }
 
-@media print { 
+@media print {
     .header, .footer, .sidebar, .searchbox2 {
         display: none !important;
     }

@@ -28,14 +28,15 @@ $(document).ready(function () {
                     }
                 }
 
-//                $.each(data.Division.results, function (key, dat) {
-//                    if (dat === "PI") {
+                $.each(data.Division.results, function (key, dat) {
+                    if (dat === "PI") {
 
                 FilteredContent.push({
                     Area: data.Area.results,
-                    SubServiceLine: data.Sector.results,
+//                    SubServiceLine: data.Sector.results,
                     ranks: data.Rank.results,
-                    Division: data.Division.results,
+//                    ranks: data.Rank.results.join(', '),
+                    SubServiceLine: data.Division.results,
                     RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
                     PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
                     RiskServiceOfferings: data.Risk_x0020_Service_x0020_Offerin.results,
@@ -51,6 +52,7 @@ $(document).ready(function () {
                     LearningType: data.Learning_x0020_Type0.results,
                     CourseType: data.Learning_x0020_type.results,
                     PASPillarOfferings: data.temp.results,
+                    WinningintheMarket: data.Winning_x0020_in_x0020_the_x0020.results,
 
                     URL: data.Course_x0020_URL.Url,
 
@@ -62,15 +64,20 @@ $(document).ready(function () {
                     AmericaAACPE: data.America_x0027_s_x0020_AA_x0020_C,
                     Blended: data.Blended_x0020_learning_x0020_pro
                 });
-//                    }
-//                });
+                    }
+                });
             });
 
             var afterFilter = function (result, jQ) {
                 $('#total').text(result.length);
             };
             var bla = function (result, jQ) {
-                $("#Divisiontrigger").trigger("click");
+
+//                setTimeout(function () {
+//
+//                    $("#Divisiontrigger").trigger("click");
+//                }, 1000);
+
 
                 $('.greywrap').on('click', function (e) {
                     $('.greywrap').not(this).removeClass('activedesc').find('.greydescription').slideUp();

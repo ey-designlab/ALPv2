@@ -9,8 +9,6 @@
     p {
         font-size: 1.2em;
     } 
-
-
     .scroll {
         bottom: 20px;
         left: 0;
@@ -39,15 +37,15 @@
         position: relative;
         box-shadow: 0px 0px 18.56px 13.44px rgba(0, 0, 0, 0.392);
         background-color: rgba(255, 255, 255, 0.6);
-        padding: 0 4%;
-        width: 84%;
-        margin: 0 4%;
+        padding: 20px 4%;
+        width: 72%;
+        margin: 0 10%;
         height: auto;
         @include break(1100px){
-/*            width: 830px;
-            margin: 0 auto;
-            padding: 60px;
-            height: 450px;*/
+            /*            width: 830px;
+                        margin: 0 auto;
+                        padding: 60px;
+                        height: 450px;*/
         }
     }
     .darkblock {
@@ -512,7 +510,12 @@
     .Blended{
         width: 100%;
         height: 70px;
-
+        position: relative;
+        img{
+            position: relative;
+            left: 200px;
+            top: 9px;
+        }
         width: 100%;
         @include break(920px){
             width: auto;
@@ -549,6 +552,7 @@
             display: none;
             position: absolute;
             top: 84px;
+            width: 230px;
         }
 
 
@@ -1264,18 +1268,19 @@
         box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0,0,0,.2)
     }
 
-    .ui-tooltip {
-        padding: 8px;
-        position: absolute;
-        z-index: 9999;
-        max-width: 300px;
-        box-shadow: 0 0 5px #aaa;
-        background-color:white !important; 
-    }
+
 }
 
 
 .WTA_Learning_Journey{
+    .home {
+        background: rgba(0, 0, 0, 0) url("road.jpg") no-repeat scroll center top / cover ;
+        width: 100%;
+        padding: 150px 0 50px 0;
+        @include break(1200px){
+            padding: 0;
+        }
+    }
     .capability h1{
         margin-top: 20px;
     }
@@ -1285,46 +1290,79 @@
         cursor: pointer;
         padding: 0 0 20px 0;
         position: static;
+        display: none;
+        @include break(1200px){
+            display: block;
+        }
     }
+    .Foundationwrap {
+        @include break2(1200px){
+            display: none !important;
+        }
+        h1 {
+            position: absolute;
+            color: #FFFFFF;
+            top: -190px;
+            width: 100%;
+        }
+        p {
+            position: absolute;
+            color: #FFFFFF;
+            top: -120px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .Executivewrap {
+        width: 1160px;
 
-    .Foundationwrap h1 {
-        position: absolute;
-        color: #FFFFFF;
-        top: -190px;
-        width: 100%;
-    }
-    .Foundationwrap p {
-        position: absolute;
-        color: #FFFFFF;
-        top: -120px;
-        width: 100%;
-        text-align: center;
-    }
-    .Executivewrap p {
-        position: absolute;
-        color: #FFFFFF;
-        top: -120px;
-        width: 100%;
-        text-align: center;
-    }
-    .Executivewrap h1 {
-        position: absolute;
-        color: #FFFFFF;
-        top: -190px;
-        width: 100%;
-    }
-    .home {
-        background: rgba(0, 0, 0, 0) url("road.jpg") no-repeat scroll center top / cover ;
-        width: 100%;
-    }
+        @include break2(1200px){
+            display: none !important;
+        }
+        p {
+            position: absolute;
+            color: #FFFFFF;
+            top: -120px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            position: absolute;
+            color: #FFFFFF;
+            top: -190px;
+            width: 100%;
+        }
+    } 
+
+
+
 
     .results {
         background: rgba(0, 0, 0, 0) url("greybg.jpg") no-repeat scroll center bottom;
-        height: 0px;
         background-size: cover;
-        overflow: hidden;
+        height: auto;
+        @include break(1200px){
+            height: 0px;
+            overflow: hidden;
+        }
+        .maps {
+            width: 100%;
+            @include break(1200px){
+                position: absolute;
+                top: 240px;
+                left: 0;
+                transform: translate(0%, 0%);
+                transform-origin: left center;
+            }
+        }
     }
-
+    .animateheight{
+        transition: .25s ease-in-out; 
+        height: auto;
+        @include break(1200px){
+            height: 700px;
+        }
+    }
     .Executive{
         background: rgba(0, 0, 0, 0) url("Roadmap_background.jpg") no-repeat scroll center bottom;
         background-size: cover;
@@ -1337,19 +1375,236 @@
         font-size: 18px;
         width: 40px;
         text-align: center;
+        @include break2(1200px){
+            display: none !important;
+        }
     }
     .transperantbox {
-        width: 1160px;
-        height: 750px;
-        margin: 0 auto;
-        margin-bottom: 220px;
+        width: 92%;        
+        height: 1850px;
+        margin: 0 4%;
+
         top: 160px;
         left: 0;
         right: 0;
-        position: relative;
+        position: static;
         box-shadow: 0px 0px 18.56px 13.44px rgba(0, 0, 0, 0.392);
         background-color: rgba(255, 255, 255, 0.6);
+        text-align: center;
+
+        @include break(1200px){
+            position: relative;
+            width: 1160px;
+            margin: 0 auto;
+            margin-bottom: 220px;
+            height: 750px;
+            margin-bottom: 220px;
+        }
+
+
+
+
+        .ConsultanttoManager {
+            left: -110px;
+            color: #000;
+            width: 200px;
+            font-size: 13px;
+            background-color: rgba(255,255,255,0.5);
+            height: 30px;
+            padding-top: 20px;
+            position: absolute;
+
+            @include break(1200px){
+                top: 21px;
+                left: 638px;
+                border-left: 3px solid #fff;
+                border-top: 3px solid #fff;
+                padding: 20px 10px 30px 30px;
+                width: 98px;
+                background-color: rgba(255,255,255,0);
+            }
+        }
+        .SeniorManagertoPartner {
+            font-size: 13px;
+            left: 110px;
+            color: #000;
+            width: 200px;
+            background-color: rgba(255,255,255,0.5);
+            height: 50px;
+            position: absolute;
+
+            @include break(1200px){
+                top: 290px;
+                left: 639px;
+                border-left: 3px solid #fff;
+                border-bottom: 3px solid #fff;
+                padding: 27px 0px 3px 16px;
+                width: 121px;
+                background-color: rgba(255,255,255,0);
+            }
+        }
+
+
+        .pos1 {
+
+            @include break(1200px){
+                top: 110px;
+                left: 20px;
+                &:after {
+                    display: block;
+                    content: " ";
+                    background-color: #FFF;
+                    height: 3px;
+                    width: 30px;
+                    position: absolute;
+                    top: 20px;
+                    right: -30px;
+                }
+                &:before {
+                    display: block;
+                    content: ">";
+                    position: absolute;
+                    top: 2px;
+                    right: -24px;
+                    font-size: 28px;
+                    color: #FFF;
+                }
+            }
+
+
+        }
+        .pos2 {
+            @include break(1200px){
+                top: 110px;
+                left: 210px;
+                &:after {
+                    display: block;
+                    content: " ";
+                    background-color: #FFF;
+                    height: 3px;
+                    width: 30px;
+                    position: absolute;
+                    top: 20px;
+                    right: -30px;
+                }
+                &:before {
+                    display: block;
+                    content: ">";
+                    position: absolute;
+                    top: 2px;
+                    right: -24px;
+                    font-size: 28px;
+                    color: #FFF;
+                }
+            }
+        }
+        .pos3 {
+            @include break(1200px){
+                top: 110px;
+                left: 400px;
+                &:after {
+                    display: block;
+                    content: " ";
+                    background-color: #FFF;
+                    height: 3px;
+                    width: 30px;
+                    position: absolute;
+                    top: 20px;
+                    right: -30px;
+                }
+                &:before {
+                    display: block;
+                    content: ">";
+                    position: absolute;
+                    top: 2px;
+                    right: -24px;
+                    font-size: 28px;
+                    color: #FFF;
+                }
+            }
+        }
+        .pos4 {
+            @include break(1200px){
+                top: 110px;
+                left: 590px;
+            }
+        }
+        .pos5 {
+            top: 70px;
+            left: -90px;
+
+            @include break(1200px){
+                top: 0px;
+                left: 780px;              
+
+                &:after {
+                    display: block;
+                    content: " ";
+                    background-color: #FFF;
+                    height: 3px;
+                    width: 30px;
+                    top: 26px;
+                    right: -30px;
+                    position: absolute;
+                }
+                &:before {
+                    display: block;
+                    content: ">";
+                    position: absolute;
+                    top: 8px;
+                    right: -24px;
+                    font-size: 28px;
+                    color: #FFF;
+                }
+            }
+        }
+        .pos6 {
+            top: -150px;
+            left: 90px;
+            @include break(1200px){
+                top: 210px;
+                left: 780px;
+                &:after {
+                    display: block;
+                    content: " ";
+                    background-color: #FFF;
+                    height: 3px;
+                    width: 30px;
+                    position: absolute;
+                    top: 26px;
+                    right: -30px;
+                }
+                &:before {
+                    display: block;
+                    content: ">";
+                    position: absolute;
+                    top: 8px;
+                    right: -24px;
+                    font-size: 28px;
+                    color: #FFF;
+                }
+            }
+        }
+        .pos7 {
+            top: -150px;
+            left: -90px;
+            @include break(1200px){
+                top: 0px;
+                left: 970px;
+            }
+        }
+        .pos8 {   
+            top: -370px;
+            left: 90px;
+            @include break(1200px){
+                top: 210px;
+                left: 970px;
+
+            }
+        }
     }
+
+
     .Journeyhometytle {
         padding-top: 40px;
         padding-bottom: 20px;
@@ -1406,9 +1661,7 @@
         bottom: -107px;
         padding: 2%;
     }
-    .Executivewrap {
-        width: 1160px;
-    }
+
     .selectrankwrap, .selectwrap {
         text-align: center;
     }
@@ -1441,353 +1694,6 @@
         text-align: center;
     }
 
-
-    .greywraptitle {
-        border-bottom: 1px solid #cecece;
-        padding: 4%;
-        width: 92%;
-        background-color: #FFF;
-        color: #000000;
-    }
-    .learnmoregreen {
-        border-width: 2px;
-        border-color: #ffe600;
-        border-style: solid;
-        border-radius: 1px;
-        background-color: #FCEDBE;
-        text-align: center;
-        padding: 10px;
-        margin-top: 10px;
-        display: block;
-        text-decoration: none;
-        color: #000;
-        transition: all 0.3s ease;
-    }
-    .learnmoregreen:hover {
-        background-color: #ffe600;
-    }
-    .learnmoreinbox {
-        border-width: 2px;
-        border-color: #ffe600;
-        border-style: solid;
-        border-radius: 1px;
-        background-color: #FCEDBE;
-        text-align: center;
-        padding: 10px;
-        margin: 15px;
-        display: block;
-        text-decoration: none;
-        color: #000;
-        transition: all 0.3s ease;
-    }
-    .learnmoreinbox:hover {
-        background-color: #ffe600;
-    }
-    .activedesc .learnmoreinbox{
-        margin: 0;
-        height: 0;
-        padding: 0;
-        overflow: hidden;
-        border: none;
-    }
-    .greydescription {
-        background-color: #333333;
-        color: #ffffff;
-        overflow: hidden;
-        display: none;
-        cursor: auto;
-        border-bottom: 1px solid;
-        position: relative;
-    }
-    .colorbar{
-        background-color: #ffd500;
-        height: 3px;
-        width: 60px;
-        position: absolute;
-        display: block;
-    }
-    .padedwidth {
-        float: right;
-        width: 190px;
-    }
-    .pad {
-        padding: 2px 4%;
-    }
-    .pad2{
-        padding: 20px;
-    }
-
-    .selectrankwrap {
-        overflow: hidden;
-    }
-    .homeinfobox{    
-        background-color: rgba(255, 255, 255, 0.5);
-
-        width: 160px;
-        height: 180px;
-        position: relative;
-        position: absolute;
-    }
-    .homeinfoboxtitle{
-        background-color: rgba(255, 255, 255, 0.7);
-    }
-    .homeinfoboxtext {
-        padding: 10px;
-        font-size: 12px;
-    }
-    .homeinfobox img {
-        position: absolute;
-        top: 10px;
-        left: 5px;
-    }
-    .homeinfoboxtitle {
-        background-color: rgba(255, 255, 255, 0.7);
-        padding: 8px 21px 1px 44px;
-        font-size: 12px;
-        height: 38px;
-        font-weight: bold;
-    }
-    .homeinfobox a {
-        text-decoration: none;
-        padding: 5px;
-        border: 2px solid #000;
-        color: #000;
-        display: block;
-        font-size: 10px;
-        text-align: center;
-        width: 123px;
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        transition: all 0.3s ease;
-    }
-    .homeinfobox a:hover {
-        border: 2px solid #ffd500;
-        color: #ffd500;
-    }
-    .yelow{
-        background-color: #ffd500;
-    }
-    .yelowhor{
-        position: absolute;
-        width: 40px;
-        height: 3px;
-        background-color: #ffd500;
-        top: 53px;
-        right: 4px;
-    }
-    .yelowver {
-        position: absolute;
-        width: 3px;
-        height: 40px;
-        background-color: #ffd500;
-        top: 53px;
-        right: 4px;
-    }
-    .xx{
-        position: absolute;
-        width: 30px;
-        height: 2px;
-        background-color: #ffd500;
-        top: 4px;
-        right: 4px;
-    }
-    .xy {
-        position: absolute;
-        width: 2px;
-        height: 30px;
-        background-color: #ffd500;
-        top: 4px;
-        right: 4px;
-    }
-    .yx{
-        position: absolute;
-        width: 30px;
-        height: 2px;
-        background-color: #ffd500;
-        bottom: 4px;
-        left: 4px;
-    }
-    .yy {
-        position: absolute;
-        width: 2px;
-        height: 30px;
-        background-color: #ffd500;
-        bottom: 4px;
-        left: 4px;
-    }
-    .boxes {
-        position: relative;
-    }
-    .roundnumber {
-        position: absolute;
-        bottom: -24px;
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 0 0 30px 30px;
-        width: 30px;
-        height: 24px;
-        text-align: center;
-        left: 66px;
-    }
-    .ConsultanttoManager {
-        position: absolute;
-        top: 21px;
-        left: 638px;
-        color: #000;
-        width: 98px;
-        border-left: 3px solid #fff;
-        border-top: 3px solid #fff;
-        padding: 20px 10px 30px 30px;
-        font-size: 13px;
-    }
-    .SeniorManagertoPartner {
-        font-size: 13px;
-        position: absolute;
-        top: 290px;
-        left: 639px;
-        color: #000;
-        width: 121px;
-        border-left: 3px solid #fff;
-        border-bottom: 3px solid #fff;
-        padding: 27px 0px 3px 16px;
-    }
-    .pos1 {
-        top: 110px;
-        left: 20px;
-    }
-    .pos1:after {
-        display: block;
-        content: " ";
-        background-color: #FFF;
-        height: 3px;
-        width: 30px;
-        position: absolute;
-        top: 20px;
-        right: -30px;
-    }
-    .pos1:before {
-        display: block;
-        content: ">";
-        position: absolute;
-        top: 2px;
-        right: -24px;
-        font-size: 28px;
-        color: #FFF;
-    }
-    .pos2 {
-        top: 110px;
-        left: 210px;
-    }
-    .pos2:after {
-        display: block;
-        content: " ";
-        background-color: #FFF;
-        height: 3px;
-        width: 30px;
-        position: absolute;
-        top: 20px;
-        right: -30px;
-    }
-    .pos2:before {
-        display: block;
-        content: ">";
-        position: absolute;
-        top: 2px;
-        right: -24px;
-        font-size: 28px;
-        color: #FFF;
-    }
-    .pos3 {
-        top: 110px;
-        left: 400px;
-    }
-
-    .pos3:before {
-        display: block;
-        content: ">";
-        position: absolute;
-        top: -127px;
-        right: 36px;
-        font-size: 28px;
-        color: #FFF;
-    }
-    .pos4 {
-        top: 110px;
-        left: 590px;
-    }
-    .pos3:after {
-        display: block;
-        content: " ";
-        background-color: #FFF;
-        height: 3px;
-        width: 30px;
-        position: absolute;
-        top: 20px;
-        right: -30px;
-    }
-    .pos3:before {
-        display: block;
-        content: ">";
-        position: absolute;
-        top: 2px;
-        right: -24px;
-        font-size: 28px;
-        color: #FFF;
-    }
-    .pos5 {
-        top: 0px;
-        left: 780px;
-    }
-    .pos5:after {
-        display: block;
-        content: " ";
-        background-color: #FFF;
-        height: 3px;
-        width: 30px;
-        position: absolute;
-        top: 26px;
-        right: -30px;
-    }
-    .pos5:before {
-        display: block;
-        content: ">";
-        position: absolute;
-        top: 8px;
-        right: -24px;
-        font-size: 28px;
-        color: #FFF;
-    }
-    .pos6 {
-        top: 210px;
-        left: 780px;
-    }
-    .pos6:after {
-        display: block;
-        content: " ";
-        background-color: #FFF;
-        height: 3px;
-        width: 30px;
-        position: absolute;
-        top: 26px;
-        right: -30px;
-    }
-    .pos6:before {
-        display: block;
-        content: ">";
-        position: absolute;
-        top: 8px;
-        right: -24px;
-        font-size: 28px;
-        color: #FFF;
-    }
-    .pos7 {
-        top: 0px;
-        left: 970px;
-    }
-    .pos8 {     
-        top: 210px;
-        left: 970px;
-    }
     .ADVISORYgroop {
         background-image: url(whitegradiant.png);
         padding: 115px 0 10px 0;
@@ -1811,99 +1717,11 @@
         width: 39%;
         float: left;
     }
-    .maps {
-        position: absolute;
-        top: 240px;
-        left: 0;
-
-        transform: translate(0%, 0%);
-        transform-origin: left center;
-    }
-    .pointer {       
-        background-image: url("pointergrey.png");
-        pointer-events:all;
-        cursor: pointer;
-        height: 94px;
-        position: absolute;
-        width: 65px;
-        z-index: 10;
-    }
-    .pointer:hover {       
-        background-image: url("pointeryelow.png");
-    }
-
-    .smallcyrkle{
-        background: none repeat scroll 0 0 #ffd500;
-        height: 20px;
-        position: absolute;
-        width: 20px;
-        right: 0;
-        border-radius: 50%;
-        top: 0;
-        transform: scale(0);
-        transition: all 0.4s ease-in-out 0.2s;
-    }
-    .strightline {
-        background: none repeat scroll 0 0 #ffd500;
-        height: 2px;
-        width: 360px;
-        position: absolute;
-        top: -159px;
-        left: 107px;
-    }
-    .rotatedline{
-        background: none repeat scroll 0 0 #ffd500;
-        width: 200px;
-        height: 2px;
-        transform: rotate(-60deg);
-        transform-origin: 16px 50% 0;
-    }
-
-    .cyrcklecontent {
-        background: none repeat scroll 0 0 #2e2e2e;
-        color: #ffffff;
-        left: 113px;
-        max-height: 0;
+    .selectrankwrap {
         overflow: hidden;
-        position: absolute;
-        top: -150px;
-        width: 355px;
-        border: 1px solid #FFFFFF;
-        transition: all 0.4s ease-in-out 0.5s;
     }
 
-    .pointer:hover .pointertytle{
-        display: block;
-        transform: scale(1);
-    }
 
-    .pointer:hover .ch-info-front {
-        transform: scale(0);
-        opacity: 0;
-    } 
-
-    .pointer:hover .cyrcklecontent, .cyrcle:hover .cyrcklecontent2{
-        max-height: 1200px;
-    }
-
-    .pointer:hover .outercircle {
-        transform: scale(0);
-        opacity: 0;
-    } 
-    .pointer:hover .ch-info-back {
-        transform: scale(1);
-        opacity: 1;
-        pointer-events: auto;
-    }
-    .pointer:hover {
-        transform: scale(1);
-
-        pointer-events: auto;
-        z-index: 150;
-    }
-    .pointer:hover .smallcyrkle, .cyrcle:hover .smallcyrkle2{
-        transform: scale(1);
-    }
 
     div#fjs_1 {
         top: 100px;

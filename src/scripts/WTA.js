@@ -27,30 +27,23 @@ $(document).ready(function () {
     $(window).on("load scroll resize", function () {
         pageheight = $('.home').height();
 
-
-        var starterData = {
-            size: {
-                width: $(".results .row").width()
-            }
-        };
-        doResize(null, starterData);
     });
 
-//responsive map
-    var $el = $(".maps");
-    var elWidth = $el.outerWidth();
-
-
-    function doResize(event, ui) {
-        var scale;
-        scale = Math.min(
-                ui.size.width / elWidth
-                );
-        $el.css({
-            transform: "translate(0%, 0%) " + "scale(" + scale + ")"
-        });
-
-    }
+////responsive map
+//    var $el = $(".maps");
+//    var elWidth = $el.outerWidth();
+//
+//
+//    function doResize(event, ui) {
+//        var scale;
+//        scale = Math.min(
+//                ui.size.width / elWidth
+//                );
+//        $el.css({
+//            transform: "translate(0%, 0%) " + "scale(" + scale + ")"
+//        });
+//
+//    }
 
     $('.click1').on('click', function (e) {
         $('.mapone').find('input').trigger("click");
@@ -90,9 +83,11 @@ $(document).ready(function () {
             $('#LearningJourneyname .capabilityitem').removeClass('activeradio');
             $(this).addClass('activeradio');
 
-            $('.results').show().animate({
-                height: 700
-            }, 600, "easeInOutBack");
+            $('.results').show().addClass('animateheight');
+                    
+//                    .animate({
+//                height: 700
+//            }, 600, "easeInOutBack");
 
             $('.pointer:visible').css({"top": "", "opacity": 0});
         }

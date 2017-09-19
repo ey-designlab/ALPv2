@@ -486,9 +486,9 @@ input{
     padding: 50px 0 10px;
     text-align: center;
 }
-/*.hide{
+.hide{
     display: none;
-}*/
+}
 
 
 
@@ -683,7 +683,7 @@ input{
 
 }
 .blended-togle{
-    width: 470px;
+    width: 270px;
     display: inline-block;
     label{
         cursor: pointer;
@@ -813,6 +813,9 @@ fieldset{
         }*/
     .row{
         text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .marker {
         background-image: url("marker.png");
@@ -914,7 +917,14 @@ fieldset{
             }
         }*/
 }
-
+.ui-tooltip {
+    padding: 8px;
+    position: absolute;
+    z-index: 9999;
+    max-width: 300px;
+    box-shadow: 0 0 5px #aaa;
+    background-color:white !important; 
+}
 .greysquore{
     background-color: #ccc;
     height: 225px;
@@ -998,7 +1008,10 @@ fieldset{
 }
 
 .blended-togle{
-
+    img{
+        position: relative;
+        left: 120px;
+    }
 }
 .coursespopupdevider{
     border-bottom: 1px solid #ccc;
@@ -1068,4 +1081,320 @@ fieldset{
         width: 0%;
         left: 50%;
     }
+}
+
+.boxes {
+    width: 200px;
+    display: inline-block;
+    position: relative;
+    @include break(1200px){
+        position: relative;
+        width: auto;
+        display: block;
+    }
+
+    .homeinfobox{    
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 160px;
+        height: 180px;
+        position: relative;
+        margin: 40px 20px;
+        @include break(1200px){
+            position: absolute;
+            margin: 0;
+        }
+    }
+    .roundnumber {
+        position: absolute;
+        bottom: -24px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 0 0 30px 30px;
+        width: 30px;
+        height: 24px;
+        text-align: center;
+        left: 66px;
+    }
+    .homeinfoboxtext {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .homeinfobox img {
+        position: absolute;
+        top: 10px;
+        left: 5px;
+    }
+    .homeinfoboxtitle {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 8px 21px 1px 44px;
+        font-size: 12px;
+        height: 38px;
+        font-weight: bold;
+    }
+    .homeinfobox a {
+        text-decoration: none;
+        padding: 5px;
+        border: 2px solid #000;
+        color: #000;
+        display: block;
+        font-size: 10px;
+        text-align: center;
+        width: 123px;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        transition: all 0.3s ease;
+    }
+    .homeinfobox a:hover {
+        border: 2px solid #ffd500;
+        color: #ffd500;
+    }
+    .yelow{
+        background-color: #ffd500;
+    }
+    .yelowhor{
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background-color: #ffd500;
+        top: 53px;
+        right: 4px;
+    }
+    .yelowver {
+        position: absolute;
+        width: 3px;
+        height: 40px;
+        background-color: #ffd500;
+        top: 53px;
+        right: 4px;
+    }
+}
+
+
+//pointers 
+
+
+
+
+.pointer {
+    background-image: url("pointergrey.png");
+    pointer-events:all;
+    cursor: pointer;
+    height: 94px;
+    position: absolute;
+    width: 65px;
+    z-index: 10;
+
+    @include break2(1200px){
+        height: auto;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative;
+        margin: 10px;
+        width: 355px;
+        background-image: none;
+    }
+    &:hover {    
+        transform: scale(1);
+
+        pointer-events: auto;
+        z-index: 150;
+
+        @include break(1200px){
+            background-image: url("pointeryelow.png");
+        }
+
+        .pointertytle{
+            display: block;
+            transform: scale(1);
+        }
+        .ch-info-front {
+            transform: scale(0);
+            opacity: 0;
+        } 
+        .outercircle {
+            transform: scale(0);
+            opacity: 0;
+        } 
+        .ch-info-back {
+            transform: scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    .smallcyrkle{
+        width: 355px;
+
+        @include break(1200px){
+            background: none repeat scroll 0 0 #ffd500;
+            right: 0;
+            border-radius: 50%;
+            top: 0;
+            transform: scale(1);
+            transition: all 0.4s ease-in-out 0.2s;
+            transform: scale(0);
+            height: 20px;
+            position: absolute;
+            width: 20px;
+        }
+
+        .strightline {
+            background: none repeat scroll 0 0 #ffd500;
+            height: 2px;
+            width: 360px;
+            position: absolute;
+            top: -159px;
+            left: 107px;
+            display: none;
+            @include break(1200px){
+                display: block;
+            }
+        }
+        .rotatedline{
+            background: none repeat scroll 0 0 #ffd500;
+            width: 200px;
+            height: 2px;
+            transform: rotate(-60deg);
+            transform-origin: 16px 50% 0;
+            display: none;
+            @include break(1200px){
+                display: block;
+            }
+        }
+
+        .cyrcklecontent {
+            background: none repeat scroll 0 0 #2e2e2e;
+            color: #ffffff;
+            width: 355px;
+            border: 1px solid #FFFFFF;
+            transition: all 0.4s ease-in-out 0.5s;
+            @include break(1200px){
+                left: 113px;
+                max-height: 0;
+                overflow: hidden;
+                position: absolute;
+                top: -150px;
+            }
+
+            .colorbar{
+                background-color: #ffd500;
+                height: 3px;
+                width: 60px;
+                position: absolute;
+                display: block;
+            }
+
+            .greywraptitle {
+                border-bottom: 1px solid #cecece;
+                padding: 4%;
+                width: 92%;
+                background-color: #FFF;
+                color: #000000;
+            }
+        }
+        .padedwidth {
+            float: right;
+            width: 190px;
+        }
+        .pad {
+            padding: 2px 4%;
+        }
+        .greydescription {
+            background-color: #333333;
+            color: #ffffff;
+            overflow: hidden;
+            display: none;
+            cursor: auto;
+            border-bottom: 1px solid;
+            position: relative;
+
+            .pad2{
+                padding: 20px;
+                .learnmoregreen {
+                    border-width: 2px;
+                    border-color: #ffe600;
+                    border-style: solid;
+                    border-radius: 1px;
+                    background-color: #FCEDBE;
+                    text-align: center;
+                    padding: 10px;
+                    margin-top: 10px;
+                    display: block;
+                    text-decoration: none;
+                    color: #000;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        background-color: #ffe600;
+                    }
+                }
+                .xx{
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    background-color: #ffd500;
+                    top: 4px;
+                    right: 4px;
+                }
+                .xy {
+                    position: absolute;
+                    width: 2px;
+                    height: 30px;
+                    background-color: #ffd500;
+                    top: 4px;
+                    right: 4px;
+                }
+                .yx{
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    background-color: #ffd500;
+                    bottom: 4px;
+                    left: 4px;
+                }
+                .yy {
+                    position: absolute;
+                    width: 2px;
+                    height: 30px;
+                    background-color: #ffd500;
+                    bottom: 4px;
+                    left: 4px;
+                }
+            }
+        }
+    }
+    .learnmoreinbox {
+        border-width: 2px;
+        border-color: #ffe600;
+        border-style: solid;
+        border-radius: 1px;
+        background-color: #FCEDBE;
+        text-align: center;
+        padding: 10px;
+        margin: 15px;
+        display: block;
+        text-decoration: none;
+        color: #000;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: #ffe600;
+        }
+    }
+    .activedesc .learnmoreinbox{
+        margin: 0;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        border: none;
+    }
+
+}
+
+
+
+.pointer:hover .cyrcklecontent{
+    max-height: 1200px;
+}
+
+.pointer:hover .smallcyrkle{
+    transform: scale(1);
 }

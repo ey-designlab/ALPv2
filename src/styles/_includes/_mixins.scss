@@ -39,3 +39,8 @@
         @content;
     }
 }
+@mixin break2 ($length){
+    @media (max-width: $length){
+        @content;
+    }
+}

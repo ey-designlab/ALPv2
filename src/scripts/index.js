@@ -1,6 +1,13 @@
 
 var sourseUrl = "src.json";
+
 //var sourseUrl = "https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000";
+
+//var sourseUrl = "https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP')/items?$top=2000";
+
+//var sourseUrl = "https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('alp_v3')/items?$top=2000";
+
+//var sourseUrl = "https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('test')/items?$top=2000";
 
 jQuery(document).ready(function ($) {
 
@@ -8,7 +15,7 @@ jQuery(document).ready(function ($) {
 
     $("#nav-icon").on('click', function () {
         $(this).toggleClass('open');
-        $("#box").toggle(  )
+        $("#box").toggle();
     });
 
 
@@ -220,6 +227,7 @@ jQuery(document).ready(function ($) {
         $('#total').empty();
         $('.checkbox').css({"top": "", "opacity": ""});
         $('.capability').show().find('.selectareawrap').show();
+        $('.Account_Topics').show().find('.selectrankwrap').show();
         $('.activeradio input').removeAttr('checked');
         $('.capabilityitem').removeClass('activeradio');
         $('.results').hide();
@@ -309,7 +317,11 @@ jQuery(document).ready(function ($) {
         }, 400);
         $(this).addClass('activeradio');
     });
-
+    $(function () {
+        $(document).tooltip({
+            track: true
+        });
+    });
 
 });
 
