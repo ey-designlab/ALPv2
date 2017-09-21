@@ -642,6 +642,7 @@ input{
         border-bottom: 1px solid #cecece;
         padding: 4% 9% 4% 4%;
         width: 87%;
+        min-height: 50px;
     }
     .learnmoregreen {
         border-width: 2px;
@@ -837,7 +838,7 @@ fieldset{
         text-align: center;
     }
     .linkstext {
-        padding: 10px;
+        padding: 10px 10px 80px 10px;
         color: #7b8392;
     }
     .quiklinks {
@@ -866,13 +867,19 @@ fieldset{
         .learnmore {
             border: 1px solid #000000;
             border-radius: 5px;
-            margin: 0 20px 30px;
             padding: 13px;
             text-align: center;
             display: block;
             transition: all 0.3s ease;
             text-decoration: none;
             color: #000000;
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            width: 220px;
+            margin: auto;
         }
         .learnmore:hover{
             background-color: #ffe600;
@@ -1290,6 +1297,7 @@ fieldset{
                 width: 92%;
                 background-color: #FFF;
                 color: #000000;
+                min-height: auto;
             }
         }
         .padedwidth {

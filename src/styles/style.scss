@@ -198,6 +198,10 @@
     .links {
         background: rgba(0, 0, 0, 0) url("pas_footer_bg.jpg") no-repeat scroll center bottom / cover ;
     }
+    .boxes {
+        display: flex;
+        justify-content: center;
+    }
 
     .bottomtext{
         padding: 50px;
