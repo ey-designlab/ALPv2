@@ -39,7 +39,7 @@
                     <img src="assets/css/TOOLKIT_ico.png" alt="" />
                     <div class="yelow homeinfoboxtitle">PAS Success Toolkit</div>
                     <div class="homeinfoboxtext">A quick reference flipbook of useful information for PAS new joiners</div>
-                    <a target="_blank" class="clearfix" href="#">PAS TOOLKIT</a>
+                    <a target="_blank" class="clearfix" href="assets/toolkits/flipbook_Advisory_success_toolkit_v16.pdf">PAS TOOLKIT</a>
                     <div class="roundnumber">3</div>
                 </div>
 
@@ -47,7 +47,7 @@
                     <img src="assets/css/info_icon.png" alt="" />
                     <div class="yelow homeinfoboxtitle">Introduction to our offerings</div>
                     <div class="homeinfoboxtext">Introduction to our offerings</div>
-                    <a target="_blank" href="#">PAS OFFERINGS</a>
+                    <a target="_blank" href="http://ey-uk.instantmagazine.com/csg/people-advisory-services">PAS OFFERINGS</a>
                     <div class="yelowhor"></div>
                     <div class="yelowver"></div>
                     <div class="roundnumber">4</div>
@@ -528,16 +528,16 @@
         <div class="row clearfix"> 
             <div class="linkswrap">
                 <div class="linkstitle">PAS</div>
-                <div class="linkstext">People Advisory Services (PAS) SharePoint site</div>
+                <div class="linkstext">People Advisory Services SharePoint Site</div>
                 <a target="_blank" href="https://share.ey.net/sites/PeopleAdvisoryServices/SitePages/Home.aspx" class="learnmore">LEARN MORE</a>
             </div>          
             <div class="linkswrap">
                 <div class="linkstitle">Tax learning Portal</div>
-                <div class="linkstext">Go to learning Portal</div>
-                <a target="_blank" href="#" class="learnmore">LEARN MORE</a>
+                <div class="linkstext">Access the Tax virtual learning portal</div>
+                <a target="_blank" href="https://share.ey.net/sites/TaxLearning/SitePages/Community%20Home.aspx" class="learnmore">LEARN MORE</a>
             </div>    
             <div class="linkswrap">
-                <div class="linkstitle">Advisory Discover Community</div>
+                <div class="linkstitle">Advisory</div>
                 <div class="linkstext">Advisory Discover Community</div>
                 <a target="_blank" href="https://share.ey.net/sites/DS_Advisory/Pages/Home.aspx" class="learnmore">LEARN MORE</a>
             </div> 
@@ -547,47 +547,7 @@
 
     @@include('./List_template.html')
 
-    <script id="list2" type="text/html">
-
-        <div class="pointer">
-            <div class="number"></div>
-            <div class="smallcyrkle">
-                <div class="rotatedline"></div>
-                <div class="strightline"></div>
-                <div class="cyrcklecontent">
-                    <div class="pinwrap clearfix">
-                        <div class="colorbar"></div>
-                        <div class="greywraptitle"><%= Title %></div>
-                        <div class="greydescription">
-                            <div class="pad2">
-                                <div class="xx"></div>
-                                <div class="xy"></div>
-                                <div class="yx"></div>
-                                <div class="yy"></div>
-                                <%= description %> 
-                                <% if ( URL !== "http://tba" ){ %>
-                                <a class="learnmoregreen" target="_blank" href="<%= URL %>">Launch Now</a>
-                                <% } %>
-                            </div>
-                        </div>
-                        <div class="learnmoreinbox">Learn More</div>
-                        <div class="clearfix pad">Course type:<div class="padedwidth "><%= CourseType %></div></div>
-                        <div class="clearfix pad">Course code:<div class="padedwidth "><%= coursecode %></div></div>
-
-                        <% if ( Sector[0] !== "General (no sector)" ){ %>
-                        <div class="clearfix pad">Sector: <div class="padedwidth clearfix"><%= Sector %></div></div>
-                        <% } %>
-
-                        <div class="clearfix pad">Course Duration:<div class="padedwidth clearfix courseduration"><%= Duration %></div></div>
-
-
-
-                    </div>
-                </div>
-            </div> 
-        </div>       
-
-    </script>
+    
     <script src="assets/js/script.js"></script>
     <script src="assets/js/PASLJ.js"></script>
 

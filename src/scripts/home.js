@@ -103,8 +103,8 @@ $(document).ready(function () {
                 var FileName = '';
 
                 $.each(data.AttachmentFiles.results, function (key, data) {
-                    image = data.ServerRelativeUrl
-                    FileName = data.FileName
+                    image = data.ServerRelativeUrl;
+                    FileName = data.FileName;
                 });
 
                 $('#carousel').append(

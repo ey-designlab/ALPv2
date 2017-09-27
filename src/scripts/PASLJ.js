@@ -4,7 +4,6 @@ $(document).ready(function () {
     //  https://msdn.microsoft.com/en-us/library/office/jj860569.aspx
 
     var FilteredContent = [];
-    var FilteredContent2 = [];
 
     var Ajax = function (url) {
         return $.ajax({
@@ -18,6 +17,9 @@ $(document).ready(function () {
             alert('Error: ' + xhr.responseText);
         });
     };
+    
+    
+    
     var Next = function (url) {
         $.when(Ajax(url)).then(function (data) {
 //            console.log(data)
@@ -147,7 +149,7 @@ $(document).ready(function () {
                         });
 
                         $('#resultss').append(
-                                '<div id="fjs_' + count + '" class="pointer">'
+                                '<div id="fjss_' + count + '" class="pointer">'
                                 + '<div class="number"></div>'
                                 + '<div class="smallcyrkle">'
                                 + '<div class="rotatedline"></div>'

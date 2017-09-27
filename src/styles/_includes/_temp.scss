@@ -496,6 +496,9 @@
             }
         }
     }
+    #runtime_criteria{
+        margin-bottom: 30px;
+    }
 
     input{
         &.sw{
@@ -520,6 +523,7 @@
         @include break(920px){
             width: auto;
             height: auto;
+            float: left;
         }
     }
 
@@ -945,8 +949,9 @@
         .padedwidth{
             float: right;
             width: 100%;
+            overflow-wrap: break-word;
             @include break(530px){
-
+                overflow-wrap: break-word;
                 width: 380px;
             }
         }
@@ -997,7 +1002,7 @@
 
     .pag{
         text-align: center;
-        padding: 10px 0 20px 0;
+        padding: 20px 0 10px 0;
 
         .pagination{
             display: inline-block;

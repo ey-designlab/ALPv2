@@ -241,8 +241,8 @@ $(document).ready(function () {
             var FJS = FilterJS(FilteredContent, '#movies', {
                 template: '#courses',
                 filter_on_init: true,
-                search: {ele: '#searchbox'},
-//                search: {ele: '#searchbox', fields: ['Title']}, // With specific fields
+//                search: {ele: '#searchbox'},
+                search: {ele: '#searchbox', fields: ['Title', 'description', 'coursecode']}, // With specific fields
 
                 callbacks: {
                     afterFilter: afterFilter,
