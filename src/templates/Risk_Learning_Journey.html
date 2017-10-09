@@ -358,22 +358,22 @@
                                 </div>
                             </label>
                         </div> 
-<!--                        <div class="checkbox">
-                            <label>
-                                <div class="capabilityitem Regulatory_Compliance">
-                                    <input name=RiskServiceOfferingsRiskAssuranceCapabilty type="radio" value="Third Party Related Compliance">
-                                    <div class="capabilityitemtitle">Third Party Related Compliance</div>
-                                </div>
-                            </label>
-                        </div> -->
-<!--                        <div class="checkbox">
-                            <label>
-                                <div class="capabilityitem SOCR">
-                                    <input name=RiskServiceOfferingsRiskAssuranceCapabilty type="radio" value="IT Audit">
-                                    <div class="capabilityitemtitle">IT Audit</div>
-                                </div>
-                            </label>
-                        </div> -->
+                        <!--                        <div class="checkbox">
+                                                    <label>
+                                                        <div class="capabilityitem Regulatory_Compliance">
+                                                            <input name=RiskServiceOfferingsRiskAssuranceCapabilty type="radio" value="Third Party Related Compliance">
+                                                            <div class="capabilityitemtitle">Third Party Related Compliance</div>
+                                                        </div>
+                                                    </label>
+                                                </div> -->
+                        <!--                        <div class="checkbox">
+                                                    <label>
+                                                        <div class="capabilityitem SOCR">
+                                                            <input name=RiskServiceOfferingsRiskAssuranceCapabilty type="radio" value="IT Audit">
+                                                            <div class="capabilityitemtitle">IT Audit</div>
+                                                        </div>
+                                                    </label>
+                                                </div> -->
                     </fieldset> 
                     <a data-wrapname="RiskCapabilitieswtrap" class="previous"  href="#"> &lt; PREVIOUS</a>
                     <a class="nextslide finish"  href="#">FINISH</a>
@@ -386,7 +386,7 @@
         </div>  
 
 
-        <div class="YOURSELECTIONSUMMARY">
+        <div id="summary" class="YOURSELECTIONSUMMARY">
             <div class="row clearfix">
                 <h1>YOUR SELECTION SUMMARY</h1>
                 <br />
@@ -396,10 +396,14 @@
         </div>
 
         <div class="results">
+
+
             <div class="row clearfix">
                 <h1>YOUR LEARNING OBJECTIVES</h1>
                 <br />
-
+                <a href="#" onclick="return xepOnline.Formatter.Format('results', {render: 'download'});">
+                    <button id="generatepdf">Generate PDF</button>
+                </a>
                 <div id="results" class="clearfix"></div>
             </div>               
         </div>
@@ -439,7 +443,7 @@
                 <div class="linkstext">Risk Transformation Discover Community</div>
                 <a target="_blank" href="https://share.ey.net/sites/DS_RT/Pages/home.aspx" class="learnmore">LEARN MORE</a>
             </div>
-            
+
         </div>
     </section>
 

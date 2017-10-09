@@ -750,6 +750,11 @@
     "sectoricons/Power.png", 
     "sectoricons/Power_hover.png");
 }
+.Normal_WEM-EMEIA{
+    @include icons(
+    "generalicons/Normal_WEM-EMEIA.png", 
+    "generalicons/Over_WEM-EMEIA.png");
+}
 .realEstate{
     @include icons(
     "sectoricons/realEstate.png", 

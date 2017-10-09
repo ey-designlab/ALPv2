@@ -13,7 +13,7 @@ var gulp = require('gulp'),
         uglify = require('gulp-uglify'),
         babel = require('gulp-babel'),
         cssimport = require('gulp-cssimport'),
-        sourcemaps = require('gulp-sourcemaps'),
+//        sourcemaps = require('gulp-sourcemaps'),
         fileinclude = require('gulp-file-include'),
         addsrc = require('gulp-add-src'),
 //        inline_base64 = require('gulp-inline-base64'),
@@ -55,6 +55,8 @@ var routes = {
             baseDirs.src + 'scripts/vendor/jquery.featureCarousel.min.js',
             baseDirs.src + 'scripts/vendor/jquery-ui-1.10.2.custom.min.js',
             baseDirs.src + 'scripts/vendor/filter.js',
+            baseDirs.src + 'scripts/vendor/xepOnline.jqPlugin.js',
+            
             baseDirs.src + 'scripts/index.js'
 
         ],
@@ -107,7 +109,7 @@ gulp.task('styles', function () {
                     message: "<%= error.message %>"
                 })
             }))
-            .pipe(sourcemaps.init())
+//            .pipe(sourcemaps.init())
             .pipe(sass({
                 outputStyle: 'compressed'
             }))
@@ -117,7 +119,7 @@ gulp.task('styles', function () {
 //                maxSize: 14 * 1024,
 //                debug: true
 //            }))
-            .pipe(sourcemaps.write())
+//            .pipe(sourcemaps.write())
             .pipe(cssimport({}))
             .pipe(rename('style.css'))
             .pipe(gulp.dest(routes.styles.css))
@@ -138,7 +140,7 @@ gulp.task('scripts', function () {
                     message: "<%= error.message %>"
                 })
             }))
-            .pipe(sourcemaps.init())
+//            .pipe(sourcemaps.init())
 
             // .pipe(gulpbrowserify())
             .pipe(babel({
@@ -149,7 +151,7 @@ gulp.task('scripts', function () {
             .pipe(concat('script.js'))
             .pipe(addsrc(baseDirs.src + 'scripts/*.js'))
             .pipe(uglify())
-            .pipe(sourcemaps.write())
+//            .pipe(sourcemaps.write())
             .pipe(gulp.dest(routes.scripts.jsmin))
             .pipe(browserSync.stream())
             .pipe(notify({

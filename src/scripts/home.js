@@ -1,10 +1,5 @@
 $(document).ready(function () {
 
-
-//    $(function () {
-//        $.srSmoothscroll();
-//    });
-
     var downarrow = $(".scroll");
     var body = $('html, body');
     downarrow.on("click", function (e) {
@@ -13,15 +8,7 @@ $(document).ready(function () {
             scrollTop: 870
         }, 500);
     });
-//    $(window).on("load", function () {
-//        if (window.location.hash === '#page1') {
-//            setTimeout(function () {
-//                body.stop(true, false).animate({
-//                    scrollTop: 870
-//                }, 500);
-//            }, 400);
-//        }
-//    });
+
 
 
     setTimeout(function () {
@@ -36,21 +23,6 @@ $(document).ready(function () {
 
     }, 600);
 
-    //waypoints trigered when on section and calls AnimatingMenuLine funtion
-
-//    $('#carousel').waypoint(function () {
-//        $("#carousel").featureCarousel({
-//            trackerSummation: false,
-//            carouselSpeed: 600,
-//            autoPlay: 7000,
-//            pauseOnHover: true
-//        });
-//    }, {
-//        offset: 500,
-//        triggerOnce: true
-//    });
-
-    // how many pixeles you have scrolled from top
     function getPageScroll() {
 
 
@@ -65,9 +37,6 @@ $(document).ready(function () {
         return yScroll;
     }
 
-
-
-
     //paralax efect for first section 
     var $bgobj = $('.page1');
     $(window).on("load scroll resize", function () {
@@ -80,8 +49,7 @@ $(document).ready(function () {
             backgroundPosition: coords
         });
     });
-    
-    
+        
     var Ajax2 = function (url) {
         return $.ajax({
             url: url,
