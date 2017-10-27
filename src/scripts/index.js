@@ -1,11 +1,11 @@
 
-//var sourseUrl = "src.json";
+var sourseUrl = "src.json";
 
 //var sourseUrl = "https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP_v2')/items?$top=1000";
 
 //var sourseUrl = "https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('ALP')/items?$top=2000";
 
-var sourseUrl = "https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('alp_v3')/items?$top=2000";
+//var sourseUrl = "https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('alp_v3')/items?$top=2000";
 
 //var sourseUrl = "https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('test')/items?$top=2000";
 
@@ -365,21 +365,3 @@ function secondsToString(seconds) {
 ga('create', 'UA-84567289-1', 'auto');
 ga('send', 'pageview');
 
-
-
-
-
-var doc = new jsPDF();
-var specialElementHandlers = {
-    '#editor': function (element, renderer) {
-        return true;
-    }
-};
-
-$('#generatepdf').click(function () {
-    doc.fromHTML($('#results').html(), 15, 15, {
-        'width': 170,
-        'elementHandlers': specialElementHandlers
-    });
-    doc.save('sample-file.pdf');
-});

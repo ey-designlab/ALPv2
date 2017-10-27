@@ -168,7 +168,7 @@ $(document).ready(function () {
     };
     var Next = function (url) {
         $.when(Ajax(url)).then(function (data) {
-            console.log(data)
+//            console.log(data)
             $.each(data.d.results, function (key, data) {
                 for (var key in data) {
                     if (data[key] === null && key !== 'Title' && key !== 'gpqg' && key !== 'Course_x0020_Code' && key !== 'Short_x0020_description' && key !== 'America_x0027_s_x0020_classroom_' && key !== 'America_x0027_s_x0020_AA_x0020_C' && key !== 'Blended_x0020_learning_x0020_pro') {
@@ -277,7 +277,7 @@ $(document).ready(function () {
             FJS.addCriteria({field: 'PASfferings', ele: '#PASfferings input:checkbox'});
             FJS.addCriteria({field: 'PASPillarOfferings', ele: '#PASPillarOfferings input:checkbox'});
             FJS.addCriteria({field: 'WinningintheMarket', ele: '#WinningintheMarket input:checkbox'});
-            
+
 
 
             //            FJS.addCriteria({field: 'Division', ele: '#Division', all: 'all', selector: 'select'});
@@ -331,4 +331,13 @@ function initSliders() {
         }
     });
 
+}
+
+
+function printContent(el) {
+    var restorepage = $('body').html();
+    var printcontent = $('#' + el).clone();
+    $('body').empty().html(printcontent);
+    window.print();
+    $('body').html(restorepage);
 }

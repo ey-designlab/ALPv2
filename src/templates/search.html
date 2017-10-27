@@ -3,8 +3,6 @@
 
 <body class="searchsystem">
     @@include('./header.html')
-
-
     <div class="container clearfix">
         <div class="searchbox2">
 
@@ -52,7 +50,7 @@
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" value="PPED">
-                                    <span>PPED</span> 
+                                    <span>PPED/AP</span> 
                                 </label>
                             </div>
 
@@ -1460,7 +1458,7 @@
 
 
         </div>
-        <div class="col-md-9 ">
+        <div id="col-md-9" class="col-md-9 ">
             <div class="appyedfilters clearfix">
 
             </div>
@@ -1482,9 +1480,39 @@
                         <a id="one" href="#"><img src="assets/css/list.png" alt=""/></a>
                     </div>
 
+
+
+
+
+
+
                 </div>
                 <div class="pag"></div>   
                 <div class="clearfix"></div>
+
+                <a href="#" onclick="return xepOnline.Formatter.Format('movies', {render: 'download'});">
+                    <button id="generatepdf">Generate PDF</button>
+                </a>
+
+                <button type="button" onclick="printJS('movies', 'html')">
+                    Print Form
+                </button>
+
+
+                <button type="button" onclick="printJS({
+                            printable: 'col-md-9',
+                            properties: ['name', 'email', 'phone'],
+                            type: 'html',
+                            thumbnail: 'float: left; width: 32%;',
+                            gridHeaderStyle: 'color: red;  border: 2px solid #3971A5;',
+                            honorMarginPadding: false
+
+                        })">
+                    Print this
+                </button>
+                
+                <button id="print" onclick="printContent('movies');" >Print</button>
+
             </div>
             <div class="clearfix"></div>
             <div class="movies" id="movies"> </div>
@@ -1824,7 +1852,11 @@
         </div>
     </script>
 
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+
+
     <script src="assets/js/script.js"></script>
+
     <script src="assets/js/search.js"></script>
 
 </body>

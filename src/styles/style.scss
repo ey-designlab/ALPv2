@@ -3,7 +3,6 @@
 @import '_includes/_mixins';
 @import '_includes/_base';
 @import '_includes/_icons';
-
 @import '_includes/_temp';
 
 
@@ -197,10 +196,19 @@
     }
     .links {
         background: rgba(0, 0, 0, 0) url("pas_footer_bg.jpg") no-repeat scroll center bottom / cover ;
+
+        .linkswrap{
+
+        }
+
     }
     .boxes {
+        width: 100%;
+
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+
     }
 
     .bottomtext{
@@ -242,7 +250,11 @@
         }
         #resultss{
             position: relative;
-            top: 160px;            
+            padding-bottom: 20px;
+            @include break(1200px){
+                top: -510px;  
+                padding-bottom: 0px;
+            }
         }
         .Foundationwrap{
             img{
@@ -280,6 +292,28 @@
     }
 
     .maps{
+        .number{
+            display: none;
+            @include break(1200px){
+                display: block;
+            }
+        }
+        .Foundationwrap {
+            img{
+                display: none;
+                @include break(1200px){
+                    display: block;
+                }
+            }
+            .ADVISORYgroop, .CAREERgroop, .CLIENTSgroop, p{
+                display: none;
+                @include break(1200px){
+                    display: block;
+                }
+            }
+
+        }
+
         div#fjss_1 {
             top: 100px;
             left: 150px;
@@ -594,7 +628,26 @@
 }
 
 @media print {
-    .header, .footer, .sidebar, .searchbox2 {
-        display: none !important;
+    /*    .header, .footer, .sidebar, .searchbox2 {
+            display: none !important;
+        }*/
+
+
+
+/*    body * {
+        visibility: hidden;
     }
+    #movies, #movies * {
+        visibility: visible;
+    }
+    #movies {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        .thumbnail{
+            float: left;
+            width: 200px;
+        }
+    }*/
 }
