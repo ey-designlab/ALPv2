@@ -339,18 +339,7 @@
                                     <span>Risk</span>
                                 </label>
                             </div>
-                            <!--                            <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="Account Topics">
-                                                                <span>Account Topics</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" value="Sector">
-                                                                <span>Sector</span>
-                                                            </label>
-                                                        </div>-->
+               
 
 
                         </fieldset>
@@ -361,20 +350,7 @@
                         For classroom training please contact your local Learning team for how to register.
                     </div>
 
-                    <!--        <div class="well">
-                                <fieldset>
-                                    <legend>Sub-Service Line</legend>
-                                    <select class="form-control" id="Division">
-                                        <option value="all">All</option>
-                                        <option value="Firm wide">Firm wide</option>
-                                        <option value="Advisory">Advisory</option>
-                                        <option value="FSO wide">FSO wide</option>
-                                        <option value="Risk">Risk</option>
-                                        <option value="PI">PI</option>
-                                        <option value="PAS">PAS</option>
-                                    </select>
-                                </fieldset>
-                            </div>-->
+              
                 </div>
             </div>
             <div class="filtergroops">
@@ -1490,28 +1466,7 @@
                 <div class="pag"></div>   
                 <div class="clearfix"></div>
 
-                <a href="#" onclick="return xepOnline.Formatter.Format('movies', {render: 'download'});">
-                    <button id="generatepdf">Generate PDF</button>
-                </a>
 
-                <button type="button" onclick="printJS('movies', 'html')">
-                    Print Form
-                </button>
-
-
-                <button type="button" onclick="printJS({
-                            printable: 'col-md-9',
-                            properties: ['name', 'email', 'phone'],
-                            type: 'html',
-                            thumbnail: 'float: left; width: 32%;',
-                            gridHeaderStyle: 'color: red;  border: 2px solid #3971A5;',
-                            honorMarginPadding: false
-
-                        })">
-                    Print this
-                </button>
-                
-                <button id="print" onclick="printContent('movies');" >Print</button>
 
             </div>
             <div class="clearfix"></div>
@@ -1521,9 +1476,8 @@
 
             </div>
         </div>
-        <!-- /.col-md-9 -->
     </div>
-    <!-- /.container -->
+
     <div class="greybg"></div>
 
     <div class="footer clearfix">
@@ -1563,7 +1517,7 @@
                 <div class="closepopup">
                     <img src="assets/css/closepopup.png" alt=""/>
                 </div>
-                <div class="coursecode"><span class="grey">Code :</span> <%= coursecode %></div>
+
                 <div class="coursetytle"><%= Title %></div>
                 <div class="coursespopupdevider">
                     <div class="grey">Description</div>
@@ -1573,10 +1527,16 @@
                     <div class="grey flatleftpaded">Rank </div>
                     <div class="padedwidth"><%= ranks %></div>
                 </div>
+
+
+                <% if ( Sector[0] ){ %> 
                 <div class="coursespopupdevider clearfix">
-                    <div class="grey flatleftpaded">Sector</div>
+                    <div class="grey flatleftpaded">Sector </div>
                     <div class="padedwidth"><%= Sector %></div>
                 </div>
+                <% } %>
+
+
                 <div class="coursespopupdevider clearfix">
                     <div class="grey flatleftpaded">Course Type</div>
                     <div class="padedwidth"><%= CourseType %></div>                      
@@ -1594,14 +1554,21 @@
                 <h4><%= Title %></h4>                   
                 <div class="detail">
                     <dl>
-                        <dt>Course Code</dt>
-                        <dd><%= coursecode %></dd>       
+
+                        <% if ( coursecode ){ %> 
+                        <dt>Course Code</dt>                      
+
+                        <dd><%= coursecode %></dd>    
+                        <% } %>
+
                         <dt>Course Type / Modality</dt>
                         <dd><%= CourseType %></dd>  
                         <dt>Ranks</dt>
                         <dd><%= ranks %></dd>
+                        <% if ( Duration ){ %> 
                         <dt>Duration</dt>
                         <span class="courseduration"><%= Duration %></span></dd>
+                        <% } %>
                     </dl>
                 </div>
             </div>
@@ -1624,7 +1591,11 @@
                 <div class="closepopup">
                     <img src="assets/css/closepopup.png" alt=""/>
                 </div>
-                <div class="coursecode"><span class="grey">Code :</span> <%= coursecode %></div>
+                <% if ( coursecode ){ %> 
+                <div class="coursecode">
+                    <span class="grey">Code :</span> <%= coursecode %>
+                </div>
+                <% } %>
                 <div class="coursetytle"><%= Title %></div>
                 <div class="coursespopupdevider">
                     <div class="grey">Description</div>
@@ -1634,16 +1605,21 @@
                     <div class="grey flatleftpaded">Rank </div>
                     <div class="padedwidth"><%= ranks %></div>
                 </div>
+                
+                <% if ( Sector[0] ){ %> 
                 <div class="coursespopupdevider clearfix">
-                    <div class="grey flatleftpaded">Sector</div>
+                    <div class="grey flatleftpaded">Sector </div>
                     <div class="padedwidth"><%= Sector %></div>
                 </div>
+                <% } %>
+                
                 <div class="coursespopupdevider clearfix">
                     <div class="grey flatleftpaded">Course Type</div>
                     <div class="padedwidth"><%= CourseType %></div>                      
                 </div>
+                <% if ( Duration ){ %> 
                 <div class="coursecode"><span class="grey">Course duration:</span> <span class="courseduration"><%= Duration %></span></div>
-
+                <% } %>
 
                 <% if ( America !== true ){ %>
                 <% if ( Blended !== true ){ %>
@@ -1656,7 +1632,7 @@
     </script>
 
     <script id="courses2" type="text/html">
-        script id="courses2" type="text/html">
+
         <div class="resultsrow">                   
             <div class="rowwrap">
                 <div class="resultscoursetitle"><%= Title %></div>
@@ -1800,10 +1776,12 @@
                     <div class="grey flatleftpaded">Rank </div>
                     <div class="padedwidth"><%= ranks %></div>
                 </div>
+                <% if ( Sector[0] ){ %> 
                 <div class="coursespopupdevider clearfix">
-                    <div class="grey flatleftpaded">Sector</div>
+                    <div class="grey flatleftpaded">Sector </div>
                     <div class="padedwidth"><%= Sector %></div>
                 </div>
+                <% } %>
                 <div class="coursespopupdevider clearfix">
                     <div class="grey flatleftpaded">Course Type</div>
                     <div class="padedwidth"><%= CourseType %></div>                      
@@ -1852,11 +1830,7 @@
         </div>
     </script>
 
-    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
-
-
     <script src="assets/js/script.js"></script>
-
     <script src="assets/js/search.js"></script>
 
 </body>

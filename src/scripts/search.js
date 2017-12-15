@@ -71,6 +71,9 @@ $(document).ready(function () {
     });
 
 
+
+
+
     MainArr = [];
 
     var fieldset = $('fieldset');
@@ -100,7 +103,7 @@ $(document).ready(function () {
             }
         });
 
-//        WhriteTOStorage();
+        WhriteTOStorage($('body').attr('class'));
 
         $('.clearall').on('click', function (e) {
             $('fieldset input:checked').each(function (j) {
@@ -113,42 +116,40 @@ $(document).ready(function () {
             var fieldsetname = $(this).parent().attr('class');
             $('#' + fieldsetname).find('input[value="' + fieldvalue + '"]').trigger("click");
         });
-
     });
 
 
-//    function WhriteTOStorage() {
-//// Put the object into storage
-//        localStorage.setItem('AppliedFilters', JSON.stringify(AppliedFiltersOBJ));
-//    }
-//
-//    function ReadFromStorage() {
-//
-//
-//        // Retrieve the object from storage  var retrievedObject = localStorage.getItem('AppliedFilters');
-//        var retrievedObject = localStorage.getItem('AppliedFilters');
-//        var parsed = JSON.parse(retrievedObject);
-//
-//        $.each(parsed, function (key, data) {
-//            $(data).each(function () {
-//                setTimeout(function () {
-//                    $('#' + key).find('input[value="' + this + '"]').trigger("click");
-//                }, 400);
-//
-////                console.log(key);
-//            });
-////            console.log(key, data);
-//
-//        });
-////        var fieldvalue = $(this).text();
-////        var fieldsetname = $(this).parent().attr('class');
-////        
-////        $('#' + fieldsetname).find('input[value="' + fieldvalue + '"]').trigger("click");
-//
-////        console.log(parsed);
-////        console.log(retrievedObject);
-//    }
-//    ReadFromStorage();
+
+//store filters that you cheked 
+
+
+    $('input:checked').each(function () {
+        $(this).attr('checked', false);
+    });
+
+    function WhriteTOStorage(classname) {
+        // Put the object into storage
+        localStorage.setItem(classname + 'AppliedFilters', JSON.stringify(AppliedFiltersOBJ));
+    }
+
+    function ReadFromStorage(classname) {
+        // Retrieve the object from storage 
+        var retrievedObject = localStorage.getItem(classname + 'AppliedFilters');
+        var parsed = JSON.parse(retrievedObject);
+
+        $.each(parsed, function (key, data) {
+            $(data).each(function () {
+                $('#' + key).find('input[value="' + this + '"]').trigger("click");
+            });
+        });
+    }
+
+    setTimeout(function () {
+        ReadFromStorage($('body').attr('class'));
+    }, 200);
+
+
+
 
     initSliders();
 
@@ -168,7 +169,7 @@ $(document).ready(function () {
     };
     var Next = function (url) {
         $.when(Ajax(url)).then(function (data) {
-//            console.log(data)
+            console.dir(data)
             $.each(data.d.results, function (key, data) {
                 for (var key in data) {
                     if (data[key] === null && key !== 'Title' && key !== 'gpqg' && key !== 'Course_x0020_Code' && key !== 'Short_x0020_description' && key !== 'America_x0027_s_x0020_classroom_' && key !== 'America_x0027_s_x0020_AA_x0020_C' && key !== 'Blended_x0020_learning_x0020_pro') {
@@ -178,11 +179,11 @@ $(document).ready(function () {
                     }
                 }
 
+                console.dir(data.Created)
+
                 FilteredContent.push({
                     Area: data.Area.results,
-//                    SubServiceLine: data.Sector.results,
                     ranks: data.Rank.results,
-//                    ranks: data.Rank.results.join(', '),
                     SubServiceLine: data.Division.results,
                     RiskCapabilities: data.Risk_x0020_Capabilities_x0020__x.results,
                     PiCapabilities: data.PI_x0020_Capabilities_x0020__x00.results,
@@ -258,7 +259,6 @@ $(document).ready(function () {
                 }
             });
             FJS.addCriteria({field: 'ranks', ele: '#ranks input:checkbox'});
-//            FJS.addCriteria({field: 'Division', ele: '#Division input:checkbox'});
             FJS.addCriteria({field: 'CourseType', ele: '#CourseType input:checkbox', all: 'all'});
             FJS.addCriteria({field: 'CourseLevel', ele: '#CourseLevel input:checkbox'});
             FJS.addCriteria({field: 'Area', ele: '#Area input:checkbox'});
@@ -309,7 +309,6 @@ $(document).ready(function () {
 
 
 function initSliders() {
-
     $("#runtime_slider").slider({
         min: 0,
         max: 3000,
@@ -317,7 +316,6 @@ function initSliders() {
         step: 10,
         range: true,
         slide: function (event, ui) {
-
             var courseduration = ui.values[ 1 ];
             var arraystuff = secondsToString(courseduration);
             var string = arraystuff.toString();
@@ -330,14 +328,4 @@ function initSliders() {
             $('#runtime_filter').val(ui.values[0] + '-' + ui.values[1]).trigger('change');
         }
     });
-
-}
-
-
-function printContent(el) {
-    var restorepage = $('body').html();
-    var printcontent = $('#' + el).clone();
-    $('body').empty().html(printcontent);
-    window.print();
-    $('body').html(restorepage);
 }
