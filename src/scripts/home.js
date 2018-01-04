@@ -77,8 +77,8 @@ $(document).ready(function () {
 
                 $('#carousel').append(
                         '<div class="carousel-feature">'
-                        + '<a target="_blank" href="' + data.URL + '">'
-//                        + '<img class="carousel-image" src="https://share.ey.net' + image + '">'
+//                        + '<a target="_blank" href="' + data.URL + '">'
+                        + '<img class="carousel-image" src="https://share.ey.net' + image + '">'
                         + '<img class="carousel-image" src="assets/sliderimages/' + FileName + '">'
                         + '<div class="clickherewrap">'
                         + '<img class="click_here" alt="Image Caption" src="assets/css/click_here_info.png">'
@@ -93,10 +93,10 @@ $(document).ready(function () {
     };
     
     //good one
-//    Next2("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('Whats_new')/items?$select=Title,ID,Description,URL,Attachments,AttachmentFiles&$expand=AttachmentFiles");
+    Next2("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('Whats_new')/items?$select=Title,ID,Description,URL,Attachments,AttachmentFiles&$expand=AttachmentFiles");
     
     //local
-    Next2("slider.json"); 
+//    Next2("slider.json"); 
     
     
 //    Next2("https://share.ey.net/sites/alp/_api/web/Lists/getByTitle('Whats_new')/items?$top=1000");
