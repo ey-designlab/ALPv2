@@ -15,7 +15,7 @@
 
 
 ```bash
-git clone https://github.com/rokart/ALP-v2-.git
+git clone https://github.com/ey-designlab/ALPv2.git
 ```
 ```bash
 npm install
