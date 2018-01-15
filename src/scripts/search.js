@@ -89,8 +89,6 @@ $(document).ready(function () {
 
 
 
-
-
     MainArr = [];
 
     var fieldset = $('fieldset');
@@ -196,7 +194,7 @@ $(document).ready(function () {
                     }
                 }
 
-                console.dir(data.Created)
+//                console.dir(data.Created)
 
                 FilteredContent.push({
                     Area: data.Area.results,
@@ -218,8 +216,23 @@ $(document).ready(function () {
                     CourseType: data.Learning_x0020_type.results,
                     PASPillarOfferings: data.temp.results,
                     WinningintheMarket: data.Winning_x0020_in_x0020_the_x0020.results,
+                    
+                    
+                    
+                    
+                    
+                    FSOOffering: data.FSO_x0020_Offering.results,
+                    FSOSubOfferings: data.FSO_x0020_Sub_x0020_Offerings.results,
+                    
+                    
+                    
+                    
+                    
 
                     URL: data.Course_x0020_URL.Url,
+
+
+
 
                     Title: data.Title,
                     Duration: data.gpqg,
@@ -294,6 +307,11 @@ $(document).ready(function () {
             FJS.addCriteria({field: 'PASfferings', ele: '#PASfferings input:checkbox'});
             FJS.addCriteria({field: 'PASPillarOfferings', ele: '#PASPillarOfferings input:checkbox'});
             FJS.addCriteria({field: 'WinningintheMarket', ele: '#WinningintheMarket input:checkbox'});
+            
+            FJS.addCriteria({field: 'FSOOffering', ele: '#FSOOffering input:checkbox'});
+            FJS.addCriteria({field: 'FSOSubOfferings', ele: '#FSOSubOfferings input:checkbox'});
+            
+            
 
 
 
